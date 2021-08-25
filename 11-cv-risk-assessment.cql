@@ -1,6 +1,5 @@
-// Current smoker - lung cancer screening Related observations: chest CT
-// "Order a screening chest CT once a year in current smokers age 55 to 80 with a 30 or greater pack-year history."
-// This incorporates the current smoker and past smoker CDS rules #8 and #61 in my heroku app
+// Age 40-75 - CV risk assessment Related observations: CV risk assessment
+// "Screen adults age 40-75 at least every 5 years for excess cardiovascular risk. "
 
 // Basis:
 
@@ -9,7 +8,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library lung-cancer-screening
+library CV-risk-assessment
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
