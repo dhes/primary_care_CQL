@@ -1,5 +1,5 @@
-// Vascular disease - monitor lipids Related observations: lipid panel
-// "Check lipid panel every 6 months in all patients with vascular disease (ischemic heart disease, stroke or peripheral vascular disease). "
+// Liver function panel (other liver disease) Related observations: LFT
+// "Liver function panel for patients with other liver disease"
 
 // Basis:
 

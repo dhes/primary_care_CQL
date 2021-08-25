@@ -1,5 +1,5 @@
 // Single-question alcohol screen Related observations: ETOH1
-//"Screen adults for alcohol misuse and provide brief counseling to reduce alcohol use. "
+// "Screen adults for alcohol misuse and provide brief counseling to reduce alcohol use. "
 
 // Basis:
 

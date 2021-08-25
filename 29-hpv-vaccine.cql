@@ -1,5 +1,7 @@
-// PPSV23 - tobacco smokers Related observations: Pneumovax
-// "PPSV23 immunzation for smokers age 19-64"
+// HPV series Related observations: HPV vaccine series
+// "Administer HPV vaccine series to all females age 11 and older
+// (2 doses if started before age 15,
+// three doses if started age 15 or older). "
 
 // Basis:
 
@@ -8,7 +10,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library ppsv23-smoker
+library hpv-vaccine
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers

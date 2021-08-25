@@ -1,4 +1,4 @@
-// Current smoker - AAA screening Related observations: Aorta US
+// Ever smoker - AAA screening Related observations: Aorta US
 // "Screen men age 65-75 y who have ever smoked 1 time for abdominal aortic aneurysm (AAA) using ultrasonography. "
 
 // Basis:

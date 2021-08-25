@@ -1,5 +1,6 @@
-// Prediabetes - annual A1c Related observations: A1c
-// "Patients with prediabetes should have an A1c blood test once a year."
+// Vascular disease - start ASA Related observations: ASA assessment
+// "Recommend low-dose aspirin to all patients with vascular disease."
+
 // Basis:
 /*
 NOTE: This example is for instructional purposes only and is derived from work in progress.

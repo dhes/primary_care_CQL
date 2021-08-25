@@ -1,5 +1,5 @@
-// Healthy lifestyle for adults at risk for CVD Related observations: healthy lifestyle counseling
-// "Refer adults who are overweight or obese with additional CVD risk factors to intensive behavioral counseling."
+// ever smoker - AAA screening Related observations: Aorta US
+// "One-time screening for abdominal aortic aneurysm with ultrasonography in men aged 65 to 75 years who have ever smoked."
 
 // Basis:
 
@@ -8,7 +8,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library counselling-high-CV-risk
+library AAA-screening
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers

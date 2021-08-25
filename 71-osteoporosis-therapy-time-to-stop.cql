@@ -1,5 +1,6 @@
 // Osteoporosis duration of therapy Related observations: assess continuing medical therapy for osteoporosis
-// "Assessment to possibly discontinue medical therapy after five years of alendronate or risedronate or after three years for zoledronic acid"
+// "Assessment to possibly discontinue medical therapy after five years of alendronate or risedronate or after 
+// three years for zoledronic acid"
 // Basis:
 
 /*

@@ -1,7 +1,6 @@
-// HPV series Related observations: HPV vaccine series
-// "Administer HPV vaccine series to all females age 11 and older
-// (2 doses if started before age 15,
-// three doses if started age 15 or older). "
+// Current smoker - lung cancer screening Related observations: chest CT
+// "Order a screening chest CT once a year in current smokers age 55 to 80 with a 30 or greater pack-year history."
+// #8 and #61 are candidates for consolidation
 
 // Basis:
 
@@ -10,7 +9,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library hpv-series
+library lung-cancer-screening-smoker
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
