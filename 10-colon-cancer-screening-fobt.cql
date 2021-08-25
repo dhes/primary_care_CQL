@@ -1,6 +1,6 @@
 // Colon cancer screening - stool test Related observations: FOBT
 //"Order screening FOBT for patients age 50 to 75 once a year."
-// This incorporates the colon cancer screening by colonoscopy and FOBT rules #9 and #10 in the heroku app
+// #9 and #10 are are candidates for consolidation
 
 // Basis:
 
@@ -9,7 +9,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library colon-cancer-screening
+library colon-cancer-screening-fobt
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
