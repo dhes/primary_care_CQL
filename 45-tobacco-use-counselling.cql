@@ -1,5 +1,5 @@
-// Senior PPSV23 Related observations: Pneumovax
-// "Immunize adults aged >=65 y against pneumococcal disease with PPSV23. "
+// Take a smoking status history Related observations: smoking history
+// "Take a smoking status history if none recorded. "
 
 // Basis:
 
@@ -8,7 +8,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library ppsv23-vaccine
+library tobacco-use-screening
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
