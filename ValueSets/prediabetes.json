@@ -1,0 +1,60 @@
+{
+    "resourceType": "ValueSet",
+    "id": "2.16.840.1.113762.1.4.1222.419",
+    "meta": {
+        "versionId": "5",
+        "lastUpdated": "2021-05-19T01:01:46.000-04:00"
+    },
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Value Set Contents</h3><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-714628002\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=714628002\">714628002</a></td><td>http://snomed.info/sct</td><td>Prediabetes (finding)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-cm-R73.01\"> </a>R73.01</td><td>http://hl7.org/fhir/sid/icd-10-cm</td><td>Impaired fasting glucose</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-cm-R73.02\"> </a>R73.02</td><td>http://hl7.org/fhir/sid/icd-10-cm</td><td>Impaired glucose tolerance (oral)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-cm-R73.03\"> </a>R73.03</td><td>http://hl7.org/fhir/sid/icd-10-cm</td><td>Prediabetes</td></tr></table></div>"
+    },
+    "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1222.419",
+    "version": "20210519",
+    "name": "Prediabetes (Borderline Diabetes)",
+    "status": "active",
+    "date": "2021-05-19T01:01:46-04:00",
+    "publisher": "HL7 Patient Care WG Steward",
+    "expansion": {
+        "identifier": "urn:uuid:4de422f8-9f85-46ff-969c-51c413f9e0ca",
+        "timestamp": "2021-08-25T21:40:17-04:00",
+        "total": 4,
+        "offset": 0,
+        "parameter": [
+            {
+                "name": "count",
+                "valueInteger": 1000
+            },
+            {
+                "name": "offset",
+                "valueInteger": 0
+            }
+        ],
+        "contains": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/731000124108/version/2021-03",
+                "code": "714628002",
+                "display": "Prediabetes (finding)"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "version": "2022",
+                "code": "R73.01",
+                "display": "Impaired fasting glucose"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "version": "2022",
+                "code": "R73.02",
+                "display": "Impaired glucose tolerance (oral)"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "version": "2022",
+                "code": "R73.03",
+                "display": "Prediabetes"
+            }
+        ]
+    }
+}
