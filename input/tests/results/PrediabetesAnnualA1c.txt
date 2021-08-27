@@ -1,0 +1,7 @@
+Running tests.
+Data path: /Users/danheslinga/primary_care_CQL/input/tests/PrediabetesAnnualA1c
+Terminology path: /Users/danheslinga/primary_care_CQL/input/vocabulary/valueset
+Patient=null
+Has prediabetes=null
+
+elapsed: 2.481 seconds

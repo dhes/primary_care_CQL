@@ -18,8 +18,9 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 // urn - uniform resource name https://en.wikipedia.org/wiki/Uniform_Resource_Name
 // oid - organization id
 
-valueset "Prediabetes" 'https://cts.nlm.nih.gov/fhir/r4/ValueSet/2.16.840.1.113762.1.4.1222.419'
+// valueset "Prediabetes": 'https://cts.nlm.nih.gov/fhir/r4/ValueSet/2.16.840.1.113762.1.4.1222.419'
+valueset "Prediabetes": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1222.419'
 
 context Patient
 
-define "Has prediabetes": [Observation: Condition] C where C.code in "Prediabetes"
+define "Has prediabetes": [Condition: "Prediabetes"]
