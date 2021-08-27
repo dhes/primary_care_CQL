@@ -1,5 +1,6 @@
 // Prediabetes - annual A1c Related observations: A1c
 // "Patients with prediabetes should have an A1c blood test once a year."
+// Rule #1 from web app
 
 // Basis:
 
