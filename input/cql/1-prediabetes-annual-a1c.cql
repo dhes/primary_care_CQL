@@ -8,7 +8,7 @@ NOTE: This example is for instructional purposes only and is derived from work i
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library prediabetes-annual-A1c
+library PrediabetesAnnualA1c
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
@@ -20,3 +20,5 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 valueset "Prediabetes" 'https://cts.nlm.nih.gov/fhir/r4/ValueSet/2.16.840.1.113762.1.4.1222.419'
 
 context Patient
+
+define "Has prediabetes": [Observation: Condition] C where C.code in "Prediabetes"
