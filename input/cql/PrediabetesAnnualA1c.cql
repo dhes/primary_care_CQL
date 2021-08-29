@@ -24,14 +24,15 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 // the current snomedct code is 714628002
 // this value set references the current snomedct code 714628002 and three ICD-10-CM codes:
 // see https://icd10cmtool.cdc.gov/?fy=FY2021
-valueset "Most Recent Prediabetes Codes": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1222.419'
+// valueset "Most Recent Prediabetes Codes": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1222.419'
 // this custom value set includes the deprecated synthea code, all of the Prediabetes codes as well as corresponding ICD9 codes
 // R73.01 = 790.21
 // R73.02 = 790.22
 // R73.03 = 790.29 (other abnormal glucose; no specific code for prediabetes)
-// valuset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclusiveprediabetescodes'
+// all resourcetype: Conditions are encounter-diagnosis; none are problem-list item. 
+valueset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclusiveprediabetescodes'
 valueset "Condition Clinical Status Active": 'http://example.org/fhir/ValueSet/conditionclinicalstatusactive'
 
 context Patient
 
-define "Has prediabetes": [Condition: "Prediabetes"]
+define "Has prediabetes": [Condition: "Inclusive Prediabetes Codes"]
