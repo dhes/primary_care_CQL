@@ -44,6 +44,13 @@ code "HbA1c": '4548-4' from "LOINC" display 'HbA1c (Bld) [Mass fraction]'
 
 context Patient
 
+define "Name":
+[Patient] P return  P.name.given.single() + ' ' + P.name.family.single()
+
+// define "Patient Name": [Patient] P.family + " " + P.given
+
 define "Has prediabetes": [Condition: "Inclusive Prediabetes Codes"]
 
 define "Has HbA1c test":  [Observation: "HbA1c"]
+
+define "Count HbA1c tests": Count("Has HbA1c test")
