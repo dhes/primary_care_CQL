@@ -82,7 +82,11 @@ define "Most Recent A1c test":
 
 define "Most recent A1c value":
  "Most Recent A1c test" MR
- return MR.value as Quantity
+ return Abs(MR.value as Quantity)
+
+ define "Most recent A1c date":
+  "Most Recent A1c test" MR
+  return MR.effective.toString()
 
 /* define "Has HbA1c test":  [Observation: "HbA1c"] */
 
