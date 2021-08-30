@@ -1,61 +1,70 @@
 {
-    "resourceType": "ValueSet",
-    "id": "InclusivePreDiabetescodes",
-    "url": "http://example.org/fhir/ValueSet/inclusiveprediabetescodes",
-    "version": "0.1.0",
-    "name": "Prediabetes (Borderline Diabetes)",
-    "status": "active",
-    "experimental": true,
-    "publisher": "ACME",
-    "description": "This value set includes SNOMED-CT codes for Chest CT Procedures",
-    "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
-    "expansion": {
-        "contains": [
-            {
-                "system": "http://snomed.info/sct",
-                "version": "http://snomed.info/sct/731000124108/version/2021-03",
-                "code": "714628002",
-                "display": "Prediabetes (finding)"
-            },
-            {
-                "system": "http://hl7.org/fhir/sid/icd-10-cm",
-                "version": "2022",
-                "code": "R73.01",
-                "display": "Impaired fasting glucose"
-            },
-            {
-                "system": "http://hl7.org/fhir/sid/icd-10-cm",
-                "version": "2022",
-                "code": "R73.02",
-                "display": "Impaired glucose tolerance (oral)"
-            },
-            {
-                "system": "http://hl7.org/fhir/sid/icd-10-cm",
-                "version": "2022",
-                "code": "R73.03",
-                "display": "Prediabetes"
-            },
-            {
-                "system": "http://snomed.info/sct",
-                "code": "15777000",
-                "display": "Prediabetes (finding)"
-            },
-            {
-                "system": "http://hl7.org/fhir/sid/icd-9-cm",
-                "code": "790.21",
-                "display": "Impaired fasting glucose"
-            },
-            {
-                "system": "http://hl7.org/fhir/sid/icd-9-cm",
-                "code": "790.22",
-                "display": "Impaired glucose tolerance (oral)"
-            },
-            {
-                "system": "http://hl7.org/fhir/sid/icd-9-cm",
-                "code": "790.29",
-                "display": "Prediabetes"
-            }
-
+  "resourceType": "ValueSet",
+  "id": "InclusivePreDiabetescodes",
+  "url": "http://example.org/fhir/ValueSet/inclusiveprediabetescodes",
+  "version": "0.1.0",
+  "name": "Prediabetes (Borderline Diabetes)",
+  "status": "active",
+  "experimental": true,
+  "publisher": "ACME",
+  "description": "This value set includes SNOMED-CT codes for Chest CT Procedures",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement. The ICD-10 is copyrighted by the World Health Organization (WHO).",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/731000124108/version/2021-03",
+        "concept": [
+          {
+            "code": "714628002",
+            "display": "Prediabetes (finding)"
+          }
         ]
-    }
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "15777000",
+            "display": "Prediabetes (finding)"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2022",
+        "concept": [
+          {
+            "code": "R73.01",
+            "display": "Impaired fasting glucose"
+          },
+          {
+            "code": "R73.02",
+            "display": "Impaired glucose tolerance (oral)"
+          },
+          {
+            "code": "R73.03",
+            "display": "Prediabetes"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-9-cm",
+        "concept": [
+          {
+            "code": "790.21",
+            "display": "Impaired fasting glucose"
+          },
+          {
+            "code": "790.22",
+            "display": "Impaired glucose tolerance (oral)"
+          },
+          {
+            "code": "790.29",
+            "display": "Other abnormal glucose"
+          }
+        ]
+      }
+    ]
+  }
 }
