@@ -14,7 +14,7 @@ library PrediabetesAnnualA1c
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
-// include FHIRCommon // for FHIR codesystem
+include FHIRCommon version '4.0.1' called FC
 
 // urn - uniform resource name https://en.wikipedia.org/wiki/Uniform_Resource_Name
 // oid - organization id
@@ -30,10 +30,13 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 // R73.02 = 790.22
 // R73.03 = 790.29 (other abnormal glucose; no specific code for prediabetes)
 // all resourcetype: Conditions are encounter-diagnosis; none are problem-list item.
+codesystem "LOINC": 'http://loinc.org'
+// codesystem "ObservationCategory": 'http://terminology.hl7.org/CodeSystem/observation-category' // not sure if I need this; it's to get quantities
+
 valueset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclusiveprediabetescodes'
 valueset "Condition Clinical Status Active": 'http://example.org/fhir/ValueSet/conditionclinicalstatusactive'
+valueset "Laboratory": 'http://example.org/fhir/ValueSet/laboratory'
 
-codesystem "LOINC": 'http://loinc.org'
 
 // LOINC for A1c = 4548-4.
 // Long common name Hemoglobin A1c/Hemoglobin.total in Blood
@@ -51,6 +54,36 @@ define "Name":
 
 define "Has prediabetes": [Condition: "Inclusive Prediabetes Codes"]
 
-define "Has HbA1c test":  [Observation: "HbA1c"]
+define "HbA1c observations":
+[Observation: category in "Laboratory"] O
+  where O.status in { 'final', 'amended' , 'corrected', 'preliminary'}
+    and O.value is Quantity
+    and O.code ~ "HbA1c"
+  sort by FHIRHelpers.ToDateTime(effective as dateTime) desc
 
-define "Count HbA1c tests": Count("Has HbA1c test")
+
+/* define "HbA1c test in last year":
+  [Observation: "HbA1c"] O
+    where O.status  in { 'final', 'amended', 'corrected', 'preliminary' }
+    and FC.ToInterval(O.effective) ends 1 year or less before Today() */
+
+/* define "Most Recent HbA1c test":
+  First([Observation: "HbA1c"] O
+    where O.status  in { 'final', 'amended', 'corrected', 'preliminary' }
+    sort by FHIRHelpers.ToDateTime(effective as dateTime) desc) */
+
+/* define "Most Recent A1c value":
+  "Most Recent HbA1c test" MR
+    let mostRecentA1c: MR
+    return MR.value as Quantity */
+
+define "Most Recent A1c test":
+  First("HbA1c observations")
+
+define "Most recent A1c value":
+ "Most Recent A1c test" MR
+ return MR.value as Quantity
+
+/* define "Has HbA1c test":  [Observation: "HbA1c"] */
+
+/* define "Count HbA1c tests": Count("Has HbA1c test") */
