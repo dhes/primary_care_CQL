@@ -14,7 +14,7 @@ library PrediabetesAnnualA1c
 
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
-// include cqf.fhir.common.FHIRCommon // uncomment as needed
+// include FHIRCommon // for FHIR codesystem
 
 // urn - uniform resource name https://en.wikipedia.org/wiki/Uniform_Resource_Name
 // oid - organization id
@@ -33,7 +33,17 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 valueset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclusiveprediabetescodes'
 valueset "Condition Clinical Status Active": 'http://example.org/fhir/ValueSet/conditionclinicalstatusactive'
 
-// LOINC for A1c = 4548-4
+codesystem "LOINC": 'http://loinc.org'
+
+// LOINC for A1c = 4548-4.
+// Long common name Hemoglobin A1c/Hemoglobin.total in Blood
+// Short name HbA1c MFr Bld
+// Display name HbA1c (Bld) [Mass fraction]
+// codesystem LOINC is in fhircommon
+code "HbA1c": '4548-4' from "LOINC" display 'HbA1c (Bld) [Mass fraction]'
+
 context Patient
 
 define "Has prediabetes": [Condition: "Inclusive Prediabetes Codes"]
+
+define "Has HbA1c test":  [Observation: "HbA1c"]
