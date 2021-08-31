@@ -37,7 +37,6 @@ valueset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclus
 valueset "Condition Clinical Status Active": 'http://example.org/fhir/ValueSet/conditionclinicalstatusactive'
 valueset "Laboratory": 'http://example.org/fhir/ValueSet/laboratory'
 
-
 // LOINC for A1c = 4548-4.
 // Long common name Hemoglobin A1c/Hemoglobin.total in Blood
 // Short name HbA1c MFr Bld
@@ -48,11 +47,14 @@ code "HbA1c": '4548-4' from "LOINC" display 'HbA1c (Bld) [Mass fraction]'
 context Patient
 
 define "Name":
-[Patient] P return  P.name.given.single() + ' ' + P.name.family.single()
+[Patient] P return  P.name.given.first() + ' ' + P.name.family.first()
 
 // define "Patient Name": [Patient] P.family + " " + P.given
 
-define "Has prediabetes": [Condition: "Inclusive Prediabetes Codes"]
+define "Has prediabetes":
+  [Condition: "Inclusive Prediabetes Codes"] C
+  where C.clinicalStatus in "Condition Clinical Status Active"
+
 
 define "HbA1c observations":
 [Observation: category in "Laboratory"] O
@@ -67,15 +69,13 @@ define "HbA1c observations":
     where O.status  in { 'final', 'amended', 'corrected', 'preliminary' }
     and FC.ToInterval(O.effective) ends 1 year or less before Today() */
 
-/* define "Most Recent HbA1c test":
-  First([Observation: "HbA1c"] O
+define "HbA1c test in last year":
+  "HbA1c observations" O
     where O.status  in { 'final', 'amended', 'corrected', 'preliminary' }
-    sort by FHIRHelpers.ToDateTime(effective as dateTime) desc) */
+      and FC.ToInterval(O.effective) ends 1 year or less before Today()
 
-/* define "Most Recent A1c value":
-  "Most Recent HbA1c test" MR
-    let mostRecentA1c: MR
-    return MR.value as Quantity */
+define "Had a HbA1c test in last year":
+Exists("HbA1c test in last year")
 
 define "Most Recent A1c test":
   First("HbA1c observations")
@@ -88,6 +88,10 @@ define "Most recent A1c value":
   "Most Recent A1c test" MR
   return MR.effective.toString()
 
-/* define "Has HbA1c test":  [Observation: "HbA1c"] */
+define "Has HbA1c test":  Exists("HbA1c observations")
 
-/* define "Count HbA1c tests": Count("Has HbA1c test") */
+define "Count HbA1c tests": Count("HbA1c observations")
+
+define "Needs an A1c test to monitor prediabetes":
+not Exists("HbA1c test in last year")
+and Exists("Has prediabetes")
