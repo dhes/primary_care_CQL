@@ -13,9 +13,12 @@
 It should in no way be considered a final specification or recommendation for guidance.
 */
 
-library PrediabetesAnnualA1c
+//* test patients:
+/* Adeline686 Lindgren255 has diabetes so she does not need an A1c test accoring to this protocol
+   of course, she will need an A1c to satisfy diabetes monitoring requirements. */library PrediabetesAnnualA1c
 
 using FHIR version '4.0.1'
+
 include FHIRHelpers version '4.0.1' called FHIRHelpers
 include FHIRCommon version '4.0.1' called FC
 
@@ -33,6 +36,7 @@ include FHIRCommon version '4.0.1' called FC
 // R73.02 = 790.22
 // R73.03 = 790.29 (other abnormal glucose; no specific code for prediabetes)
 // all resourcetype: Conditions are encounter-diagnosis; none are problem-list item.
+
 codesystem "LOINC": 'http://loinc.org'
 // codesystem "ObservationCategory": 'http://terminology.hl7.org/CodeSystem/observation-category' // not sure if I need this; it's to get quantities
 
@@ -45,26 +49,31 @@ valueset "Laboratory": 'http://example.org/fhir/ValueSet/laboratory'
 // Short name HbA1c MFr Bld
 // Display name HbA1c (Bld) [Mass fraction]
 // codesystem LOINC is in fhircommon
+
 code "HbA1c": '4548-4' from "LOINC" display 'HbA1c (Bld) [Mass fraction]'
 
 context Patient
 
 define "Name":
-[Patient] P return  P.name.given.first() + ' ' + P.name.family.first()
+  [Patient] P
+    return P.name.given.first ( ) + ' ' + P.name.family.first ( )
 
 // define "Patient Name": [Patient] P.family + " " + P.given
 
 define "Has prediabetes":
   [Condition: "Inclusive Prediabetes Codes"] C
-  where C.clinicalStatus in "Condition Clinical Status Active"
+    where C.clinicalStatus in "Condition Clinical Status Active"
 
+define "Show prediabetes clinicalStatus codes":
+  [Condition: "Inclusive Prediabetes Codes"] C
+//    return C.clinicalStatus
 
 define "HbA1c observations":
-[Observation: category in "Laboratory"] O
-  where O.status in { 'final', 'amended' , 'corrected', 'preliminary'}
-    and O.value is Quantity
-    and O.code ~ "HbA1c"
-  sort by FHIRHelpers.ToDateTime(effective as dateTime) desc
+  [Observation: category in "Laboratory"] O
+    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+      and O.value is Quantity
+      and O.code ~ "HbA1c"
+    sort by FHIRHelpers.ToDateTime ( effective as dateTime ) desc
 
 
 /* define "HbA1c test in last year":
@@ -74,27 +83,29 @@ define "HbA1c observations":
 
 define "HbA1c test in last year":
   "HbA1c observations" O
-    where O.status  in { 'final', 'amended', 'corrected', 'preliminary' }
-      and FC.ToInterval(O.effective) ends 1 year or less before Today()
+    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+      and FC.ToInterval ( O.effective ) ends 1 year or less before Today()
 
 define "Had a HbA1c test in last year":
-Exists("HbA1c test in last year")
+  Exists("HbA1c test in last year")
 
 define "Most Recent A1c test":
   First("HbA1c observations")
 
 define "Most recent A1c value":
- "Most Recent A1c test" MR
- return Abs(MR.value as Quantity)
-
- define "Most recent A1c date":
   "Most Recent A1c test" MR
-  return MR.effective.toString()
+    return Abs(MR.value as Quantity)
 
-define "Has HbA1c test":  Exists("HbA1c observations")
+define "Most recent A1c date":
+  "Most Recent A1c test" MR
+    return MR.effective.toString ( )
 
-define "Count HbA1c tests": Count("HbA1c observations")
+define "Has HbA1c test":
+  Exists("HbA1c observations")
+
+define "Count HbA1c tests":
+  Count("HbA1c observations")
 
 define "Needs an A1c test to monitor prediabetes":
-not Exists("HbA1c test in last year")
-and Exists("Has prediabetes")
+  not Exists("HbA1c test in last year")
+    and Exists("Has prediabetes")
