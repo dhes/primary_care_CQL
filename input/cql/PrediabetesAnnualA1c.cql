@@ -55,7 +55,7 @@ code "HbA1c": '4548-4' from "LOINC" display 'HbA1c (Bld) [Mass fraction]'
 context Patient
 
 define "Name":
-  [Patient] P
+  Patient P
     return P.name.given.first ( ) + ' ' + P.name.family.first ( )
 
 // define "Patient Name": [Patient] P.family + " " + P.given
