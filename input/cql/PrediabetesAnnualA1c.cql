@@ -64,9 +64,10 @@ define "Has prediabetes":
   [Condition: "Inclusive Prediabetes Codes"] C
     where C.clinicalStatus in "Condition Clinical Status Active"
 
-define "Show prediabetes clinicalStatus codes":
-  [Condition: "Inclusive Prediabetes Codes"] C
+// define "Show prediabetes clinicalStatus codes":
+//  [Condition: "Inclusive Prediabetes Codes"] C
 //    return C.clinicalStatus
+// only return one because there only is one
 
 define "HbA1c observations":
   [Observation: category in "Laboratory"] O
@@ -109,3 +110,6 @@ define "Count HbA1c tests":
 define "Needs an A1c test to monitor prediabetes":
   not Exists("HbA1c test in last year")
     and Exists("Has prediabetes")
+
+define "double set":
+({2,4,6,8}) L return L*2
