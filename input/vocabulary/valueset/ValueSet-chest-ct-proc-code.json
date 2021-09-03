@@ -1,0 +1,68 @@
+{
+  "resourceType": "ValueSet",
+  "id": "chest-ct-proc-code",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-v3-cpt-4.html\"><code>http://www.ama-assn.org/go/cpt</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>G0297</td><td>Low-dose CT scan (LDCT) for lung cancer screening</td></tr><tr><td>71250</td><td>Chest CT without contrast</td></tr><tr><td>71270</td><td>Check CT with and without contrast</td></tr></table></li></ul></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference",
+      "valueUri": "https://www.acr.org/Clinical-Resources/Lung-Cancer-Screening-Resources/FAQ"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference",
+      "valueUri": "https://www.rad.msu.edu/Patient/documents/MSU_CT_CPT_Codes.pdf"
+    }
+  ],
+  "url": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code",
+  "version": "0.2.0",
+  "name": "ChestCTProcCode",
+  "title": "Chest CT Procedure Code",
+  "status": "active",
+  "date": "2021-04-26T17:32:25+00:00",
+  "publisher": "University of Utah",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicine.utah.edu/dbmi/"
+        }
+      ]
+    }
+  ],
+  "description": "This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from Current Procedures Terminology (CPT) code set and requires a separate license from the American Medical Association. Users of this content are responsible for identifying and obtaining any necessary licenses or authorizations to utilize the codes, according to the licensing policies described at https://ww.ama-assn.org/practice-management/cpt-licensing",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "concept": [
+          {
+            "code": "G0297",
+            "display": "Low-dose CT scan (LDCT) for lung cancer screening"
+          },
+          {
+            "code": "71250",
+            "display": "Chest CT without contrast"
+          },
+          {
+            "code": "71270",
+            "display": "Check CT with and without contrast"
+          }
+        ]
+      }
+    ]
+  }
+}

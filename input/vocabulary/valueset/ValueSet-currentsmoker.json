@@ -1,0 +1,62 @@
+{
+  "resourceType": "ValueSet",
+  "id": "currentsmoker",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=449868002\">449868002</a></td><td>Current every day smoker</td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428041000124106\">428041000124106</a></td><td>Current some day smoker</td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428071000124103\">428071000124103</a></td><td>Current Heavy tobacco smoker</td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428061000124105\">428061000124105</a></td><td>Current Light tobacco smoker</td></tr></table></li></ul></div>"
+  },
+  "url": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/currentsmoker",
+  "version": "0.2.0",
+  "name": "CurrentSmoker",
+  "title": "Current Smoker Status",
+  "status": "active",
+  "date": "2020-03-04T00:00:00+10:00",
+  "publisher": "University of Utah",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicine.utah.edu/dbmi/"
+        }
+      ]
+    }
+  ],
+  "description": "This value set indicates the current smoking status of a patient who is currently a smoker.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "449868002",
+            "display": "Current every day smoker"
+          },
+          {
+            "code": "428041000124106",
+            "display": "Current some day smoker"
+          },
+          {
+            "code": "428071000124103",
+            "display": "Current Heavy tobacco smoker"
+          },
+          {
+            "code": "428061000124105",
+            "display": "Current Light tobacco smoker"
+          }
+        ]
+      }
+    ]
+  }
+}

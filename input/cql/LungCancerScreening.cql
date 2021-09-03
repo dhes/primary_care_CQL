@@ -11,6 +11,7 @@ codesystem "LOINC": 'http://loinc.org'
 
 valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
+// find at http://build.fhir.org/ig/cqframework/lcs-cds/ValueSet-currentsmoker.json.html
 valueset "Current Smoker": 'http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/currentsmoker'
 valueset "Chest CT": 'http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code'
 valueset "Condition Clinical Status": 'http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical'
