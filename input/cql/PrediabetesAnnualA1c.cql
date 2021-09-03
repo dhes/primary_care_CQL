@@ -60,14 +60,27 @@ define "Name":
 
 // define "Patient Name": [Patient] P.family + " " + P.given
 
-define "Has prediabetes":
+define "Prediabetes conditions":
   [Condition: "Inclusive Prediabetes Codes"] C
     where C.clinicalStatus in "Condition Clinical Status Active"
+
+define "Has prediabetes":
+  Exists("Prediabetes conditions")
 
 // define "Show prediabetes clinicalStatus codes":
 //  [Condition: "Inclusive Prediabetes Codes"] C
 //    return C.clinicalStatus
 // only return one because there only is one
+
+define "Is living":
+  Patient.deceased is null
+
+define "Initial population":
+  "Is living"
+    and "Has prediabetes"
+
+define "Denominator":
+  true
 
 define "HbA1c observations":
   [Observation: category in "Laboratory"] O
@@ -109,7 +122,4 @@ define "Count HbA1c tests":
 
 define "Needs an A1c test to monitor prediabetes":
   not Exists("HbA1c test in last year")
-    and Exists("Has prediabetes")
-
-define "double set":
-({2,4,6,8}) L return L*2
+    and Exists("Prediabetes conditions")
