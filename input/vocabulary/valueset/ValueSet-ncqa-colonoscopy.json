@@ -1,0 +1,209 @@
+"resourceType": "ValueSet",
+    "id": "2.16.840.1.113883.3.464.1003.108.11.1051",
+    "meta": {
+        "versionId": "32",
+        "lastUpdated": "2021-02-20T01:02:00.000-05:00"
+    },
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Value Set Contents</h3><p>This value set contains 29 concepts</p><p>All codes from system <code>http://www.ama-assn.org/go/cpt</code></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44388\"> </a>44388</td><td>Colonoscopy through stoma; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44389\"> </a>44389</td><td>Colonoscopy through stoma; with biopsy, single or multiple</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44390\"> </a>44390</td><td>Colonoscopy through stoma; with removal of foreign body(s)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44391\"> </a>44391</td><td>Colonoscopy through stoma; with control of bleeding, any method</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44392\"> </a>44392</td><td>Colonoscopy through stoma; with removal of tumor(s), polyp(s), or other lesion(s) by hot biopsy forceps</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44394\"> </a>44394</td><td>Colonoscopy through stoma; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44401\"> </a>44401</td><td>Colonoscopy through stoma; with ablation of tumor(s), polyp(s), or other lesion(s) (includes pre-and post-dilation and guide wire passage, when performed)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44402\"> </a>44402</td><td>Colonoscopy through stoma; with endoscopic stent placement (including pre- and post-dilation and guide wire passage, when performed)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44403\"> </a>44403</td><td>Colonoscopy through stoma; with endoscopic mucosal resection</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44404\"> </a>44404</td><td>Colonoscopy through stoma; with directed submucosal injection(s), any substance</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44405\"> </a>44405</td><td>Colonoscopy through stoma; with transendoscopic balloon dilation</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44406\"> </a>44406</td><td>Colonoscopy through stoma; with endoscopic ultrasound examination, limited to the sigmoid, descending, transverse, or ascending colon and cecum and adjacent structures</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44407\"> </a>44407</td><td>Colonoscopy through stoma; with transendoscopic ultrasound guided intramural or transmural fine needle aspiration/biopsy(s), includes endoscopic ultrasound examination limited to the sigmoid, descending, transverse, or ascending colon and cecum and adjacent structures</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-44408\"> </a>44408</td><td>Colonoscopy through stoma; with decompression (for pathologic distention) (eg, volvulus, megacolon), including placement of decompression tube, when performed</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45378\"> </a>45378</td><td>Colonoscopy, flexible; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45379\"> </a>45379</td><td>Colonoscopy, flexible; with removal of foreign body(s)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45380\"> </a>45380</td><td>Colonoscopy, flexible; with biopsy, single or multiple</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45381\"> </a>45381</td><td>Colonoscopy, flexible; with directed submucosal injection(s), any substance</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45382\"> </a>45382</td><td>Colonoscopy, flexible; with control of bleeding, any method</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45384\"> </a>45384</td><td>Colonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by hot biopsy forceps</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45385\"> </a>45385</td><td>Colonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45386\"> </a>45386</td><td>Colonoscopy, flexible; with transendoscopic balloon dilation</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45388\"> </a>45388</td><td>Colonoscopy, flexible; with ablation of tumor(s), polyp(s), or other lesion(s) (includes pre- and post-dilation and guide wire passage, when performed)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45389\"> </a>45389</td><td>Colonoscopy, flexible; with endoscopic stent placement (includes pre- and post-dilation and guide wire passage, when performed)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45390\"> </a>45390</td><td>Colonoscopy, flexible; with endoscopic mucosal resection</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45391\"> </a>45391</td><td>Colonoscopy, flexible; with endoscopic ultrasound examination limited to the rectum, sigmoid, descending, transverse, or ascending colon and cecum, and adjacent structures</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45392\"> </a>45392</td><td>Colonoscopy, flexible; with transendoscopic ultrasound guided intramural or transmural fine needle aspiration/biopsy(s), includes endoscopic ultrasound examination limited to the rectum, sigmoid, descending, transverse, or ascending colon and cecum, and adjacent structures</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45393\"> </a>45393</td><td>Colonoscopy, flexible; with decompression (for pathologic distention) (eg, volvulus, megacolon), including placement of decompression tube, when performed</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.ama-assn.org-go-cpt-45398\"> </a>45398</td><td>Colonoscopy, flexible; with band ligation(s) (eg, hemorrhoids)</td></tr></table></div>"
+    },
+    "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.11.1051",
+    "version": "20210220",
+    "name": "Colonoscopy",
+    "status": "active",
+    "date": "2021-02-20T01:02:00-05:00",
+    "publisher": "NCQA PHEMUR",
+    "expansion": {
+        "identifier": "urn:uuid:f5861bac-978a-4a01-b0ad-7cdf1a76a3a2",
+        "timestamp": "2021-10-02T16:51:15-04:00",
+        "total": 29,
+        "offset": 0,
+        "parameter": [
+            {
+                "name": "count",
+                "valueInteger": 1000
+            },
+            {
+                "name": "offset",
+                "valueInteger": 0
+            }
+        ],
+        "contains": [
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44388",
+                "display": "Colonoscopy through stoma; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44389",
+                "display": "Colonoscopy through stoma; with biopsy, single or multiple"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44390",
+                "display": "Colonoscopy through stoma; with removal of foreign body(s)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44391",
+                "display": "Colonoscopy through stoma; with control of bleeding, any method"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44392",
+                "display": "Colonoscopy through stoma; with removal of tumor(s), polyp(s), or other lesion(s) by hot biopsy forceps"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44394",
+                "display": "Colonoscopy through stoma; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44401",
+                "display": "Colonoscopy through stoma; with ablation of tumor(s), polyp(s), or other lesion(s) (includes pre-and post-dilation and guide wire passage, when performed)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44402",
+                "display": "Colonoscopy through stoma; with endoscopic stent placement (including pre- and post-dilation and guide wire passage, when performed)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44403",
+                "display": "Colonoscopy through stoma; with endoscopic mucosal resection"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44404",
+                "display": "Colonoscopy through stoma; with directed submucosal injection(s), any substance"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44405",
+                "display": "Colonoscopy through stoma; with transendoscopic balloon dilation"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44406",
+                "display": "Colonoscopy through stoma; with endoscopic ultrasound examination, limited to the sigmoid, descending, transverse, or ascending colon and cecum and adjacent structures"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44407",
+                "display": "Colonoscopy through stoma; with transendoscopic ultrasound guided intramural or transmural fine needle aspiration/biopsy(s), includes endoscopic ultrasound examination limited to the sigmoid, descending, transverse, or ascending colon and cecum and adjacent structures"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "44408",
+                "display": "Colonoscopy through stoma; with decompression (for pathologic distention) (eg, volvulus, megacolon), including placement of decompression tube, when performed"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45378",
+                "display": "Colonoscopy, flexible; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45379",
+                "display": "Colonoscopy, flexible; with removal of foreign body(s)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45380",
+                "display": "Colonoscopy, flexible; with biopsy, single or multiple"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45381",
+                "display": "Colonoscopy, flexible; with directed submucosal injection(s), any substance"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45382",
+                "display": "Colonoscopy, flexible; with control of bleeding, any method"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45384",
+                "display": "Colonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by hot biopsy forceps"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45385",
+                "display": "Colonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45386",
+                "display": "Colonoscopy, flexible; with transendoscopic balloon dilation"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45388",
+                "display": "Colonoscopy, flexible; with ablation of tumor(s), polyp(s), or other lesion(s) (includes pre- and post-dilation and guide wire passage, when performed)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45389",
+                "display": "Colonoscopy, flexible; with endoscopic stent placement (includes pre- and post-dilation and guide wire passage, when performed)"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45390",
+                "display": "Colonoscopy, flexible; with endoscopic mucosal resection"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45391",
+                "display": "Colonoscopy, flexible; with endoscopic ultrasound examination limited to the rectum, sigmoid, descending, transverse, or ascending colon and cecum, and adjacent structures"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45392",
+                "display": "Colonoscopy, flexible; with transendoscopic ultrasound guided intramural or transmural fine needle aspiration/biopsy(s), includes endoscopic ultrasound examination limited to the rectum, sigmoid, descending, transverse, or ascending colon and cecum, and adjacent structures"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45393",
+                "display": "Colonoscopy, flexible; with decompression (for pathologic distention) (eg, volvulus, megacolon), including placement of decompression tube, when performed"
+            },
+            {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2021",
+                "code": "45398",
+                "display": "Colonoscopy, flexible; with band ligation(s) (eg, hemorrhoids)"
+            }
+        ]
+    }
+}
