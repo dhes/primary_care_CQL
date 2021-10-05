@@ -8,10 +8,12 @@ using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
 include FHIRCommon version '4.0.1' called FC
 
-codesystem "SNOMED": 'http://snomed.info/sct'
+//codesystem "SNOMED": 'http://snomed.info/sct'
 // codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
-codesystem "LOINC": 'http://loinc.org'
+//codesystem "LOINC": 'http://loinc.org'
 
+//valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/r4/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
+valueset "Colonoscopy": 'http://example.org/fhir/ValueSet/colonoscopy-from-dbcg-cql-evaluator'
 // valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 // valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
 // find at http://build.fhir.org/ig/cqframework/lcs-cds/ValueSet-currentsmoker.json.html
@@ -25,12 +27,12 @@ codesystem "LOINC": 'http://loinc.org'
 
 context Patient
 
-/* Data Elements */
-define "Patient age in years based on date of birth":
-  AgeInYears()
+// Data Elements
+/* define "Patient age in years based on date of birth":
+  AgeInYears() */
 
 // When a tobacco smoking status is more than 10 years old, should that be a "warning" surfaced to the clinician in some way?
-define "Smoking status observation":
+/* define "Smoking status observation":
   [Observation: "Tobacco Smoking Status"] O
     where O.status in { 'final', 'amended' }
       //and FHIRHelpers.ToDateTime(O.issued) 10 years or less before Today()
@@ -43,7 +45,7 @@ define "Chest CT procedure":
   [Procedure: "Chest CT"] P
     where P.status = 'completed'
 
-/* Intermediate Data Elements */
+// Intermediate Data Elements
 define "55 through 80":
   AgeInYears() >= 55 and AgeInYears() <= 80
 
@@ -85,7 +87,7 @@ define "Had chest CT in past year":
     where FC.ToInterval(P.performed) ends 1 year or less before Today()
   )
 
-/* Inclusion Criteria */
+// Inclusion Criteria
 define "Inclusion Criteria":
   "55 through 80"
     and ("Is current smoker" or "Is former smoker who quit within past 15 years")
@@ -111,7 +113,7 @@ define "Is Eligible Indicator":
     then 'info'
   else null
 
-/* Exclusion Criteria */
+// Exclusion Criteria
 define "Exclusion Criteria":
   (
     not ("Is current smoker" or "Is former smoker who quit within past 15 years")
@@ -135,3 +137,4 @@ define "Exclusion Indicator":
   if "Exclusion Criteria"
     then 'info'
   else null
+  */
