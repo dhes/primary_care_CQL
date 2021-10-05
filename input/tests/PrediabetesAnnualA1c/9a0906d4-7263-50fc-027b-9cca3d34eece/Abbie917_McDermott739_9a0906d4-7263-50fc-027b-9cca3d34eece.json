@@ -15046,7 +15046,7 @@
       "code": {
         "coding": [ {
           "system": "http://snomed.info/sct",
-          "code": "15777000",
+          "code": "714628002",
           "display": "Prediabetes"
         } ],
         "text": "Prediabetes"
@@ -17013,7 +17013,7 @@
       "reasonCode": [ {
         "coding": [ {
           "system": "http://snomed.info/sct",
-          "code": "15777000",
+          "code": "714628002",
           "display": "Prediabetes"
         } ],
         "text": "Prediabetes"
@@ -17417,7 +17417,7 @@
         "productOrService": {
           "coding": [ {
             "system": "http://snomed.info/sct",
-            "code": "15777000",
+            "code": "714628002",
             "display": "Prediabetes"
           } ],
           "text": "Prediabetes"
@@ -18091,7 +18091,7 @@
         "productOrService": {
           "coding": [ {
             "system": "http://snomed.info/sct",
-            "code": "15777000",
+            "code": "714628002",
             "display": "Prediabetes"
           } ],
           "text": "Prediabetes"

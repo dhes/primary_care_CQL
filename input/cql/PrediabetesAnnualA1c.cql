@@ -40,7 +40,8 @@ include FHIRCommon version '4.0.1' called FC
 codesystem "LOINC": 'http://loinc.org'
 // codesystem "ObservationCategory": 'http://terminology.hl7.org/CodeSystem/observation-category' // not sure if I need this; it's to get quantities
 
-valueset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclusiveprediabetescodes'
+// valueset "Inclusive Prediabetes Codes": 'http://example.org/fhir/ValueSet/inclusiveprediabetescodes'
+valueset "Prediabetes (Borderline Diabetes)": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1222.419'
 valueset "Condition Clinical Status Active": 'http://example.org/fhir/ValueSet/conditionclinicalstatusactive'
 valueset "Laboratory": 'http://example.org/fhir/ValueSet/laboratory'
 
@@ -61,7 +62,7 @@ define "Name":
 // define "Patient Name": [Patient] P.family + " " + P.given
 
 define "Prediabetes conditions":
-  [Condition: "Inclusive Prediabetes Codes"] C
+  [Condition: "Prediabetes (Borderline Diabetes)"] C
     where C.clinicalStatus in "Condition Clinical Status Active"
 
 define "Has prediabetes":
