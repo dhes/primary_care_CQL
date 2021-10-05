@@ -12,8 +12,8 @@ include FHIRCommon version '4.0.1' called FC
 // codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
 //codesystem "LOINC": 'http://loinc.org'
 
-//valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/r4/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
-valueset "Colonoscopy": 'http://example.org/fhir/ValueSet/colonoscopy-from-dbcg-cql-evaluator'
+valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
+//valueset "Colonoscopy": 'http://example.org/fhir/ValueSet/colonoscopy-from-dbcg-cql-evaluator'
 // valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 // valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
 // find at http://build.fhir.org/ig/cqframework/lcs-cds/ValueSet-currentsmoker.json.html
@@ -32,7 +32,7 @@ context Patient
   AgeInYears() */
 
 // When a tobacco smoking status is more than 10 years old, should that be a "warning" surfaced to the clinician in some way?
-/* define "Smoking status observation":
+/*define "Smoking status observation":
   [Observation: "Tobacco Smoking Status"] O
     where O.status in { 'final', 'amended' }
       //and FHIRHelpers.ToDateTime(O.issued) 10 years or less before Today()
@@ -136,5 +136,11 @@ define "Exclusion Summary":
 define "Exclusion Indicator":
   if "Exclusion Criteria"
     then 'info'
-  else null
-  */
+  else null*/
+
+  define "Had Colonoscopy":
+    [Procedure: "Colonoscopy"] P
+//      where C.clinicalStatus in "Condition Clinical Status Active"
+
+/*  define "Has prediabetes":
+    Exists("Prediabetes conditions") */
