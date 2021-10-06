@@ -30,6 +30,7 @@ valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea
 // code "PACKS A DAY": '8663-7' from "LOINC" display 'packs per day'
 
 code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
+code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
 
 context Patient
 
@@ -156,6 +157,11 @@ define "Exclusion Indicator":
     [Observation] O
     where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
       and O.code ~ "Polyp size"
+
+  define "Polyp pathology":
+    [Observation] O
+    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+      and O.code ~ "Polyp path"
 
 //      where C.clinicalStatus in "Condition Clinical Status Active"
 
