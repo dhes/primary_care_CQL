@@ -14,6 +14,8 @@ codesystem "SNOMED": 'http://snomed.info/sct'
 
 valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
 valueset "PolypOfLargeIntestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
+valueset "Gross Pathology": 'http://example.com/81523557-8a25-45b0-a880-f864b939a75e'
+//valueset "PolypOfLargeIntestine": 'http://example.com/768d1418-20b6-4b3a-b0ba-da6c7d576fb7'
 //valueset "Colonoscopy": 'http://example.org/fhir/ValueSet/colonoscopy-from-dbcg-cql-evaluator'
 // valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 // valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
@@ -143,9 +145,11 @@ define "Exclusion Indicator":
     [Procedure: "Colonoscopy"] P
 
   define "Found polyps":
-    Count([Observation: "PolypOfLargeIntestine"] O)
-//    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-//      and O.value is CodeableConcept
+    [Observation] O
+      where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+        and (O.value as CodeableConcept) in "PolypOfLargeIntestine"
+        /*and O.value is CodeableConcept*/
+        /*and O.code ~ "168455000"*/
 //      and O.code ~ "168455000")
 //    sort by FHIRHelpers.ToDateTime ( effective as dateTime ) desc
 

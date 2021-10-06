@@ -1,6 +1,7 @@
 {
   "resourceType": "ValueSet",
-  "url": "urn:uuid:768d1418-20b6-4b3a-b0ba-da6c7d576fb7",
+  "url": "http://example.com/768d1418-20b6-4b3a-b0ba-da6c7d576fb7",
+  "id": "768d1418-20b6-4b3a-b0ba-da6c7d576fb7",
   "version": "0.1",
   "title": "Polyp of Large Intestine",
   "status": "draft",

@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "81523557-8a25-45b0-a880-f864b939a75e",
+  "url": "http://example.com/81523557-8a25-45b0-a880-f864b939a75e",
+  "identifier": [
+    {
+      "value": "Gross Pathology"
+    }
+  ],
+  "version": "0.1",
+  "title": "Gross Pathology",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "168455000",
+            "display": "Gross pathology (finding) "
+          }
+        ]
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Colorectal Polyps</h2><tt>bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b</tt><p>Locations of colorectal polyp</p></div>"
+  },
+  "name": "GrossPathology",
+  "publisher": "Dan Heslinga",
+  "description": "Code for gross appearance of specimen",
+  "language": "English"
+}
