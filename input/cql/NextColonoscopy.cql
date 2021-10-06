@@ -8,11 +8,12 @@ using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers
 include FHIRCommon version '4.0.1' called FC
 
-//codesystem "SNOMED": 'http://snomed.info/sct'
+codesystem "SNOMED": 'http://snomed.info/sct'
 // codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
 //codesystem "LOINC": 'http://loinc.org'
 
 valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
+valueset "PolypOfLargeIntestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
 //valueset "Colonoscopy": 'http://example.org/fhir/ValueSet/colonoscopy-from-dbcg-cql-evaluator'
 // valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 // valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
@@ -140,6 +141,14 @@ define "Exclusion Indicator":
 
   define "Had Colonoscopy":
     [Procedure: "Colonoscopy"] P
+
+  define "Found polyps":
+    Count([Observation: "PolypOfLargeIntestine"] O)
+//    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+//      and O.value is CodeableConcept
+//      and O.code ~ "168455000")
+//    sort by FHIRHelpers.ToDateTime ( effective as dateTime ) desc
+
 //      where C.clinicalStatus in "Condition Clinical Status Active"
 
 /*  define "Has prediabetes":

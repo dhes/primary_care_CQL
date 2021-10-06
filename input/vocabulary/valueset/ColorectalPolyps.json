@@ -1,0 +1,59 @@
+{
+  "resourceType": "ValueSet",
+  "id": "bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b",
+  "url": "http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b",
+  "identifier": [
+    {
+      "value": "Colorectal Polyps"
+    }
+  ],
+  "version": "0.1",
+  "title": "Colorectal Polyps",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "449833002",
+            "display": "Polyp of cecum (disorder)"
+          },
+          {
+            "code": "712979009",
+            "display": "Polyp of ascending colon (disorder)"
+          },
+          {
+            "code": "712730008",
+            "display": "Polyp of transverse colon (disorder)"
+          },
+          {
+            "display": "Polyp of descending colon (disorder)",
+            "code": "712728006"
+          },
+          {
+            "code": "39772007",
+            "display": "Rectal polyp (disorder)"
+          }
+        ]
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Colorectal Polyps</h2><tt>bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b</tt><p>Locations of colorectal polyp</p></div>"
+  },
+  "name": "PolypOfLargeIntestine",
+  "publisher": "Dan Heslinga",
+  "description": "Locations of colorectal polyp",
+  "language": "English"
+}
