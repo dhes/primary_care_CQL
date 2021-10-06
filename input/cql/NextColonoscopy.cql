@@ -10,11 +10,12 @@ include FHIRCommon version '4.0.1' called FC
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 // codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
-//codesystem "LOINC": 'http://loinc.org'
+codesystem "LOINC": 'http://loinc.org'
 
 valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
-valueset "PolypOfLargeIntestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
-valueset "Gross Pathology": 'http://example.com/81523557-8a25-45b0-a880-f864b939a75e'
+valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
+// code runs with or without the next line
+//valueset "Gross Pathology": 'http://example.com/81523557-8a25-45b0-a880-f864b939a75e'
 //valueset "PolypOfLargeIntestine": 'http://example.com/768d1418-20b6-4b3a-b0ba-da6c7d576fb7'
 //valueset "Colonoscopy": 'http://example.org/fhir/ValueSet/colonoscopy-from-dbcg-cql-evaluator'
 // valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
@@ -27,6 +28,8 @@ valueset "Gross Pathology": 'http://example.com/81523557-8a25-45b0-a880-f864b939
 // code "Tobacco Smoking Status": '72166-2' from "LOINC"
 // code "Former Smoker": '8517006' from "SNOMED"
 // code "PACKS A DAY": '8663-7' from "LOINC" display 'packs per day'
+
+code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
 
 context Patient
 
@@ -147,11 +150,12 @@ define "Exclusion Indicator":
   define "Found polyps":
     [Observation] O
       where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-        and (O.value as CodeableConcept) in "PolypOfLargeIntestine"
-        /*and O.value is CodeableConcept*/
-        /*and O.code ~ "168455000"*/
-//      and O.code ~ "168455000")
-//    sort by FHIRHelpers.ToDateTime ( effective as dateTime ) desc
+        and (O.value as CodeableConcept) in "Polyp of Large Intestine"
+
+  define "Polyp length":
+    [Observation] O
+    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+      and O.code ~ "Polyp size"
 
 //      where C.clinicalStatus in "Condition Clinical Status Active"
 
