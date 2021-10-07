@@ -163,6 +163,26 @@ define "Exclusion Indicator":
     where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
       and O.code ~ "Polyp path"
 
+  define "Observation with member":
+    [Observation] O
+    where exists O.hasMember.reference
+    return O.hasMember.reference.value
+
+  define "First hasMember reference":
+  First("Observation with member")
+
+  define "id":
+  "First hasMember reference"[0]
+
+  define "id1":
+  "id" is string
+
+//   define "Observation with Observation":
+//     Count([Observation] O1
+//       with [Observation] O2
+//         such that (O1 in O2.hasMember.reference.value
+
+
 //      where C.clinicalStatus in "Condition Clinical Status Active"
 
 /*  define "Has prediabetes":
