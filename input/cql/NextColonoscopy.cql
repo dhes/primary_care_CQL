@@ -177,10 +177,10 @@ define "Exclusion Indicator":
   define "id1":
   "id" is string
 
-//   define "Observation with Observation":
-//     Count([Observation] O1
-//       with [Observation] O2
-//         such that (O1 in O2.hasMember.reference.value
+   define "Observation with Observation":
+     [Observation] OM
+       with [Observation] OO
+         such that OM.id.value ~ OO.hasMember.reference[0].id
 
 
 //      where C.clinicalStatus in "Condition Clinical Status Active"
