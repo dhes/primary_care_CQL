@@ -162,7 +162,7 @@ define "Exclusion Indicator":
       and O.code ~ "Polyp size"
       return O.id.value
 
-  define "Polyp pathology":
+  define "Polyp report":
     [Observation] O
     where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
       and O.code ~ "Polyp path"
@@ -199,7 +199,7 @@ define "Exclusion Indicator":
   define "Patient full name":
     Patient.name.given.first() + ' ' + Patient.name.family.first()
 
-  define "Observation":
+  define "Polpy size":
     from [Observation] O,
     "Observation with member" OM
     where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
@@ -208,11 +208,20 @@ define "Exclusion Indicator":
        as a range in the colonoscopy procedure report (e.g. "6-8 mm")
        only the HIGHER value is recorded
     */
-    return {Location: (OM.value as CodeableConcept).text,
+    return {ID: Last(Split(O.id,':')),
+      Location: (OM.value as CodeableConcept).text,
       Size: ((O.value as Quantity).value.value).toString() + ' ' +
       (O.value as Quantity).unit
        }
 
+   define "Polyp pathology":
+     from [Observation] O,
+     "Observation with member" OM
+     where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[1],'/'))
+     return {ID: Last(Split(O.id,':')),
+       Location: (OM.value as CodeableConcept).text,
+       Pathology: (O.value as CodeableConcept).text
+        }
 //      where C.clinicalStatus in "Condition Clinical Status Active"
 
 /*  define "Has prediabetes":
