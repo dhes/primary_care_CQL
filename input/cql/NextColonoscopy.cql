@@ -6,7 +6,7 @@ library NextColonoscopy
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1' called FHIRHelpers
-include FHIRCommon version '4.0.1' called FC
+//include FHIRCommon version '4.0.1' called FC
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 // codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
@@ -202,7 +202,8 @@ define "Exclusion Indicator":
   define "Observation":
     from [Observation] O,
     "Observation with member" OM
-    return {O: O.id, OM: OM.hasMember.reference}
+    where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
+    return {O: Last(Split(O.id,':')), OM: Last(Split(OM.hasMember.reference[0],'/'))}
 
 
 
