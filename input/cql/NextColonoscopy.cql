@@ -203,14 +203,15 @@ define "Exclusion Indicator":
     from [Observation] O,
     "Observation with member" OM
     where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
-//    where O.id = resolve(OM.hasMember.reference)
-//    return {O: Last(Split(O.id,':')), OM: Last(Split(OM.hasMember.reference[0],'/'))}
-    return {O: ((O.value as Quantity).value.value).toString() + ' ' +
-      (O.value as Quantity).unit,
-      OM: (OM.value as CodeableConcept).text }
-
-
-
+    /*
+       as a simplifying convention, when polyp sizes are reported
+       as a range in the colonoscopy procedure report (e.g. "6-8 mm")
+       only the HIGHER value is recorded
+    */
+    return {Location: (OM.value as CodeableConcept).text,
+      Size: ((O.value as Quantity).value.value).toString() + ' ' +
+      (O.value as Quantity).unit
+       }
 
 //      where C.clinicalStatus in "Condition Clinical Status Active"
 
