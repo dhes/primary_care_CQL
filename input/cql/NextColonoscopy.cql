@@ -148,6 +148,9 @@ define "Exclusion Indicator":
   define "Had Colonoscopy":
     [Procedure: "Colonoscopy"] P
 
+  define "First colonoscopy in the list":
+  "Had Colonoscopy"[0]
+
   define "Found polyps":
     [Observation] O
       where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
@@ -157,6 +160,7 @@ define "Exclusion Indicator":
     [Observation] O
     where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
       and O.code ~ "Polyp size"
+      return O.id.value
 
   define "Polyp pathology":
     [Observation] O
@@ -164,8 +168,9 @@ define "Exclusion Indicator":
       and O.code ~ "Polyp path"
 
   define "Observation with member":
-    [Observation] O
-    where exists O.hasMember.reference
+    from [Observation] O
+    //let a: Substring(O.hasMember.reference.value,6)
+    where exists O.hasMember
     return O.hasMember.reference.value
 
   define "First hasMember reference":
@@ -177,10 +182,25 @@ define "Exclusion Indicator":
   define "id1":
   "id" is string
 
-   define "Observation with Observation":
+  define "Observation with Observation":
      [Observation] OM
        with [Observation] OO
          such that OM.id.value ~ OO.hasMember.reference[0].id
+
+  define "Union function test":
+    (Patient.name.given.value | Patient.name.family.value)
+   //.substring(0,4)
+  //identifier.where(use = 'official')
+
+  define "Official contact phone":
+  Patient.telecom.where(use = 'official')
+  //.union(Patient.contact.telecom.where(use = 'official')).exists().not()
+
+  define "Patient full name":
+    Patient.name.given.first() + ' ' + Patient.name.family.first()
+
+  define "Observation":
+    [Observation]
 
 
 //      where C.clinicalStatus in "Condition Clinical Status Active"
