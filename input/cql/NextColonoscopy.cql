@@ -168,19 +168,19 @@ define "Exclusion Indicator":
       and O.code ~ "Polyp path"
 
   define "Observation with member":
-    from [Observation] O
+    [Observation] O
     //let a: Substring(O.hasMember.reference.value,6)
     where exists O.hasMember
-    return O.hasMember.reference.value
+    //return O.hasMember.reference
 
   define "First hasMember reference":
   First("Observation with member")
 
-  define "id":
-  "First hasMember reference"[0]
+  //define "id":
+  //"First hasMember reference"[0]
 
-  define "id1":
-  "id" is string
+  //define "id1":
+  //"id" is string
 
   define "Observation with Observation":
      [Observation] OM
@@ -200,7 +200,11 @@ define "Exclusion Indicator":
     Patient.name.given.first() + ' ' + Patient.name.family.first()
 
   define "Observation":
-    [Observation]
+    from [Observation] O,
+    "Observation with member" OM
+    return {O: O.id, OM: OM.hasMember.reference}
+
+
 
 
 //      where C.clinicalStatus in "Condition Clinical Status Active"
