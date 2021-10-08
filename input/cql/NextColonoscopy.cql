@@ -203,7 +203,11 @@ define "Exclusion Indicator":
     from [Observation] O,
     "Observation with member" OM
     where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
-    return {O: Last(Split(O.id,':')), OM: Last(Split(OM.hasMember.reference[0],'/'))}
+//    where O.id = resolve(OM.hasMember.reference)
+//    return {O: Last(Split(O.id,':')), OM: Last(Split(OM.hasMember.reference[0],'/'))}
+    return {O: ((O.value as Quantity).value.value).toString() + ' ' +
+      (O.value as Quantity).unit,
+      OM: (OM.value as CodeableConcept).text }
 
 
 
