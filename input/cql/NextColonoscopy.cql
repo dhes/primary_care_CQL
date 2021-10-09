@@ -46,9 +46,9 @@ define "First hasMember reference":
   First("Observation with member")
 
 define "Observation with Observation":
-   [Observation] OM
+   [Observation] GrossPathology
      with [Observation] OO
-       such that OM.id.value ~ OO.hasMember.reference[0].id
+       such that GrossPathology.id.value ~ OO.hasMember.reference[0].id
 
 define "Union function test":
   (Patient.name.given.value | Patient.name.family.value)
@@ -61,31 +61,32 @@ define "Patient full name":
 
 define "Polpy size":
   from [Observation] O,
-  "Observation with member" OM
-    where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
+  "Observation with member" GrossPathology
+    where Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[0],'/'))
      /*as a simplifying convention, when polyp sizes are reported
      as a range in the colonoscopy procedure report (e.g. "6-8 mm"),
      only the HIGHER value is recorded*/
   /*return {ID: Last(Split(O.id,':')),
-    Location: (OM.value as CodeableConcept).text,
+    Location: (GrossPathology.value as CodeableConcept).text,
     Size: ((O.value as Quantity).value.value).toString() + ' ' +
     (O.value as Quantity).unit
      }*/
 
 define "Polyp pathology":
   from [Observation] O,
-  "Observation with member" OM
-    where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[1],'/'))
+  "Observation with member" GrossPathology
+    where Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[1],'/'))
  /*return {ID: Last(Split(O.id,':')),
-   Location: (OM.value as CodeableConcept).text,
+   Location: (GrossPathology.value as CodeableConcept).text,
    Pathology: (O.value as CodeableConcept).text}*/
 
 define "Full report":
   from
     "Polpy size" PS,
     "Polyp pathology" PP
-      where PS.OM = PP.OM
-    return {Location: (PS.OM.value as CodeableConcept).text,
+      where PS.GrossPathology = PP.GrossPathology
+    return {ID: PS.GrossPathology.id,
+            "Gross Pathology": (PS.GrossPathology.value as CodeableConcept).text,
             Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
-            Path: (PP.O.value as CodeableConcept).text}
+            "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
