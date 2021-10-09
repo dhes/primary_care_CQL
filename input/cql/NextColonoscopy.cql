@@ -40,9 +40,7 @@ define "Polyp report":
 
 define "Observation with member":
   [Observation] O
-  //let a: Substring(O.hasMember.reference.value,6)
   where exists O.hasMember
-  //return O.hasMember.reference
 
 define "First hasMember reference":
   First("Observation with member")
@@ -64,23 +62,30 @@ define "Patient full name":
 define "Polpy size":
   from [Observation] O,
   "Observation with member" OM
-  where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
-  /*
-     as a simplifying convention, when polyp sizes are reported
-     as a range in the colonoscopy procedure report (e.g. "6-8 mm")
-     only the HIGHER value is recorded
-  */
-  return {ID: Last(Split(O.id,':')),
+    where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[0],'/'))
+     /*as a simplifying convention, when polyp sizes are reported
+     as a range in the colonoscopy procedure report (e.g. "6-8 mm"),
+     only the HIGHER value is recorded*/
+  /*return {ID: Last(Split(O.id,':')),
     Location: (OM.value as CodeableConcept).text,
     Size: ((O.value as Quantity).value.value).toString() + ' ' +
     (O.value as Quantity).unit
-     }
+     }*/
 
- define "Polyp pathology":
-   from [Observation] O,
-   "Observation with member" OM
-   where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[1],'/'))
-   return {ID: Last(Split(O.id,':')),
-     Location: (OM.value as CodeableConcept).text,
-     Pathology: (O.value as CodeableConcept).text
-      }
+define "Polyp pathology":
+  from [Observation] O,
+  "Observation with member" OM
+    where Last(Split(O.id,':')) = Last(Split(OM.hasMember.reference[1],'/'))
+ /*return {ID: Last(Split(O.id,':')),
+   Location: (OM.value as CodeableConcept).text,
+   Pathology: (O.value as CodeableConcept).text}*/
+
+define "Full report":
+  from
+    "Polpy size" PS,
+    "Polyp pathology" PP
+      where PS.OM = PP.OM
+    return {Location: (PS.OM.value as CodeableConcept).text,
+            Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
+                  (PS.O.value as Quantity).unit,
+            Path: (PP.O.value as CodeableConcept).text}
