@@ -13,6 +13,7 @@ valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea
 
 //code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
 //code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
+code "Colonoscopic polypectomy": '311774002' from "SNOMED"
 
 context Patient
 
