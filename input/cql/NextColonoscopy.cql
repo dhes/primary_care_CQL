@@ -79,7 +79,7 @@ define "Full report":
     "Polyp size" PS,
     "Polyp pathology" PP
       where PS.GrossPathology = PP.GrossPathology
-    return {ID: PS.GrossPathology.value.text,
+    return {ID: PS.GrossPathology.id,
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
             Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
