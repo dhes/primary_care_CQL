@@ -11,58 +11,51 @@ codesystem "LOINC": 'http://loinc.org'
 valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
 valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
 
-code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
-code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
+//code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
+//code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
 
 context Patient
 
-define "Had Colonoscopy":
-  [Procedure: "Colonoscopy"] P
+//define "Had Colonoscopy":
+//  [Procedure: "Colonoscopy"] P
 
-define "First colonoscopy in the list":
-"Had Colonoscopy"[0]
+//define "First colonoscopy in the list":
+//"Had Colonoscopy"[0]
 
-define "Found polyps":
-  [Observation] O
-    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-      and (O.value as CodeableConcept) in "Polyp of Large Intestine"
+//define "Found polyps":
+//  [Observation] O
+//    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+//      and (O.value as CodeableConcept) in "Polyp of Large Intestine"
 
-define "Polyp length":
+//define "Polyp length":
+//  [Observation] O
+//  where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+//    and O.code ~ "Polyp size"
+//    return O.id.value
+
+//define "Polyp report":
+//  [Observation] O
+//  where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+//    and O.code ~ "Polyp path"
+
+// In this data model there are two layers of pathology observations.
+// The top is the coded gross pathology e.g. 'cecum polyp'.
+// This serves to define the anatomic location of lesion as well
+// as its polyp appearance.
+// Within this, as .hasMember elements, are the reference sto observations
+// of length and microscopic pathology of the specimen.
+// In this patients chart the only observations that have members are
+// Gross path reports.
+define "Gross pathology":
   [Observation] O
   where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-    and O.code ~ "Polyp size"
-    return O.id.value
+  and exists O.hasMember
 
-define "Polyp report":
-  [Observation] O
-  where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-    and O.code ~ "Polyp path"
-
-define "Observation with member":
-  [Observation] O
-  where exists O.hasMember
-
-define "First hasMember reference":
-  First("Observation with member")
-
-define "Observation with Observation":
-   [Observation] GrossPathology
-     with [Observation] OO
-       such that GrossPathology.id.value ~ OO.hasMember.reference[0].id
-
-define "Union function test":
-  (Patient.name.given.value | Patient.name.family.value)
-
-define "Official contact phone":
-Patient.telecom.where(use = 'official')
-
-define "Patient full name":
-  Patient.name.given.first() + ' ' + Patient.name.family.first()
-
-define "Polpy size":
+define "Polyp size":
   from [Observation] O,
-  "Observation with member" GrossPathology
-    where Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[0],'/'))
+  "Gross pathology" GrossPathology
+    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+    and Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[0],'/'))
      /*as a simplifying convention, when polyp sizes are reported
      as a range in the colonoscopy procedure report (e.g. "6-8 mm"),
      only the HIGHER value is recorded*/
@@ -74,19 +67,20 @@ define "Polpy size":
 
 define "Polyp pathology":
   from [Observation] O,
-  "Observation with member" GrossPathology
-    where Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[1],'/'))
+  "Gross pathology" GrossPathology
+    where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
+    and Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[1],'/'))
  /*return {ID: Last(Split(O.id,':')),
    Location: (GrossPathology.value as CodeableConcept).text,
    Pathology: (O.value as CodeableConcept).text}*/
 
 define "Full report":
   from
-    "Polpy size" PS,
+    "Polyp size" PS,
     "Polyp pathology" PP
       where PS.GrossPathology = PP.GrossPathology
-    return {ID: PS.GrossPathology.id,
-            "Gross Pathology": (PS.GrossPathology.value as CodeableConcept).text,
+    return {ID: PS.GrossPathology.value.text,
+            Specimen: (PS.GrossPathology.value as CodeableConcept).text,
             Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
