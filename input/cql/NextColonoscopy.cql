@@ -90,16 +90,17 @@ define "Diagnostic Report":
   [DiagnosticReport] D
   return D.result.reference.value
 
-define "Observations that refer to something":
+define "Colonoscopy with polypectomy":
+  [Procedure] P
+    //where singleton from P.code.coding.code.value='311774002'
+    where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
+    return Last(Split(P.id,':'))
+
+define "Observations that are part of Colonoscopy with polypectomy":
+// AKA colon polyp observations
   [Observation] O
     // only observations with references..
     where exists(O.partOf.reference)
     // ...to a colonoscopy with polypectomy (in progress)
     //and O.partOf.reference
     and "Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
-
-define "Colonoscopy with polypectomy":
-  [Procedure] P
-    //where singleton from P.code.coding.code.value='311774002'
-    where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
-    return Last(Split(P.id,':'))
