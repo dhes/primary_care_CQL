@@ -100,7 +100,9 @@ define "Observations that are part of Colonoscopy with polypectomy":
 // AKA colon polyp observations
   [Observation] O
     // only observations with references..
-    where exists(O.partOf.reference)
+    //where exists(O.partOf.reference)
     // ...to a colonoscopy with polypectomy (in progress)
     //and O.partOf.reference
-    and "Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
+    where "Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
+    return {ID: Last(Split(O.id,'/')),
+      Description: (O.value as CodeableConcept).coding.display.value}
