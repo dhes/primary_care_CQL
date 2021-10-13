@@ -85,3 +85,14 @@ define "Full report":
             Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
+
+define "Diagnostic Report":
+  [DiagnosticReport] D
+  return D.result.reference.value
+
+define "Observations of interest":
+  [Observation] O
+    // only observations with references..
+    where exists(O.partOf.reference)
+    // ...to a colonoscopy with polypectomy
+    return singleton from O.partOf.reference.value
