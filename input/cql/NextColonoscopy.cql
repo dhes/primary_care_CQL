@@ -104,5 +104,9 @@ define "Observations that are part of Colonoscopy with polypectomy":
     // ...to a colonoscopy with polypectomy (in progress)
     //and O.partOf.reference
     where "Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
-    return {ID: Last(Split(O.id,'/')),
-      Description: (O.value as CodeableConcept).coding.display.value}
+    //return {ID: Last(Split(O.id,'/')),
+    //  Description: (O.value as CodeableConcept).coding.display.value}
+
+define "Details from of member Observations":
+ "Observations that are part of Colonoscopy with polypectomy" O
+ return O.hasMember.reference.value
