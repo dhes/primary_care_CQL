@@ -107,6 +107,32 @@ define "Observations that are part of Colonoscopy with polypectomy":
     //return {ID: Last(Split(O.id,'/')),
     //  Description: (O.value as CodeableConcept).coding.display.value}
 
-define "Details from of member Observations":
+define "References of member Observations":
  "Observations that are part of Colonoscopy with polypectomy" O
- return O.hasMember.reference.value
+ return {Reference: O.hasMember.reference.value}
+
+//define "Lenth of polyps":
+//"Observations that are part of Colonoscopy with polypectomy" O
+//  O.
+
+define "IDs of member Observations":
+"References of member Observations" R
+//can't get to the individual elements this way; can only choose one
+return Last(Split(R.Reference.first(),'/'))
+
+/*define "Bundle url":
+[Bundle] B
+return B.entry[0]*/
+
+//Use a tuple to gather together the two detail observation members
+define "References":
+"Observations that are part of Colonoscopy with polypectomy" O
+return {Length: Last(Split(O.hasMember.reference[0].value,'/')), Path: Last(Split(O.hasMember.reference[1].value,'/'))}
+
+// Get the Details
+define "Details":
+  from "References" R,
+  [Observation] O
+  //let x: Last(Split(O.id.value, ':'))
+  //return {L: (O.where(O.id.value = 'urn:uuid:93b40608-5c08-4917-b396-7a660df76587')).code.coding.code}
+  return {Length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity)}
