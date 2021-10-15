@@ -135,4 +135,5 @@ define "Details":
   [Observation] O
   //let x: Last(Split(O.id.value, ':'))
   //return {L: (O.where(O.id.value = 'urn:uuid:93b40608-5c08-4917-b396-7a660df76587')).code.coding.code}
-  return {Length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity)}
+  return {/*Length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity),*/
+          Path: ((O.where(O.id.value = ('urn:uuid:' + R.Path))).value as CodeableConcept).text}
