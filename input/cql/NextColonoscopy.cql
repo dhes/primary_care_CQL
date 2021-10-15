@@ -82,7 +82,7 @@ define "Full report":
       where PS.GrossPathology = PP.GrossPathology
     return {ID: PS.GrossPathology.id,
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
-            Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
+            Size: ((PS.O.value as Quantity).value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
 
@@ -138,3 +138,15 @@ define "Details":
       path: (O.where(O.id.value = ('urn:uuid:' + R.Path))).value as CodeableConcept
       //let x: Last(Split(O.id.value, ':'))
   return all {Length: length, Path: path}
+
+define "? polyp greater than 7 mm":
+  from
+    "Polyp size" PS,
+    "Polyp pathology" PP
+      where PS.GrossPathology = PP.GrossPathology
+    return {ID: PS.GrossPathology.id,
+            Specimen: (PS.GrossPathology.value as CodeableConcept).text,
+/*            Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
+                  (PS.O.value as Quantity).unit,*/
+                  Size: (PS.O.value as Quantity) > 7 'mm',
+            "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
