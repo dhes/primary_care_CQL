@@ -14,6 +14,18 @@ valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea
 //code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
 //code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
 code "Colonoscopic polypectomy": '311774002' from "SNOMED"
+code "Tubular adenoma of colon": '444898006' from "SNOMED"
+code "Tubular adenoma": '444408007' from "SNOMED"
+code "Hyperlastic polyp of large intestine": '721691004' from "SNOMED"
+
+// there is a certain ambuguity/overlap between colon and large intestine
+// technically large intestine = cecum + colon + rectum
+// There is a snomed code for polyp of the large Intestine
+// ... but not for tubular adenomas of the large intestine, only
+// ... tubular adenomas of the colon.
+// There are snomed codes for cecum polyp, asc colon polyp, desc colon polyp, sigmoid polyp and rectal polyp
+// ... as well as a code for polyp of the large intestine.
+// I'm using Tubular Adenoma of Colon but "Tubular adenoma" would probably be more correct. 
 
 context Patient
 
@@ -150,3 +162,14 @@ define "? polyp greater than 7 mm":
                   (PS.O.value as Quantity).unit,*/
                   Size: (PS.O.value as Quantity) > 7 'mm',
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
+
+define "? tubular adenoma":
+  from
+    "Polyp size" PS,
+    "Polyp pathology" PP
+      where PS.GrossPathology = PP.GrossPathology
+    return {ID: PS.GrossPathology.id,
+            Specimen: (PS.GrossPathology.value as CodeableConcept).text,
+            Size: ((PS.O.value as Quantity).value).toString() + ' ' +
+                  (PS.O.value as Quantity).unit,
+            "Microscopic Pathology": (PP.O.value as CodeableConcept)~"Tubular adenoma of colon"}
