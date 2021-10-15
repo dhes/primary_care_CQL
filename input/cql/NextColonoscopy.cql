@@ -130,10 +130,11 @@ define "References":
 return {Length: Last(Split(O.hasMember.reference[0].value,'/')), Path: Last(Split(O.hasMember.reference[1].value,'/'))}
 
 // Get the Details
+// Sadly this doesn't return quite what I want
 define "Details":
   from "References" R,
   [Observation] O
-  //let x: Last(Split(O.id.value, ':'))
-  //return {L: (O.where(O.id.value = 'urn:uuid:93b40608-5c08-4917-b396-7a660df76587')).code.coding.code}
-  return {/*Length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity),*/
-          Path: ((O.where(O.id.value = ('urn:uuid:' + R.Path))).value as CodeableConcept).text}
+    let length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity),
+      path: (O.where(O.id.value = ('urn:uuid:' + R.Path))).value as CodeableConcept
+      //let x: Last(Split(O.id.value, ':'))
+  return all {Length: length, Path: path}
