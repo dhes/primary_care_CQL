@@ -1,5 +1,8 @@
 library NextColonoscopy
 
+// TODO: add hasMember for 787139004 | Piecemeal excision (procedure) | Boolean
+//       and 55237006 | Severe dysplasia (morphologic abnormality) |severe dysplasia | Boolean
+
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1' called FHIRHelpers
@@ -19,6 +22,8 @@ valueset "Adenoma": 'http://example.com/97428d86-47dc-4874-9e9d-b15843c4a3ad'
                     Tubulovillous adenoma (morphologic abnormality) | 61722000
                     Right now I favor the morphologic abnormality*
                        (morphologic abnormality) | 55237006 - is in a different category  */
+valueset "Adenoma with tubulovillous or villous histology": 'http://example.com/d4912e4f-62fe-434e-8501-a9320ce285c6'
+
 
 //code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
 //code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
@@ -165,17 +170,42 @@ return B.entry[0]*/
 //Use a tuple to gather together the two detail observation members
 define "References":
 "Observations that are part of Colonoscopy with polypectomy" O
-return {Length: Last(Split(O.hasMember.reference[0].value,'/')), Path: Last(Split(O.hasMember.reference[1].value,'/'))}
+return {Length: Last(Split(O.hasMember.reference[0].value,'/')),
+        Path: Last(Split(O.hasMember.reference[1].value,'/'))}
+
+define "References with ID":
+"Observations that are part of Colonoscopy with polypectomy" O
+return {"ID and Length": {"Gross ID": Last(Split(O.id,':')),
+                 Length: Last(Split(O.hasMember.reference[0].value,'/'))},
+        "ID and Path":   {"Gross ID": Last(Split(O.id, ':')),
+                 Path: Last(Split(O.hasMember.reference[1].value,'/'))}}
+
+define "Length References":
+"Observations that are part of Colonoscopy with polypectomy" O
+return {ID: O.id,
+        Length: Last(Split(O.hasMember.reference[0].value,'/'))}
+
+define "Path References":
+"Observations that are part of Colonoscopy with polypectomy" O
+return {ID: O.id,
+        Path: Last(Split(O.hasMember.reference[1].value,'/'))}
 
 // Get the Details
 // Sadly this doesn't return quite what I want
 define "Details":
   from "References" R,
   [Observation] O
-    let length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity),
-      path: (O.where(O.id.value = ('urn:uuid:' + R.Path))).value as CodeableConcept
-      //let x: Last(Split(O.id.value, ':'))
-  return all {Length: length, Path: path}
+    let length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity).value.value.toString(),
+      path:   (O.where(O.id.value = ('urn:uuid:' + R.Path)).value as CodeableConcept).coding.display
+  return {Length: length, Path: path} //.where(length != null)
+
+define "Details with ID":
+  from "References" R,
+  [Observation] O
+    let length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity).value.value.toString(),
+      path:   (O.where(O.id.value = ('urn:uuid:' + R.Path)).value as CodeableConcept).coding.display
+  //where
+  return {Length: length, Path: path} //.where(length != null)
 
 define "? polyp greater than 7 mm":
   from
@@ -235,3 +265,27 @@ Count("Full report" R
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
         }) > 0
+
+//define "Adenomas with tubulovillous or villous histology test":
+//"Colonoscopic polypectomy" in "Adenoma with tubulovillous or villous histology"
+
+define "Any adenomas with tubulovillous or villous histology":
+Count("Full report" R
+//  where R.Size >= 10 'mm'
+  where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
+  return all {ID: R.ID.id,
+          Specimen: R.Specimen.text,
+          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
+          Path: R."Microscopic Pathology".text
+        }) > 0
+
+define ">10 adenomas on single examination":
+Count("Full report" R
+  //where R.Size >= 10 'mm'
+  //where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
+  where R."Microscopic Pathology" in "Adenoma"
+  return all {ID: R.ID.id,
+          Specimen: R.Specimen.text,
+          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
+          Path: R."Microscopic Pathology".text
+        }) > 10

@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "id": "d4912e4f-62fe-434e-8501-a9320ce285c6",
+  "url": "http://example.com/d4912e4f-62fe-434e-8501-a9320ce285c6",
+  "name": "Adenoma with tubulovillous or villous histology",
+  "status": "draft",
+  "experimental": true,
+  "date": "2021-10-15",
+  "publisher": "Dan Heslinga MD LLC",
+  "expansion": {
+    "total": 2,
+    "contains": [ {
+      "system":  "http://snomed.info/sct",
+      "code": "128859003",  
+      "display": "Villous adenoma (morphologic abnormality)"
+    }, {
+      "system":  "http://snomed.info/sct",
+      "code": "61722000",
+      "display": "Tubulovillous adenoma (morphologic abnormality)"
+    }]
+  }
+}
