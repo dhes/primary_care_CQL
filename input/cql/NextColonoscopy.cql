@@ -10,22 +10,31 @@ codesystem "LOINC": 'http://loinc.org'
 
 valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
 valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
+valueset "Adenoma" /* should contain:
+                    Tubular adenoma of colon | 444898006 -or-
+                      Benign tubular adenoma (morphologic abnormality) | 1156654007
+                    Villous adenoma of colon (disorder) | 309084001 -or-
+                      Villous adenoma (morphologic abnormality) | 128859003
+                    Tubulovillous adenoma (morphologic abnormality) | 61722000
+                    "Adenoma with high-grade dysplasia":  Severe dysplasia (morphologic abnormality) | 55237006
+                    Right now I favor the morphologic abnormality*/
 
 //code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
 //code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
 code "Colonoscopic polypectomy": '311774002' from "SNOMED"
 code "Tubular adenoma of colon": '444898006' from "SNOMED"
-code "Tubular adenoma": '444408007' from "SNOMED"
+//code "Tubular adenoma": '444408007' from "SNOMED"
 code "Hyperlastic polyp of large intestine": '721691004' from "SNOMED"
 
 // there is a certain ambuguity/overlap between colon and large intestine
 // technically large intestine = cecum + colon + rectum
 // There is a snomed code for polyp of the large Intestine
-// ... but not for tubular adenomas of the large intestine, only
-// ... tubular adenomas of the colon.
+// ... but not for tubular adenoma of the large intestine, only
+// ... tubular adenomas of the colon, which I will use in its place. .
+// 399432003 | Adenoma of large intestine (disorder) |
 // There are snomed codes for cecum polyp, asc colon polyp, desc colon polyp, sigmoid polyp and rectal polyp
 // ... as well as a code for polyp of the large intestine.
-// I'm using Tubular Adenoma of Colon but "Tubular adenoma" would probably be more correct. 
+// I'm using Tubular Adenoma of Colon but "Tubular adenoma" would probably be more correct.
 
 context Patient
 
@@ -87,7 +96,7 @@ define "Polyp pathology":
    Location: (GrossPathology.value as CodeableConcept).text,
    Pathology: (O.value as CodeableConcept).text}*/
 
-define "Full report":
+define "Full report text output":
   from
     "Polyp size" PS,
     "Polyp pathology" PP
@@ -97,6 +106,16 @@ define "Full report":
             Size: ((PS.O.value as Quantity).value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
+
+define "Full report":
+  from
+    "Polyp size" PS,
+    "Polyp pathology" PP
+      where PS.GrossPathology = PP.GrossPathology
+    return {ID: PS.GrossPathology,
+            Specimen: PS.GrossPathology.value as CodeableConcept,
+            Size: PS.O.value as Quantity,
+            "Microscopic Pathology": PP.O.value as CodeableConcept}
 
 define "Diagnostic Report":
   [DiagnosticReport] D
@@ -160,7 +179,7 @@ define "? polyp greater than 7 mm":
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
 /*            Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,*/
-                  Size: (PS.O.value as Quantity) > 7 'mm',
+                  "Size > 7 mm?": (PS.O.value as Quantity) > 7 'mm',
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
 
 define "? tubular adenoma":
@@ -172,4 +191,25 @@ define "? tubular adenoma":
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
             Size: ((PS.O.value as Quantity).value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
-            "Microscopic Pathology": (PP.O.value as CodeableConcept)~"Tubular adenoma of colon"}
+            "? tubular adenoma": (PP.O.value as CodeableConcept)~"Tubular adenoma of colon"}
+
+define "? tubular adenoma and < 10 mm":
+  "Full report" R
+    where R.Size < 10 'mm'
+    and R."Microscopic Pathology"~"Tubular adenoma of colon"
+    return all {ID: R.ID.id,
+            Specimen: R.Specimen.text,
+            Size: (R.Size).value,
+            Path: R."Microscopic Pathology".text
+          }
+
+define "1-2 tubular adenomas <10 mm":
+  Count("? tubular adenoma and < 10 mm") <= 2
+
+define "3-4 tubular adenomas <10 mm":
+  3 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=4
+
+define "5-10 tubular adenomas <10 mm":
+  5 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=10
+
+//define "Adenoma >= 10 mm":
