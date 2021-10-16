@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "id": "97428d86-47dc-4874-9e9d-b15843c4a3ad",
+  "url": "http://example.com/97428d86-47dc-4874-9e9d-b15843c4a3ad",
+  "name": "Adenoma",
+  "status": "draft",
+  "experimental": true,
+  "date": "2021-10-15",
+  "publisher": "Dan Heslinga MD LLC",
+  "expansion": {
+    "total": 3,
+    "contains": [ {
+      "system":  "http://snomed.info/sct",
+      "code": "444898006",
+      "display": "Benign tubular adenoma (morphologic abnormality)"
+    }, {
+      "system":  "http://snomed.info/sct",
+      "code": "128859003",  
+      "display": "Villous adenoma (morphologic abnormality)"
+    }, {
+      "system":  "http://snomed.info/sct",
+      "code": "61722000",
+      "display": "Tubulovillous adenoma (morphologic abnormality)"
+    }]
+  }
+}

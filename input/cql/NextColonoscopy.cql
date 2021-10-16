@@ -10,21 +10,28 @@ codesystem "LOINC": 'http://loinc.org'
 
 valueset "Colonoscopy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020'
 valueset "Polyp of Large Intestine": 'http://example.com/bcd6931c-f88c-4df8-aeea-1ee5cc4cf70b'
-valueset "Adenoma" /* should contain:
+valueset "Adenoma": 'http://example.com/97428d86-47dc-4874-9e9d-b15843c4a3ad'
+                    /* should contain:
                     Tubular adenoma of colon | 444898006 -or-
                       Benign tubular adenoma (morphologic abnormality) | 1156654007
                     Villous adenoma of colon (disorder) | 309084001 -or-
                       Villous adenoma (morphologic abnormality) | 128859003
                     Tubulovillous adenoma (morphologic abnormality) | 61722000
-                    "Adenoma with high-grade dysplasia":  Severe dysplasia (morphologic abnormality) | 55237006
-                    Right now I favor the morphologic abnormality*/
+                    Right now I favor the morphologic abnormality*
+                       (morphologic abnormality) | 55237006 - is in a different category  */
 
 //code "Polyp size": '33756-8' from "LOINC" display 'Polyp size greatest dimension'
 //code "Polyp path": '34574-4' from "LOINC" display 'Pathology report final diagnosis'
 code "Colonoscopic polypectomy": '311774002' from "SNOMED"
-code "Tubular adenoma of colon": '444898006' from "SNOMED"
-//code "Tubular adenoma": '444408007' from "SNOMED"
 code "Hyperlastic polyp of large intestine": '721691004' from "SNOMED"
+code "Tubular adenoma of colon": '444898006' from "SNOMED"
+// next three for testing:
+code "Benign tubular adenoma (morphologic abnormality)": '444898006' from "SNOMED"
+code "Villous adenoma (morphologic abnormality)": '128859003' from "SNOMED"
+code  "Tubulovillous adenoma (morphologic abnormality)": '61722000' from "SNOMED"
+//code "Tubular adenoma": '444408007' from "SNOMED"
+// code "Adenoma with high-grade dysplasia":  Severe dysplasia
+
 
 // there is a certain ambuguity/overlap between colon and large intestine
 // technically large intestine = cecum + colon + rectum
@@ -213,3 +220,8 @@ define "5-10 tubular adenomas <10 mm":
   5 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=10
 
 //define "Adenoma >= 10 mm":
+define "Adenoma valuset test":
+  //"Benign tubular adenoma (morphologic abnormality)" in "Adenoma" //t rue
+  //"Villous adenoma (morphologic abnormality)"  in "Adenoma"       // true
+  //"Tubulovillous adenoma (morphologic abnormality)" in "Adenoma"  // true
+  "Colonoscopic polypectomy" in "Adenoma"                           // false
