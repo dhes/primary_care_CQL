@@ -225,3 +225,13 @@ define "Adenoma valuset test":
   //"Villous adenoma (morphologic abnormality)"  in "Adenoma"       // true
   //"Tubulovillous adenoma (morphologic abnormality)" in "Adenoma"  // true
   "Colonoscopic polypectomy" in "Adenoma"                           // false
+
+define "Any adenoma >= 10 mm":
+Count("Full report" R
+  where R.Size >= 10 'mm'
+  and R."Microscopic Pathology" in "Adenoma"
+  return all {ID: R.ID.id,
+          Specimen: R.Specimen.text,
+          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
+          Path: R."Microscopic Pathology".text
+        }) > 0
