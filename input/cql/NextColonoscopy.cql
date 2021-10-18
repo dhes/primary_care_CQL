@@ -119,7 +119,7 @@ define "Full report text output":
                   (PS.O.value as Quantity).unit,
             "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
 
-define "Full report":
+define "Old Full report":
   from
     "Polyp size" PS,
     "Polyp pathology" PP
@@ -234,7 +234,7 @@ define "? tubular adenoma and < 10 mm":
   "Full report" R
     where R.Size < 10 'mm'
     and R."Microscopic Pathology"~"Tubular adenoma of colon"
-    return all {ID: R.ID.id,
+    return all {ID: R.ID,
             Specimen: R.Specimen.text,
             Size: (R.Size).value,
             Path: R."Microscopic Pathology".text
@@ -260,7 +260,7 @@ define "Any adenoma >= 10 mm":
 Count("Full report" R
   where R.Size >= 10 'mm'
   and R."Microscopic Pathology" in "Adenoma"
-  return all {ID: R.ID.id,
+  return all {ID: R.ID,
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
@@ -273,7 +273,7 @@ define "Any adenomas with tubulovillous or villous histology":
 Count("Full report" R
 //  where R.Size >= 10 'mm'
   where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
-  return all {ID: R.ID.id,
+  return all {ID: R.ID,
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
@@ -284,7 +284,7 @@ Count("Full report" R
   //where R.Size >= 10 'mm'
   //where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
   where R."Microscopic Pathology" in "Adenoma"
-  return all {ID: R.ID.id,
+  return all {ID: R.ID,
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
@@ -297,8 +297,16 @@ Count("Full report" R
                 "Coverage Type":          (E.contained[1] as Coverage).type.text,
                 "O":                      ((E.contained[2] as Observation).value as CodeableConcept).text} */
 
-define "Polyp size 2":
+define "Full report with details":
   "Observations that are part of Colonoscopy with polypectomy" O
-    return all {"Gross path": (O.value as CodeableConcept).coding.display,
-                "Polyp size": ((O.contained[0] as Observation).value as Quantity).value.value,
-                "Polyp Path": ((O.contained[1] as Observation).value as CodeableConcept).text }
+    return all {ID: Last(Split(O.id.value,':')),
+                Specimen: singleton from (O.value as CodeableConcept).coding.display,
+                Size: ((O.contained[0] as Observation).value as Quantity).value.toString() + ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
+                "Microscopic Pathology": ((O.contained[1] as Observation).value as CodeableConcept).text }
+
+define "Full report":
+  "Observations that are part of Colonoscopy with polypectomy" O
+    return all {ID: Last(Split(O.id.value,':')),
+                Specimen: O.value as CodeableConcept,
+                Size: (O.contained[0] as Observation).value as Quantity,
+                "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept}
