@@ -289,3 +289,10 @@ Count("Full report" R
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
         }) > 10
+
+define "EOB":
+  [ExplanationOfBenefit] E
+    //where exists E.contained // all of them
+    return all {"Service Request Status": (E.contained[0] as ServiceRequest).status.value,
+                "Coverage Type":          (E.contained[1] as Coverage).type.text,
+                "O":                      ((E.contained[2] as Observation).value as CodeableConcept).text}
