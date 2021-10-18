@@ -80,16 +80,16 @@ context Patient
 // of length and microscopic pathology of the specimen.
 // In this patients chart the only observations that have members are
 // Gross path reports.
-define "Gross pathology":
+/*define "Gross pathology":
   [Observation] O
   where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-  and exists O.hasMember
+  and exists O.hasMember*/
 
-define "Polyp size":
+/*define "Polyp size":
   from [Observation] O,
   "Gross pathology" GrossPathology
     where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-    and Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[0],'/'))
+    and Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[0],'/'))*/
      /*as a simplifying convention, when polyp sizes are reported
      as a range in the colonoscopy procedure report (e.g. "6-8 mm"),
      only the HIGHER value is recorded*/
@@ -99,16 +99,16 @@ define "Polyp size":
     (O.value as Quantity).unit
      }*/
 
-define "Polyp pathology":
+/*define "Polyp pathology":
   from [Observation] O,
   "Gross pathology" GrossPathology
     where O.status in { 'final', 'amended', 'corrected', 'preliminary' }
-    and Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[1],'/'))
+    and Last(Split(O.id,':')) = Last(Split(GrossPathology.hasMember.reference[1],'/'))*/
  /*return {ID: Last(Split(O.id,':')),
    Location: (GrossPathology.value as CodeableConcept).text,
    Pathology: (O.value as CodeableConcept).text}*/
 
-define "Full report text output":
+/*define "Old Full report text output":
   from
     "Polyp size" PS,
     "Polyp pathology" PP
@@ -117,9 +117,9 @@ define "Full report text output":
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
             Size: ((PS.O.value as Quantity).value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
-            "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
+            "Microscopic Pathology": (PP.O.value as CodeableConcept).text}*/
 
-define "Old Full report":
+/*define "Old Full report":
   from
     "Polyp size" PS,
     "Polyp pathology" PP
@@ -127,11 +127,11 @@ define "Old Full report":
     return {ID: PS.GrossPathology,
             Specimen: PS.GrossPathology.value as CodeableConcept,
             Size: PS.O.value as Quantity,
-            "Microscopic Pathology": PP.O.value as CodeableConcept}
+            "Microscopic Pathology": PP.O.value as CodeableConcept}*/
 
-define "Diagnostic Report":
+/*define "Diagnostic Report":
   [DiagnosticReport] D
-  return D.result.reference.value
+  return D.result.reference.value*/
 
 define "Colonoscopy with polypectomy":
   [Procedure] P
@@ -150,76 +150,76 @@ define "Observations that are part of Colonoscopy with polypectomy":
     //return {ID: Last(Split(O.id,'/')),
     //  Description: (O.value as CodeableConcept).coding.display.value}
 
-define "References of member Observations":
+/*define "References of member Observations":
  "Observations that are part of Colonoscopy with polypectomy" O
- return {Reference: O.hasMember.reference.value}
+ return {Reference: O.hasMember.reference.value}*/
 
 //define "Lenth of polyps":
 //"Observations that are part of Colonoscopy with polypectomy" O
 //  O.
 
-define "IDs of member Observations":
+/*define "IDs of member Observations":
 "References of member Observations" R
 //can't get to the individual elements this way; can only choose one
-return Last(Split(R.Reference.first(),'/'))
+return Last(Split(R.Reference.first(),'/'))*/
 
 /*define "Bundle url":
 [Bundle] B
 return B.entry[0]*/
 
 //Use a tuple to gather together the two detail observation members
-define "References":
+/*define "References":
 "Observations that are part of Colonoscopy with polypectomy" O
 return {Length: Last(Split(O.hasMember.reference[0].value,'/')),
-        Path: Last(Split(O.hasMember.reference[1].value,'/'))}
+        Path: Last(Split(O.hasMember.reference[1].value,'/'))}*/
 
-define "References with ID":
+/*define "References with ID":
 "Observations that are part of Colonoscopy with polypectomy" O
 return {"ID and Length": {"Gross ID": Last(Split(O.id,':')),
                  Length: Last(Split(O.hasMember.reference[0].value,'/'))},
         "ID and Path":   {"Gross ID": Last(Split(O.id, ':')),
-                 Path: Last(Split(O.hasMember.reference[1].value,'/'))}}
+                 Path: Last(Split(O.hasMember.reference[1].value,'/'))}}*/
 
-define "Length References":
+/*define "Length References":
 "Observations that are part of Colonoscopy with polypectomy" O
 return {ID: O.id,
-        Length: Last(Split(O.hasMember.reference[0].value,'/'))}
+        Length: Last(Split(O.hasMember.reference[0].value,'/'))}*/
 
-define "Path References":
+/*define "Path References":
 "Observations that are part of Colonoscopy with polypectomy" O
 return {ID: O.id,
-        Path: Last(Split(O.hasMember.reference[1].value,'/'))}
+        Path: Last(Split(O.hasMember.reference[1].value,'/'))}*/
 
 // Get the Details
 // Sadly this doesn't return quite what I want
-define "Details":
+/*define "Details":
   from "References" R,
   [Observation] O
     let length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity).value.value.toString(),
       path:   (O.where(O.id.value = ('urn:uuid:' + R.Path)).value as CodeableConcept).coding.display
-  return {Length: length, Path: path} //.where(length != null)
+  return {Length: length, Path: path} //.where(length != null)*/
 
-define "Details with ID":
+/*define "Details with ID":
   from "References" R,
   [Observation] O
     let length: (O.where(O.id.value = ('urn:uuid:' + R.Length)).value as Quantity).value.value.toString(),
       path:   (O.where(O.id.value = ('urn:uuid:' + R.Path)).value as CodeableConcept).coding.display
   //where
-  return {Length: length, Path: path} //.where(length != null)
+  return {Length: length, Path: path}*/ //.where(length != null)
 
-define "? polyp greater than 7 mm":
+/*define "? polyp greater than 7 mm":
   from
     "Polyp size" PS,
     "Polyp pathology" PP
       where PS.GrossPathology = PP.GrossPathology
     return {ID: PS.GrossPathology.id,
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
-/*            Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
-                  (PS.O.value as Quantity).unit,*/
+//            Size: ((PS.O.value as Quantity).value.value).toString() + ' ' +
+                  //(PS.O.value as Quantity).unit,
                   "Size > 7 mm?": (PS.O.value as Quantity) > 7 'mm',
-            "Microscopic Pathology": (PP.O.value as CodeableConcept).text}
+            "Microscopic Pathology": (PP.O.value as CodeableConcept).text}*/
 
-define "? tubular adenoma":
+/*define "? tubular adenoma":
   from
     "Polyp size" PS,
     "Polyp pathology" PP
@@ -228,7 +228,7 @@ define "? tubular adenoma":
             Specimen: (PS.GrossPathology.value as CodeableConcept).text,
             Size: ((PS.O.value as Quantity).value).toString() + ' ' +
                   (PS.O.value as Quantity).unit,
-            "? tubular adenoma": (PP.O.value as CodeableConcept)~"Tubular adenoma of colon"}
+            "? tubular adenoma": (PP.O.value as CodeableConcept)~"Tubular adenoma of colon"}*/
 
 define "? tubular adenoma and < 10 mm":
   "Full report" R
@@ -250,11 +250,11 @@ define "5-10 tubular adenomas <10 mm":
   5 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=10
 
 //define "Adenoma >= 10 mm":
-define "Adenoma valuset test":
+/*define "Adenoma valueset test":
   //"Benign tubular adenoma (morphologic abnormality)" in "Adenoma" //t rue
   //"Villous adenoma (morphologic abnormality)"  in "Adenoma"       // true
   //"Tubulovillous adenoma (morphologic abnormality)" in "Adenoma"  // true
-  "Colonoscopic polypectomy" in "Adenoma"                           // false
+  "Colonoscopic polypectomy" in "Adenoma"      */                     // false
 
 define "Any adenoma >= 10 mm":
 Count("Full report" R
