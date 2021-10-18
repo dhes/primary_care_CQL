@@ -290,9 +290,15 @@ Count("Full report" R
           Path: R."Microscopic Pathology".text
         }) > 10
 
-define "EOB":
+/* define "EOB":
   [ExplanationOfBenefit] E
     //where exists E.contained // all of them
     return all {"Service Request Status": (E.contained[0] as ServiceRequest).status.value,
                 "Coverage Type":          (E.contained[1] as Coverage).type.text,
-                "O":                      ((E.contained[2] as Observation).value as CodeableConcept).text}
+                "O":                      ((E.contained[2] as Observation).value as CodeableConcept).text} */
+
+define "Polyp size 2":
+  "Observations that are part of Colonoscopy with polypectomy" O
+    return all {"Gross path": (O.value as CodeableConcept).coding.display,
+                "Polyp size": ((O.contained[0] as Observation).value as Quantity).value.value,
+                "Polyp Path": ((O.contained[1] as Observation).value as CodeableConcept).text }
