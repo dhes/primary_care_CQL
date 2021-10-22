@@ -1,0 +1,57 @@
+{
+  "resourceType": "Specimen",
+  "id": "snared-cecal-polyp",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is a candidate for representing the size of polyp collected and the location from which it came. </div>"
+  },
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "POL",
+        "display": "Polyps"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Peter Patient"
+  },
+  "receivedTime": "2011-03-04T07:03:00Z",
+  "collection": {
+    "collector": {
+      "reference": "Practitioner/example"
+    },
+    "collectedDateTime": "2011-05-30T06:15:00Z",
+    "quantity": {
+      "value": 6,
+      "unit": "mm"
+    },
+    "method": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "129304002"
+          "display": "Excision - action"
+        }
+      ]
+    },
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "32713005",
+          "display": "Cecum structure (body structure)"
+        }
+      ],
+      "text": "Cecum structure (body structure)"
+    }
+  },
+  "note": [
+    {
+      "text": "Length is as measures by colonoscopist. Specimen was excised completely using a snare (cold biopsy forceps/cold snare/hot snare)"
+    }
+  ]
+}
