@@ -1804,6 +1804,9 @@
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
+        "specimen": {
+          "reference": "Specimen/c7ef17f8-2a3a-4324-aa12-1c2d9b1c8275"
+        },
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
@@ -1838,6 +1841,9 @@
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "Specimen/60a9b253-e932-4fdf-82cb-4f3691c86780"
         },
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
@@ -1874,6 +1880,9 @@
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
+        "specimen": {
+          "reference": "Specimen/f2e68ce3-4d4e-4c5c-87e4-790a0abd37d4"
+        },
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
@@ -1909,6 +1918,9 @@
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
+        "specimen": {
+          "reference": "Specimen/ef4af09f-c90e-4824-93f7-902006648987"
+        },
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
@@ -1943,6 +1955,9 @@
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "Specimen/6e022128-23a0-475a-962a-6e39812a47ba"
         },
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
