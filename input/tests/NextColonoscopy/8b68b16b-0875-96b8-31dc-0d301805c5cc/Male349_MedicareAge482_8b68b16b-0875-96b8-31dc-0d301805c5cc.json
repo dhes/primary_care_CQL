@@ -1259,231 +1259,6 @@
         "primarySource": false
       }
     }, {
-      "fullUrl": "urn:uuid:a8b6a8d3-f747-4b6e-bc66-c6dc3218f986",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "a8b6a8d3-f747-4b6e-bc66-c6dc3218f986",
-        "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
-        "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "24419-4",
-            "display": "Pathology report gross observation"
-          }, {
-            "system": "http://snomed.info/sct",
-            "code": "168455000",
-            "display": "Gross pathology (finding)"
-          } ],
-          "text": "Gross pathology (finding)"
-        },
-        "subject": {
-          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-        },
-        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-        "issued": "2019-06-24T00:00:00-10:00",
-        "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "449833002",
-            "display": "Polyp of cecum (disorder)"
-          } ],
-          "text": "Polyp of cecum (disorder)"
-        },
-        "partOf": [
-          {
-            "reference": "Procedure/e3191af6-bb59-03dd-8f04-781cd8c14e05",
-            "display": "Colonoscopic polypectomy (procedure)"
-          }
-        ]
-      }
-    }, {
-      "fullUrl": "urn:uuid:2fbc330d-7df7-4077-8f24-fafe7c60756b",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "2fbc330d-7df7-4077-8f24-fafe7c60756b",
-        "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
-        "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "24419-4",
-            "display": "Pathology report gross observation"
-          }, {
-            "system": "http://snomed.info/sct",
-            "code": "168455000",
-            "display": "Gross pathology (finding)"
-          } ],
-          "text": "Gross pathology (finding)"
-        },
-        "subject": {
-          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-        },
-        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-        "issued": "2019-06-24T00:00:00-10:00",
-        "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "712979009",
-            "display": "Polyp of ascending colon (disorder)"
-          } ],
-          "text": "Polyp of ascending colon (disorder)"
-        },
-        "partOf": [
-          {
-            "reference": "Procedure/e3191af6-bb59-03dd-8f04-781cd8c14e05",
-            "display": "Colonoscopic polypectomy (procedure)"
-          }
-        ]
-      }
-    }, {
-      "fullUrl": "urn:uuid:6c7316ea-9438-47d3-82c2-cf8d53d6b8a1",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "6c7316ea-9438-47d3-82c2-cf8d53d6b8a1",
-        "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
-        "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "24419-4",
-            "display": "Pathology report gross observation"
-          }, {
-            "system": "http://snomed.info/sct",
-            "code": "168455000",
-            "display": "Gross pathology (finding)"
-          } ],
-          "text": "Gross pathology (finding)"
-        },
-        "subject": {
-          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-        },
-        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-        "issued": "2019-06-24T00:00:00-10:00",
-        "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "712728006",
-            "display": "Polyp of descending colon (disorder)"
-          } ],
-          "text": "Polyp of descending colon (disorder)"
-        },
-        "partOf": [
-          {
-            "reference": "Procedure/e3191af6-bb59-03dd-8f04-781cd8c14e05",
-            "display": "Colonoscopic polypectomy (procedure)"
-          }
-        ]
-      }
-    }, {
-      "fullUrl": "urn:uuid:b5bcb3b4-1b78-49cc-9479-ad608fadc7f9",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "b5bcb3b4-1b78-49cc-9479-ad608fadc7f9",
-        "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
-        "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "24419-4",
-            "display": "Pathology report gross observation"
-          }, {
-            "system": "http://snomed.info/sct",
-            "code": "168455000",
-            "display": "Gross pathology (finding)"
-          } ],
-          "text": "Gross pathology (finding)"
-        },
-        "subject": {
-          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-        },
-        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-        "issued": "2019-06-24T00:00:00-10:00",
-        "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "712728006",
-            "display": "Polyp of descending colon (disorder)"
-          } ],
-          "text": "Polyp of descending colon (disorder)"
-        },
-        "partOf": [
-          {
-            "reference": "Procedure/e3191af6-bb59-03dd-8f04-781cd8c14e05",
-            "display": "Colonoscopic polypectomy (procedure)"
-          }
-        ]
-      }
-    }, {
-      "fullUrl": "urn:uuid:887b47c5-d71f-4d5b-9ef3-2b9d330e26fd",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "887b47c5-d71f-4d5b-9ef3-2b9d330e26fd",
-        "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
-        "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "24419-4",
-            "display": "Pathology report gross observation"
-          }, {
-            "system": "http://snomed.info/sct",
-            "code": "168455000",
-            "display": "Gross pathology (finding)"
-          } ],
-          "text": "Gross pathology (finding)"
-        },
-        "subject": {
-          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-        },
-        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-        "issued": "2019-06-24T00:00:00-10:00",
-        "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "712728006",
-            "display": "Polyp of descending colon (disorder)"
-          } ],
-          "text": "Polyp of descending colon (disorder)"
-        },
-        "partOf": [
-          {
-            "reference": "Procedure/e3191af6-bb59-03dd-8f04-781cd8c14e05",
-            "display": "Colonoscopic polypectomy (procedure)"
-          }
-        ]
-      }
-    }, {
       "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df7658",
       "resource": {
         "resourceType": "DiagnosticReport",
@@ -1534,23 +1309,23 @@
         ],
         "result": [
           {
-            "reference": "Observation/a8b6a8d3-f747-4b6e-bc66-c6dc3218f986",
+            "reference": "Observation/f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
             "display": "Snared cecal polyp"
           },
           {
-            "reference": "Observation/2fbc330d-7df7-4077-8f24-fafe7c60756b",
+            "reference": "Observation/adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
             "display": "Snared ascending colon polyp"
           },
           {
-            "reference": "Observation/6c7316ea-9438-47d3-82c2-cf8d53d6b8a1",
+            "reference": "Observation/a233ee0e-39a0-4418-8bc3-cb61ab29272a",
             "display": "Descending colon polyp cold snare"
           },
           {
-            "reference": "Observation/b5bcb3b4-1b78-49cc-9479-ad608fadc7f9",
+            "reference": "Observation/079213ea-36db-40a3-a3c0-03e204e2f589",
             "display": "Descending colon polyp hot snare #1"
           },
           {
-            "reference": "Observation/887b47c5-d71f-4d5b-9ef3-2b9d330e26fd",
+            "reference": "Observation/93b40608-5c08-4917-b396-7a660df76587",
             "display": "Descending colon polyp hot snare #2"
           }
         ]
