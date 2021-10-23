@@ -1263,71 +1263,6 @@
       "resource": {
         "resourceType": "Observation",
         "id": "a8b6a8d3-f747-4b6e-bc66-c6dc3218f986",
-        "contained": [
-          {
-            "resourceType": "Observation",
-            "id": "f3be0226-ec9e-41e9-942e-56ca610ae0f4",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "33756-8",
-                "display": "Polyp size greatest dimension"
-              } ],
-              "text": "Polyp size greatest dimension"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueQuantity": {
-              "value": 6,
-              "unit": "mm",
-              "system": "http://unitsofmeasure.org",
-              "code": "mm"
-            }
-          }, {
-            "resourceType": "Observation",
-            "id": "f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "34574-4",
-                "display": "Pathology report final diagnosis"
-            } ],
-            "text": "Pathology report final diagnosis"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueCodeableConcept": {
-              "coding": [ {
-                "system": "http://snomed.info/sct",
-                "code": "444898006",
-                "display": "Tubular adenoma of colon (disorder)"
-              } ],
-              "text": "Tubular adenoma of colon (disorder)"
-            }
-          }
-        ],
         "status": "final",
         "category": [ {
           "coding": [ {
@@ -1373,71 +1308,6 @@
       "resource": {
         "resourceType": "Observation",
         "id": "2fbc330d-7df7-4077-8f24-fafe7c60756b",
-        "contained": [
-          {
-            "resourceType": "Observation",
-            "id": "5de9a825-dccc-44d6-84f2-0638fe649e72",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "33756-8",
-                "display": "Polyp size greatest dimension"
-              } ],
-              "text": "Polyp size greatest dimension"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueQuantity": {
-              "value": 25,
-              "unit": "mm",
-              "system": "http://unitsofmeasure.org",
-              "code": "mm"
-            }
-          }, {
-            "resourceType": "Observation",
-            "id": "adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "34574-4",
-                "display": "Pathology report final diagnosis"
-              } ],
-              "text": "Pathology report final diagnosis"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueCodeableConcept": {
-              "coding": [ {
-                "system": "http://snomed.info/sct",
-                "code": "444898006",
-                "display": "Tubular adenoma of colon (disorder)"
-              } ],
-              "text": "Tubular adenoma of colon (disorder)"
-            }
-          }
-        ],
         "status": "final",
         "category": [ {
           "coding": [ {
@@ -1483,71 +1353,6 @@
       "resource": {
         "resourceType": "Observation",
         "id": "6c7316ea-9438-47d3-82c2-cf8d53d6b8a1",
-        "contained": [
-          {
-            "resourceType": "Observation",
-            "id": "fb519087-c1eb-4665-81c9-f4cf52bfb247",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "33756-8",
-                "display": "Polyp size greatest dimension"
-              } ],
-              "text": "Polyp size greatest dimension"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueQuantity": {
-              "value": 6,
-              "unit": "mm",
-              "system": "http://unitsofmeasure.org",
-              "code": "mm"
-            }
-          }, {
-            "resourceType": "Observation",
-            "id": "a233ee0e-39a0-4418-8bc3-cb61ab29272a",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "34574-4",
-                "display": "Pathology report final diagnosis"
-              } ],
-              "text": "Pathology report final diagnosis"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueCodeableConcept": {
-              "coding": [ {
-                "system": "http://snomed.info/sct",
-                "code": "444898006",
-                "display": "Tubular adenoma of colon (disorder)"
-              } ],
-              "text": "Tubular adenoma of colon (disorder)"
-            }
-          }
-        ],
         "status": "final",
         "category": [ {
           "coding": [ {
@@ -1593,71 +1398,6 @@
       "resource": {
         "resourceType": "Observation",
         "id": "b5bcb3b4-1b78-49cc-9479-ad608fadc7f9",
-        "contained": [
-          {
-            "resourceType": "Observation",
-            "id": "a3e06601-87de-410d-9ceb-b591fdcdb247",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "33756-8",
-                "display": "Polyp size greatest dimension"
-              } ],
-              "text": "Polyp size greatest dimension"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueQuantity": {
-              "value": 10,
-              "unit": "mm",
-              "system": "http://unitsofmeasure.org",
-              "code": "mm"
-            }
-          }, {
-            "resourceType": "Observation",
-            "id": "079213ea-36db-40a3-a3c0-03e204e2f589",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "34574-4",
-                "display": "Pathology report final diagnosis"
-              } ],
-              "text": "Pathology report final diagnosis"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueCodeableConcept": {
-              "coding": [ {
-                "system": "http://snomed.info/sct",
-                "code": "444898006",
-                "display": "Tubular adenoma of colon (disorder)"
-              } ],
-              "text": "Tubular adenoma of colon (disorder)"
-            }
-          }
-        ],
         "status": "final",
         "category": [ {
           "coding": [ {
@@ -1703,71 +1443,6 @@
       "resource": {
         "resourceType": "Observation",
         "id": "887b47c5-d71f-4d5b-9ef3-2b9d330e26fd",
-        "contained": [
-          {
-            "resourceType": "Observation",
-            "id": "f7b146c8-cb62-4433-a672-5d7ef4aeabcf",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "33756-8",
-                "display": "Polyp size greatest dimension"
-              } ],
-              "text": "Polyp size greatest dimension"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueQuantity": {
-              "value": 10,
-              "unit": "mm",
-              "system": "http://unitsofmeasure.org",
-              "code": "mm"
-            }
-          }, {
-            "resourceType": "Observation",
-            "id": "93b40608-5c08-4917-b396-7a660df76587",
-            "status": "final",
-            "category": [ {
-              "coding": [ {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "laboratory"
-              } ]
-            } ],
-            "code": {
-              "coding": [ {
-                "system": "http://loinc.org",
-                "code": "34574-4",
-                "display": "Pathology report final diagnosis"
-              } ],
-              "text": "Pathology report final diagnosis"
-            },
-            "subject": {
-              "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-            },
-            "effectiveDateTime": "2019-06-23T00:00:00-10:00",
-            "issued": "2019-06-24T00:00:00-10:00",
-            "valueCodeableConcept": {
-              "coding": [ {
-                "system": "http://snomed.info/sct",
-                "code": "444898006",
-                "display": "Tubular adenoma of colon (disorder)"
-              } ],
-              "text": "Tubular adenoma of colon (disorder)"
-            }
-          }
-        ],
         "status": "final",
         "category": [ {
           "coding": [ {
@@ -1814,12 +1489,24 @@
         "resourceType": "DiagnosticReport",
         "id": "93b40608-5c08-4917-b396-7a660df7658",
         "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ],
+            "text": "Surgical Pathology"
+          }
+        ],
         "code": {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
-              "code": "PAT",
-              "display": "Pathology (gross & histopath, not surgical)"
+              "system": "http://loinc.org",
+              "code": "11529-5",
+              "display": "Surgical pathology study"
             }
           ]
         },
@@ -1830,9 +1517,20 @@
         "issued": "2015-08-17T06:40:17Z",
         "specimen": [
           {
-            "reference": "Specimen/95d32bd0-5888-4cec-81de-dcb617841275",
-            "display": "Colorectal polyps"
-          }
+            "reference": "Specimen/c7ef17f8-2a3a-4324-aa12-1c2d9b1c8275",
+          },
+          {
+            "reference": "Specimen/60a9b253-e932-4fdf-82cb-4f3691c86780",
+          },
+          {
+            "reference": "Specimen/f2e68ce3-4d4e-4c5c-87e4-790a0abd37d4",
+          },
+          {
+            "reference": "Specimen/ef4af09f-c90e-4824-93f7-902006648987",
+          },
+          {
+            "reference": "Specimen/6e022128-23a0-475a-962a-6e39812a47ba",
+          },
         ],
         "result": [
           {
@@ -2081,6 +1779,181 @@
         "note": [
           {"text": "F. Descending Colon Polyps x 3: #3 (hot snare #2). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "}
         ]
+      }
+    }, {
+      "fullUrl": "urn:uuid:f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
+        "status": "final",
+        "category": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "laboratory"
+          } ]
+        } ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "34574-4",
+            "display": "Pathology report final diagnosis"
+        } ],
+        "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
+        "issued": "2019-06-24T00:00:00-10:00",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "444898006",
+            "display": "Tubular adenoma of colon (disorder)"
+          } ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    }, {
+      "fullUrl": "urn:uuid:adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
+        "status": "final",
+        "category": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "laboratory"
+          } ]
+        } ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "34574-4",
+            "display": "Pathology report final diagnosis"
+          } ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
+        "issued": "2019-06-24T00:00:00-10:00",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "444898006",
+            "display": "Tubular adenoma of colon (disorder)"
+          } ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    }, {
+      "fullUrl": "urn:uuid:a233ee0e-39a0-4418-8bc3-cb61ab29272a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "a233ee0e-39a0-4418-8bc3-cb61ab29272a",
+        "status": "final",
+        "category": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "laboratory"
+          } ]
+        } ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "34574-4",
+            "display": "Pathology report final diagnosis"
+          } ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
+        "issued": "2019-06-24T00:00:00-10:00",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "444898006",
+            "display": "Tubular adenoma of colon (disorder)"
+          } ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    }, {
+      "fullUrl": "urn:uuid:079213ea-36db-40a3-a3c0-03e204e2f589",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "079213ea-36db-40a3-a3c0-03e204e2f589",
+        "status": "final",
+        "category": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "laboratory"
+          } ]
+        } ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "34574-4",
+            "display": "Pathology report final diagnosis"
+          } ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
+        "issued": "2019-06-24T00:00:00-10:00",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "444898006",
+            "display": "Tubular adenoma of colon (disorder)"
+          } ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    }, {
+      "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df76587",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "93b40608-5c08-4917-b396-7a660df76587",
+        "status": "final",
+        "category": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "laboratory"
+          } ]
+        } ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "34574-4",
+            "display": "Pathology report final diagnosis"
+          } ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "effectiveDateTime": "2019-06-23T00:00:00-10:00",
+        "issued": "2019-06-24T00:00:00-10:00",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "444898006",
+            "display": "Tubular adenoma of colon (disorder)"
+          } ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
       }
     }
   ]
