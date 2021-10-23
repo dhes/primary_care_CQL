@@ -1,0 +1,46 @@
+{
+  "fullUrl": "urn:uuid:",
+  "resource": {
+    "resourceType": "Specimen",
+    "id": "",
+    "status": "available",
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "32713005",
+          "display": "Cecum structure (body structure)"
+        }
+      ],
+      "text": "Cecum structure (body structure)"
+    },
+    "method": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "129304002"
+          "display": "Excision - action"
+        }
+      ]
+    },
+    "quantity": {
+      "value": 6,
+      "unit": "mm"
+    },
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+          "code": "POL",
+          "display": "Polyps"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+    },
+    "note": [
+      {"text": "summary of polyp here e.g. "}
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "",
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"Surgical path of polyp from colonscopic polypectomy</div>"
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "SP",
+          "display": "Surgical Pathology"
+        }
+      ],
+      "text": "Surgical Pathology"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11529-5",
+        "display": "Surgical pathology study"
+      }
+    ],
+    "text": "Surgical pathology study"
+  },
+  "subject": {
+    "reference": "urn:uuid:...""
+  },
+  "effectiveDateTime": "",
+  "issued": "",
+}
