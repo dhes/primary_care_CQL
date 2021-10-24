@@ -319,6 +319,7 @@ define "Polpy length":
 define "Polyp path":
   from [Specimen] S, [Observation] O
     where (Last(Split(O.specimen.reference, '/')) = Last(Split(S.id, ':')))
-    return {S1: S.collection.bodySite.text.value,
-            S2: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
-            O: (O.value as CodeableConcept).coding.display.value}
+    return {Description: singleton from S.note.text,
+            "Body Site": S.collection.bodySite.text.value,
+            Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
+            Pathology: singleton from (O.value as CodeableConcept).coding.display.value}
