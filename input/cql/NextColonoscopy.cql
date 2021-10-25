@@ -317,13 +317,16 @@ define "Polpy length":
             Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}
 
 define "Polyp path":
-  from [Specimen] S, [Observation] O1, [Observation] O2
+  from [Specimen] S, [Observation] O1, [Observation] O2, [Observation] O3
     where (Last(Split(O1.specimen.reference, '/')) = Last(Split(S.id, ':')))
     and (Last(Split(O2.specimen.reference, '/')) = Last(Split(S.id, ':')))
+    and (Last(Split(O3.specimen.reference, '/')) = Last(Split(S.id, ':')))
     and singleton from O1.code.coding.code.value~'34574-4'
     and singleton from O2.code.coding.code.value~'787139004'
+    and singleton from O3.code.coding.code.value~'55237006'
     return {Description: singleton from S.note.text,
             "Body Site": S.collection.bodySite.text.value,
             Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
             Pathology: singleton from (O1.value as CodeableConcept).coding.display.value,
-            "Piecemeal?": O2.value.value}
+            "Piecemeal?": O2.value.value,
+            "High-grade dysplasia?": O3.value.value}
