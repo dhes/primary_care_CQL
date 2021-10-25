@@ -326,4 +326,4 @@ define "Polyp path":
             "Body Site": S.collection.bodySite.text.value,
             Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
             Pathology: singleton from (O1.value as CodeableConcept).coding.display.value,
-            Piecmeal: O2.value.value}
+            "Piecemeal?": O2.value.value}
