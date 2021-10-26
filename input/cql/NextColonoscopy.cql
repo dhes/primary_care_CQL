@@ -35,7 +35,13 @@ code "Benign tubular adenoma (morphologic abnormality)": '444898006' from "SNOME
 code "Villous adenoma (morphologic abnormality)": '128859003' from "SNOMED"
 code  "Tubulovillous adenoma (morphologic abnormality)": '61722000' from "SNOMED"
 //code "Tubular adenoma": '444408007' from "SNOMED"
-// code "Adenoma with high-grade dysplasia":  Severe dysplasia
+// code "Adenoma with high-grade dysplasia":  Severe dysplasiaID
+
+define function "GetId:"(uri String):
+  Last(Split(uri, ':'))
+
+define function "GetId/"(uri String ):
+    Last(Split(uri, '/'))
 
 
 // there is a certain ambuguity/overlap between colon and large intestine
@@ -314,17 +320,19 @@ define "Full report":
 
 define "Polpy length":
   [Specimen] S
-    return {Site: S.collection.bodySite.text.value,
+    return {ID: S.id,
+            Site: S.collection.bodySite.text.value,
             Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}
 
+// this one works but takes three minutes
 /* define "Polyp path":
   from [Specimen] S, [Observation] O1, [Observation] O2, [Observation] O3
     where (Last(Split(O1.specimen.reference, '/')) = Last(Split(S.id, ':')))
     and (Last(Split(O2.specimen.reference, '/')) = Last(Split(S.id, ':')))
     and (Last(Split(O3.specimen.reference, '/')) = Last(Split(S.id, ':')))
-    and singleton from O1.code.coding.code.value~'34574-4'
-    and singleton from O2.code.coding.code.value~'787139004'
-    and singleton from O3.code.coding.code.value~'55237006'
+    and singleton from O1.code.coding.code.value~'34574-4' // Pathology report final diagnosis
+    and singleton from O2.code.coding.code.value~'787139004'  // Piecemeal excision
+    and singleton from O3.code.coding.code.value~'55237006' // Severe dysplasia
     return {Description: singleton from S.note.text,
             "Body Site": S.collection.bodySite.text.value,
             Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
@@ -332,6 +340,9 @@ define "Polpy length":
             "Piecemeal?": O2.value.value,
             "High-grade dysplasia?": O3.value.value} */
 
+// this was an attempt to get straight to the appropriate observation directly
+// ... through diagnosticReport>result. I don't think it saves any time or
+// ... lessens the computation
 define "polyp via result":
   [DiagnosticReport] D
     //return FHIRHelpers.resolve('Observation')
@@ -341,3 +352,25 @@ define "polyp via result":
     //Encounter.diagnosis D
     return (singleton from ([Observation] O where (Last(Split(O.id.value,':')) =
       Last(Split(D.result.first().reference.value,'/')))))
+
+// break up "Polyp path" and then lace it back together using the specimen id
+define "Polyp path":
+  from [Specimen] S, [Observation] O
+    where "GetId/"(O.specimen.reference)= "GetId:"(S.id)
+    and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
+    return {ID: S.id.value,
+            Path: singleton from (O.value as CodeableConcept).coding.display}
+
+define "Polyp piecemeal?":
+  from [Specimen] S, [Observation] O
+    where "GetId/"(O.specimen.reference) = "GetId:"(S.id)
+    and singleton from O.code.coding.code.value~'787139004' // Piecemeal resection?
+    return {ID: S.id.value,
+            Path: (O.value as boolean).value}
+
+define "Polyp severe dysplasia":
+  from [Specimen] S, [Observation] O
+    where "GetId/"(O.specimen.reference) = "GetId:"(S.id)
+    and singleton from O.code.coding.code.value~'55237006' // severe (high-grade) dysplasia?
+    return {ID: S.id.value,
+            Path: (O.value as boolean).value}
