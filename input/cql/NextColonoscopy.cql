@@ -318,7 +318,7 @@ define "Full report":
                 Size: (O.contained[0] as Observation).value as Quantity,
                 "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept}
 
-define "Polpy length":
+define "Polyp length":
   [Specimen] S
     return {ID: S.id,
             Site: S.collection.bodySite.text.value,
@@ -354,23 +354,38 @@ define "polyp via result":
       Last(Split(D.result.first().reference.value,'/')))))
 
 // break up "Polyp path" and then lace it back together using the specimen id
-define "Polyp path":
+define "Path":
   from [Specimen] S, [Observation] O
     where "GetId/"(O.specimen.reference)= "GetId:"(S.id)
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
             Path: singleton from (O.value as CodeableConcept).coding.display}
 
-define "Polyp piecemeal?":
+define "Piecemeal?":
   from [Specimen] S, [Observation] O
     where "GetId/"(O.specimen.reference) = "GetId:"(S.id)
     and singleton from O.code.coding.code.value~'787139004' // Piecemeal resection?
     return {ID: S.id.value,
-            Path: (O.value as boolean).value}
+            "Piecemeal?": (O.value as boolean).value}
 
-define "Polyp severe dysplasia":
+define "Severe dysplasia?":
   from [Specimen] S, [Observation] O
     where "GetId/"(O.specimen.reference) = "GetId:"(S.id)
     and singleton from O.code.coding.code.value~'55237006' // severe (high-grade) dysplasia?
     return {ID: S.id.value,
-            Path: (O.value as boolean).value}
+            "Severe Dysplasia": (O.value as boolean).value}
+
+define "Polyp full report":
+  from  "Polyp length" L,
+        "Path" P,
+        "Piecemeal?" PM,
+        "Severe dysplasia?" SD
+  where L.ID=P.ID and L.ID=PM.ID and L.ID = SD.ID
+        and P.ID=PM.ID and P.ID=SD.ID
+        and PM.ID=SD.ID
+  return {ID: L.ID,
+          Site: L.Site,
+          Size: L.Size,
+          Path: P.Path,
+          "Piecemeal?": PM."Piecemeal?",
+          "Severe Dysplasia": SD."Severe Dysplasia"}
