@@ -301,7 +301,8 @@ define "Full report with details":
   "Observations that are part of Colonoscopy with polypectomy" O
     return all {ID: Last(Split(O.id.value,':')),
                 Specimen: singleton from (O.value as CodeableConcept).coding.display,
-                Size: ((O.contained[0] as Observation).value as Quantity).value.toString() + ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
+                Size: ((O.contained[0] as Observation).value as Quantity).value.toString() +
+                  ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
                 "Microscopic Pathology": ((O.contained[1] as Observation).value as CodeableConcept).text }
 
 define "Full report":
@@ -316,7 +317,7 @@ define "Polpy length":
     return {Site: S.collection.bodySite.text.value,
             Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}
 
-define "Polyp path":
+/* define "Polyp path":
   from [Specimen] S, [Observation] O1, [Observation] O2, [Observation] O3
     where (Last(Split(O1.specimen.reference, '/')) = Last(Split(S.id, ':')))
     and (Last(Split(O2.specimen.reference, '/')) = Last(Split(S.id, ':')))
@@ -329,4 +330,14 @@ define "Polyp path":
             Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
             Pathology: singleton from (O1.value as CodeableConcept).coding.display.value,
             "Piecemeal?": O2.value.value,
-            "High-grade dysplasia?": O3.value.value}
+            "High-grade dysplasia?": O3.value.value} */
+
+define "polyp via result":
+  [DiagnosticReport] D
+    //return FHIRHelpers.resolve('Observation')
+    //return (FHIRHelpers.resolve(D.result.first().toString()))
+    /* return (FHIRHelpers.resolve(D.result.reference.first())) */
+    //return FHIRHelpers.resolve(D.result.reference)
+    //Encounter.diagnosis D
+    return (singleton from ([Observation] O where (Last(Split(O.id.value,':')) =
+      Last(Split(D.result.first().reference.value,'/')))))

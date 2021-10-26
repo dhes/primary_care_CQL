@@ -46,8 +46,8 @@
               "coding": [
                 {
                   "system": "urn:ietf:bcp:47",
-                  "code": "en-US",
-                  "display": "English (United States)"
+                  "code": "en",
+                  "display": "English"
                 }
               ],
               "text": "English"
@@ -1248,9 +1248,9 @@
           "coding": [ {
             "system": "http://hl7.org/fhir/sid/cvx",
             "code": "135",
-            "display": "Influenza, high dose seasonal"
+            "display": "influenza, high dose seasonal, preservative-free"
           } ],
-          "text": "Influenza, High Dose"
+          "text": "influenza, high dose seasonal, preservative-free"
         },
         "patient": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
@@ -1756,10 +1756,10 @@
         }
       }
     }, {
-      "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df76587",
+      "fullUrl": "urn:uuid:00b9bfa7-3487-4f27-b910-e55fa08e3b69",
       "resource": {
         "resourceType": "Observation",
-        "id": "93b40608-5c08-4917-b396-7a660df76587",
+        "id": "00b9bfa7-3487-4f27-b910-e55fa08e3b69",
         "status": "final",
         "category": [ {
           "coding": [ {
@@ -1927,9 +1927,9 @@
           "coding": [ {
             "system": "http://snomed.info/sct",
             "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality) |"
+            "display": "Severe dysplasia (morphologic abnormality)"
           } ],
-          "text": "Severe dysplasia (morphologic abnormality) |"
+          "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
@@ -1958,9 +1958,9 @@
           "coding": [ {
             "system": "http://snomed.info/sct",
             "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality) |"
+            "display": "Severe dysplasia (morphologic abnormality)"
           } ],
-          "text": "Severe dysplasia (morphologic abnormality) |"
+          "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
@@ -1989,9 +1989,9 @@
           "coding": [ {
             "system": "http://snomed.info/sct",
             "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality) |"
+            "display": "Severe dysplasia (morphologic abnormality)"
           } ],
-          "text": "Severe dysplasia (morphologic abnormality) |"
+          "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
@@ -2020,9 +2020,9 @@
           "coding": [ {
             "system": "http://snomed.info/sct",
             "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality) |"
+            "display": "Severe dysplasia (morphologic abnormality)"
           } ],
-          "text": "Severe dysplasia (morphologic abnormality) |"
+          "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
@@ -2051,9 +2051,9 @@
           "coding": [ {
             "system": "http://snomed.info/sct",
             "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality) |"
+            "display": "Severe dysplasia (morphologic abnormality)"
           } ],
-          "text": "Severe dysplasia (morphologic abnormality) |"
+          "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
