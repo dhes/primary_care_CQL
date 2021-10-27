@@ -150,7 +150,7 @@ define "Polyp full report":
           Size: L.Size,
           Path: P.Path,
           "Piecemeal?": PM."Piecemeal?",
-          "Severe Dysplasia": SD."Severe Dysplasia"}
+          "Severe dysplasia?": SD."Severe Dysplasia"}
 
  define "? tubular adenoma and < 10 mm":
   "Polyp full report" R
@@ -193,6 +193,9 @@ Count("Polyp full report" R
           Path: R."Microscopic Pathology".text
         }) > 0 */
 
+define "Adenoma with high-grade dysplasia":
+  Count("Polyp full report" R
+    where R."Severe dysplasia?"=true) >0
 
 define ">10 adenomas on single examination":
 Count("Polyp full report" R
@@ -204,3 +207,7 @@ Count("Polyp full report" R
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
         }) > 10 */
+
+define "Piecemeal resection of adenoma >20 mm":
+  Count("Polyp full report" R
+    where R."Piecemeal?"=true) > 0
