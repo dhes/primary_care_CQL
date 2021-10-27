@@ -236,7 +236,7 @@ return {ID: O.id,
                   (PS.O.value as Quantity).unit,
             "? tubular adenoma": (PP.O.value as CodeableConcept)~"Tubular adenoma of colon"}*/
 
-define "? tubular adenoma and < 10 mm":
+/* define "? tubular adenoma and < 10 mm":
   "Full report" R
     where R.Size < 10 'mm'
     and R."Microscopic Pathology"~"Tubular adenoma of colon"
@@ -244,16 +244,16 @@ define "? tubular adenoma and < 10 mm":
             Specimen: R.Specimen.text,
             Size: (R.Size).value,
             Path: R."Microscopic Pathology".text
-          }
+          } */
 
-define "1-2 tubular adenomas <10 mm":
-  Count("? tubular adenoma and < 10 mm") <= 2
+/* define "1-2 tubular adenomas <10 mm":
+  Count("? tubular adenoma and < 10 mm") <= 2 */
 
-define "3-4 tubular adenomas <10 mm":
-  3 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=4
+/* define "3-4 tubular adenomas <10 mm":
+  3 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=4 */
 
-define "5-10 tubular adenomas <10 mm":
-  5 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=10
+/* define "5-10 tubular adenomas <10 mm":
+  5 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=10 */
 
 //define "Adenoma >= 10 mm":
 /*define "Adenoma valueset test":
@@ -262,7 +262,7 @@ define "5-10 tubular adenomas <10 mm":
   //"Tubulovillous adenoma (morphologic abnormality)" in "Adenoma"  // true
   "Colonoscopic polypectomy" in "Adenoma"      */                     // false
 
-define "Any adenoma >= 10 mm":
+/* define "Any adenoma >= 10 mm":
 Count("Full report" R
   where R.Size >= 10 'mm'
   and R."Microscopic Pathology" in "Adenoma"
@@ -270,12 +270,12 @@ Count("Full report" R
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
-        }) > 0
+        }) > 0 */
 
 //define "Adenomas with tubulovillous or villous histology test":
 //"Colonoscopic polypectomy" in "Adenoma with tubulovillous or villous histology"
 
-define "Any adenomas with tubulovillous or villous histology":
+/* define "Any adenomas with tubulovillous or villous histology":
 Count("Full report" R
 //  where R.Size >= 10 'mm'
   where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
@@ -283,9 +283,9 @@ Count("Full report" R
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
-        }) > 0
+        }) > 0 */
 
-define ">10 adenomas on single examination":
+/* define ">10 adenomas on single examination":
 Count("Full report" R
   //where R.Size >= 10 'mm'
   //where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
@@ -294,7 +294,7 @@ Count("Full report" R
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
           Path: R."Microscopic Pathology".text
-        }) > 10
+        }) > 10 */
 
 /* define "EOB":
   [ExplanationOfBenefit] E
@@ -322,7 +322,8 @@ define "Polyp length":
   [Specimen] S
     return {ID: S.id,
             Site: S.collection.bodySite.text.value,
-            Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}
+//            Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}  // for a literal readout
+            Size: S.collection.quantity} // for the reminder calculation
 
 // this one works but takes three minutes
 /* define "Polyp path":
@@ -343,15 +344,15 @@ define "Polyp length":
 // this was an attempt to get straight to the appropriate observation directly
 // ... through diagnosticReport>result. I don't think it saves any time or
 // ... lessens the computation
-define "polyp via result":
-  [DiagnosticReport] D
+//define "polyp via result":
+//  [DiagnosticReport] D
     //return FHIRHelpers.resolve('Observation')
     //return (FHIRHelpers.resolve(D.result.first().toString()))
     /* return (FHIRHelpers.resolve(D.result.reference.first())) */
     //return FHIRHelpers.resolve(D.result.reference)
     //Encounter.diagnosis D
-    return (singleton from ([Observation] O where (Last(Split(O.id.value,':')) =
-      Last(Split(D.result.first().reference.value,'/')))))
+//    return (singleton from ([Observation] O where (Last(Split(O.id.value,':')) =
+//      Last(Split(D.result.first().reference.value,'/')))))
 
 // break up "Polyp path" and then lace it back together using the specimen id
 define "Path":
@@ -359,7 +360,8 @@ define "Path":
     where "GetId/"(O.specimen.reference)= "GetId:"(S.id)
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
-            Path: singleton from (O.value as CodeableConcept).coding.display}
+//            Path: singleton from (O.value as CodeableConcept).coding.display} // gives a readable output
+            Path: O.value as CodeableConcept} // used in reminder calculation
 
 define "Piecemeal?":
   from [Specimen] S, [Observation] O
@@ -383,9 +385,76 @@ define "Polyp full report":
   where L.ID=P.ID and L.ID=PM.ID and L.ID = SD.ID
         and P.ID=PM.ID and P.ID=SD.ID
         and PM.ID=SD.ID
-  return {ID: L.ID,
+  return all {"Specimen ID": L.ID,
           Site: L.Site,
           Size: L.Size,
           Path: P.Path,
           "Piecemeal?": PM."Piecemeal?",
           "Severe Dysplasia": SD."Severe Dysplasia"}
+
+ define "? tubular adenoma and < 10 mm":
+  "Polyp full report" R
+    where R.Size < 10 'mm'
+    and R."Path"~"Tubular adenoma of colon"
+    /* return all {"Specimen ID": R."Specimen ID",
+            Specimen: R.Specimen.text,
+            Size: (R.Size).value,
+            Path: R."Microscopic Pathology".text
+          } */
+
+define "1-2 tubular adenomas <10 mm":
+  Count("? tubular adenoma and < 10 mm") <= 2
+
+define "3-4 tubular adenomas <10 mm":
+  3 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=4
+
+define "5-10 tubular adenomas <10 mm":
+  5 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=10
+
+//define "Adenoma >= 10 mm":
+/*define "Adenoma valueset test":
+  //"Benign tubular adenoma (morphologic abnormality)" in "Adenoma" //t rue
+  //"Villous adenoma (morphologic abnormality)"  in "Adenoma"       // true
+  //"Tubulovillous adenoma (morphologic abnormality)" in "Adenoma"  // true
+  "Colonoscopic polypectomy" in "Adenoma"      */                     // false
+
+define "Any adenoma >= 10 mm":
+Count("Polyp full report" R
+  where R.Size >= 10 'mm'
+  and R.Path in "Adenoma") > 0
+  /* return all {ID: R.ID,
+          Specimen: R.Specimen.text,
+          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
+          Path: R."Microscopic Pathology".text
+        }) > 0 */
+
+//define "Adenomas with tubulovillous or villous histology test":
+//"Colonoscopic polypectomy" in "Adenoma with tubulovillous or villous histology"
+
+define "Any adenomas with tubulovillous or villous histology":
+Count("Polyp full report" R
+  where R."Path" in "Adenoma with tubulovillous or villous histology") > 0
+  /* return all {ID: R.ID,
+          Specimen: R.Specimen.text,
+          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
+          Path: R."Microscopic Pathology".text
+        }) > 0 */
+
+
+define ">10 adenomas on single examination":
+Count("Polyp full report" R
+  //where R.Size >= 10 'mm'
+  //where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
+  where R."Path" in "Adenoma") > 10
+  /* return all {ID: R.ID,
+          Specimen: R.Specimen.text,
+          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
+          Path: R."Microscopic Pathology".text
+        }) > 10 */
+
+/* define "EOB":
+  [ExplanationOfBenefit] E
+    //where exists E.contained // all of them
+    return all {"Service Request Status": (E.contained[0] as ServiceRequest).status.value,
+                "Coverage Type":          (E.contained[1] as Coverage).type.text,
+                "O":                      ((E.contained[2] as Observation).value as CodeableConcept).text} */
