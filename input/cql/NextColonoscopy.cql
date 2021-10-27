@@ -184,7 +184,7 @@ Count("Polyp full report" R
 //define "Adenomas with tubulovillous or villous histology test":
 //"Colonoscopic polypectomy" in "Adenoma with tubulovillous or villous histology"
 
-define "Any adenomas with tubulovillous or villous histology":
+define "Any adenoma with tubulovillous or villous histology":
 Count("Polyp full report" R
   where R."Path" in "Adenoma with tubulovillous or villous histology") > 0
   /* return all {ID: R.ID,
@@ -211,3 +211,16 @@ Count("Polyp full report" R
 define "Piecemeal resection of adenoma >20 mm":
   Count("Polyp full report" R
     where R."Piecemeal?"=true) > 0
+
+define "Next colonoscopy":
+  case
+    when "Piecemeal resection of adenoma >20 mm" then '6 months'
+    when ">10 adenomas on single examination" then '1 year'
+    when "Adenoma with high-grade dysplasia" then '3 years'
+    when "Any adenoma with tubulovillous or villous histology" then '3 years'
+    when "Any adenoma >= 10 mm" then '3 years'
+    when "5-10 tubular adenomas <10 mm" then '3 years'
+    when "3-4 tubular adenomas <10 mm" then '3-5 years'
+    when "1-2 tubular adenomas <10 mm" then '7-10 years'
+    else '10 years'
+  end
