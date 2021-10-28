@@ -59,13 +59,15 @@ context Patient
 //define "First colonoscopy in the list":
 //"Had Colonoscopy"[0]
 
+/* // not currently referred to
 define "ID from Colonoscopy with polypectomy":
   [Procedure] P
     //where singleton from P.code.coding.code.value='311774002'
     where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
-    return "GetId:"(P.id)
+    return "GetId:"(P.id) */
 
-define "Observations that are part of Colonoscopy with polypectomy":
+// not currently referred to
+/* define "Observations that are part of Colonoscopy with polypectomy":
 // AKA colon polyp observations
   [Observation] O
     // only observations with references..
@@ -74,22 +76,24 @@ define "Observations that are part of Colonoscopy with polypectomy":
     //and O.partOf.reference
     where "ID from Colonoscopy with polypectomy" contains "GetId/"(O.partOf.first().reference.value)
     //return {ID: Last(Split(O.id,'/')),
-    //  Description: (O.value as CodeableConcept).coding.display.value}
+    //  Description: (O.value as CodeableConcept).coding.display.value} */
 
-define "Full report with details":
+// not currently referred to
+/* define "Full report with details":
   "Observations that are part of Colonoscopy with polypectomy" O
     return all {ID: "GetId:"(O.id.value),
                 Specimen: singleton from (O.value as CodeableConcept).coding.display,
                 Size: ((O.contained[0] as Observation).value as Quantity).value.toString() +
                   ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
-                "Microscopic Pathology": ((O.contained[1] as Observation).value as CodeableConcept).text }
+                "Microscopic Pathology": ((O.contained[1] as Observation).value as CodeableConcept).text } */
 
-define "Full report":
+// not currently referred to
+/* define "Full report":
   "Observations that are part of Colonoscopy with polypectomy" O
     return all {ID: "GetId:"(O.id.value),
                 Specimen: O.value as CodeableConcept,
                 Size: (O.contained[0] as Observation).value as Quantity,
-                "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept}
+                "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept} */
 
 define "Polyp length":
   [Specimen] S
@@ -115,13 +119,13 @@ define "Polyp length":
             "High-grade dysplasia?": O3.value.value} */
 
 // break up "Polyp path" and then lace it back together using the specimen id
-define "Path":
+define "Pathology":
   from [Specimen] S, [Observation] O
     where "GetId/"(O.specimen.reference)= "GetId:"(S.id)
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
-//            Path: singleton from (O.value as CodeableConcept).coding.display} // gives a readable output
-            Path: O.value as CodeableConcept} // used in reminder calculation
+//            Pathology: singleton from (O.value as CodeableConcept).coding.display} // gives a readable output
+            Pathology: O.value as CodeableConcept} // used in reminder calculation
 
 define "Piecemeal?":
   from [Specimen] S, [Observation] O
@@ -139,7 +143,7 @@ define "Severe dysplasia?":
 
 define "Polyp full report":
   from  "Polyp length" L,
-        "Path" P,
+        "Pathology" P,
         "Piecemeal?" PM,
         "Severe dysplasia?" SD
   where L.ID=P.ID and L.ID=PM.ID and L.ID = SD.ID
@@ -148,14 +152,14 @@ define "Polyp full report":
   return all {"Specimen ID": L.ID,
           Site: L.Site,
           Size: L.Size,
-          Path: P.Path,
+          Pathology: P.Pathology,
           "Piecemeal?": PM."Piecemeal?",
           "Severe dysplasia?": SD."Severe Dysplasia"}
 
  define "? tubular adenoma and < 10 mm":
   "Polyp full report" R
     where R.Size < 10 'mm'
-    and R."Path"~"Tubular adenoma of colon"
+    and R."Pathology"~"Tubular adenoma of colon"
     /* return all {"Specimen ID": R."Specimen ID",
             Specimen: R.Specimen.text,
             Size: (R.Size).value,
@@ -174,7 +178,7 @@ define "5-10 tubular adenomas <10 mm":
 define "Any adenoma >= 10 mm":
 Count("Polyp full report" R
   where R.Size >= 10 'mm'
-  and R.Path in "Adenoma") > 0
+  and R.Pathology in "Adenoma") > 0
   /* return all {ID: R.ID,
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
@@ -186,7 +190,7 @@ Count("Polyp full report" R
 
 define "Any adenoma with tubulovillous or villous histology":
 Count("Polyp full report" R
-  where R."Path" in "Adenoma with tubulovillous or villous histology") > 0
+  where R."Pathology" in "Adenoma with tubulovillous or villous histology") > 0
   /* return all {ID: R.ID,
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
@@ -201,7 +205,7 @@ define ">10 adenomas on single examination":
 Count("Polyp full report" R
   //where R.Size >= 10 'mm'
   //where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
-  where R."Path" in "Adenoma") > 10
+  where R."Pathology" in "Adenoma") > 10
   /* return all {ID: R.ID,
           Specimen: R.Specimen.text,
           Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
@@ -259,6 +263,3 @@ define "Surveillance colonoscopy date range tuple":
     when true then Interval["Surveillance colonoscopy date low",]
     else "Surveillance colonoscopy date high"
   end */
-
-  //Try to match the polypectomy procedure to the specimens through the DiagnosticReport
-  define "specimens for a certian colonoscopic polypectomy":

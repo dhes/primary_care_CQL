@@ -55,7 +55,8 @@
           }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:c916fab3-9399-51a5-8e18-3321129cc847",
       "resource": {
         "resourceType": "AllergyIntolerance",
@@ -96,7 +97,8 @@
         },
         "recordedDate": "2021-09-04T11:26:13-10:00"
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:61d000e0-eced-f8a4-7ae4-146ce5346c9d",
       "resource": {
         "resourceType": "Condition",
@@ -149,28 +151,38 @@
         "onsetDateTime": "2011-07-12T00:00:00-10:00",
         "recordedDate": "2021-09-09T08:23:07-07:00"
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:a27db04f-882e-ae76-dcba-d8053b15bb41",
       "resource": {
         "resourceType": "Observation",
         "id": "a27db04f-882e-ae76-dcba-d8053b15bb41",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/bodyheight", "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bodyheight",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "8302-2",
-            "display": "Body Height"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body Height"
+            }
+          ],
           "text": "Body Height"
         },
         "subject": {
@@ -185,25 +197,32 @@
           "code": "cm"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:1241207a-074d-59d1-2fd0-31a148aefea8",
       "resource": {
         "resourceType": "Observation",
         "id": "1241207a-074d-59d1-2fd0-31a148aefea8",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "72514-3",
-            "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+            }
+          ],
           "text": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
         },
         "subject": {
@@ -218,28 +237,38 @@
           "code": "{score}"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:f0699843-1b4a-f033-27e9-9b0bd7be4823",
       "resource": {
         "resourceType": "Observation",
         "id": "f0699843-1b4a-f033-27e9-9b0bd7be4823",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/bodyweight", "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bodyweight",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "29463-7",
-            "display": "Body Weight"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body Weight"
+            }
+          ],
           "text": "Body Weight"
         },
         "subject": {
@@ -254,28 +283,38 @@
           "code": "kg"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:7375202e-d782-e232-fcd1-322000681845",
       "resource": {
         "resourceType": "Observation",
         "id": "7375202e-d782-e232-fcd1-322000681845",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/bmi", "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bmi",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "39156-5",
-            "display": "Body mass index (BMI) [Ratio]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
           "text": "Body Mass Index"
         },
         "subject": {
@@ -290,28 +329,38 @@
           "code": "kg/m2"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:2ea3e93f-2d2d-3210-3040-a9649e517e9b",
       "resource": {
         "resourceType": "Observation",
         "id": "2ea3e93f-2d2d-3210-3040-a9649e517e9b",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/bp", "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bp",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "85354-9",
-            "display": "Blood pressure panel with all children optional"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
           "text": "Blood Pressure"
         },
         "subject": {
@@ -319,60 +368,77 @@
         },
         "effectiveDateTime": "2014-06-03T17:59:13-10:00",
         "issued": "2014-06-03T17:59:13.248-10:00",
-        "component": [ {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "8462-4",
-              "display": "Diastolic Blood Pressure"
-            } ],
-            "text": "Diastolic Blood Pressure"
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic Blood Pressure"
+                }
+              ],
+              "text": "Diastolic Blood Pressure"
+            },
+            "valueQuantity": {
+              "value": 85,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
           },
-          "valueQuantity": {
-            "value": 85,
-            "unit": "mm[Hg]",
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]"
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic Blood Pressure"
+                }
+              ],
+              "text": "Systolic Blood Pressure"
+            },
+            "valueQuantity": {
+              "value": 126,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
           }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "8480-6",
-              "display": "Systolic Blood Pressure"
-            } ],
-            "text": "Systolic Blood Pressure"
-          },
-          "valueQuantity": {
-            "value": 126,
-            "unit": "mm[Hg]",
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]"
-          }
-        } ]
+        ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:c7c10daa-6cea-3864-c83f-59e9f62228ed",
       "resource": {
         "resourceType": "Observation",
         "id": "c7c10daa-6cea-3864-c83f-59e9f62228ed",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/heartrate", "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "8867-4",
-            "display": "Heart rate"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
           "text": "Heart rate"
         },
         "subject": {
@@ -387,28 +453,38 @@
           "code": "/min"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:53ea28cb-c733-8ef8-b46f-1e583281a2c3",
       "resource": {
         "resourceType": "Observation",
         "id": "53ea28cb-c733-8ef8-b46f-1e583281a2c3",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/resprate", "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/resprate",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "vital-signs",
-            "display": "Vital Signs"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "9279-1",
-            "display": "Respiratory rate"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ],
           "text": "Respiratory rate"
         },
         "subject": {
@@ -423,28 +499,37 @@
           "code": "/min"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:1c23fa5e-1636-45f5-00e3-4b42f22a892a",
       "resource": {
         "resourceType": "Observation",
         "id": "1c23fa5e-1636-45f5-00e3-4b42f22a892a",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "social-history",
-            "display": "Social History"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "72166-2",
-            "display": "Tobacco smoking status"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
           "text": "Tobacco smoking status NHIS"
         },
         "subject": {
@@ -453,33 +538,42 @@
         "effectiveDateTime": "2021-09-10T13:36:13-10:00",
         "issued": "2021-09-10T13:36:13-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "266919005",
-            "display": "Never smoked"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266919005",
+              "display": "Never smoked"
+            }
+          ],
           "text": "Never smoker"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:0cb988e7-1d38-c73d-b6fe-58c2d916b6b7",
       "resource": {
         "resourceType": "Observation",
         "id": "0cb988e7-1d38-c73d-b6fe-58c2d916b6b7",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "survey",
-            "display": "survey"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "survey"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "93025-5",
-            "display": "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93025-5",
+              "display": "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]"
+            }
+          ],
           "text": "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]"
         },
         "subject": {
@@ -487,373 +581,480 @@
         },
         "effectiveDateTime": "2014-06-03T18:49:15-10:00",
         "issued": "2014-06-03T18:49:15.248-10:00",
-        "component": [ {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "76501-6",
-              "display": "Within the last year, have you been afraid of your partner or ex-partner"
-            } ],
-            "text": "In the past year, have you been afraid of your partner or ex-partner?"
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "76501-6",
+                  "display": "Within the last year, have you been afraid of your partner or ex-partner"
+                }
+              ],
+              "text": "In the past year, have you been afraid of your partner or ex-partner?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA33-6",
+                  "display": "Yes"
+                }
+              ],
+              "text": "Yes"
+            }
           },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA33-6",
-              "display": "Yes"
-            } ],
-            "text": "Yes"
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93026-3",
+                  "display": "Do you feel physically and emotionally safe where you currently live?"
+                }
+              ],
+              "text": "Do you feel physically and emotionally safe where you currently live?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA33-6",
+                  "display": "Yes"
+                }
+              ],
+              "text": "Yes"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93027-1",
+                  "display": "Are you a refugee?"
+                }
+              ],
+              "text": "Are you a refugee?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93028-9",
+                  "display": "In the past year, have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility?"
+                }
+              ],
+              "text": "In the past year, have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93038-8",
+                  "display": "Stress level"
+                }
+              ],
+              "text": "Stress is when someone feels tense, nervous, anxious or can't sleep at night because their mind is troubled. How stressed are you?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA6568-5",
+                  "display": "Not at all"
+                }
+              ],
+              "text": "Not at all"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93029-7",
+                  "display": "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?"
+                }
+              ],
+              "text": "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA30132-7",
+                  "display": "5 or more times a week"
+                }
+              ],
+              "text": "5 or more times a week"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93030-5",
+                  "display": "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living"
+                }
+              ],
+              "text": "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93031-3",
+                  "display": "In the past year, have you or any family members you live with been unable to get any of the following when it was really needed?"
+                }
+              ],
+              "text": "In the past year, have you or any family members you live with been unable to get any of the following when it was really needed?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA30122-8",
+                  "display": "I choose not to answer this question"
+                }
+              ],
+              "text": "I choose not to answer this question"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "63586-2",
+                  "display": "What was your best estimate of the total income of all family members from all sources, before taxes, in last year [PhenX]"
+                }
+              ],
+              "text": "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits."
+            },
+            "valueQuantity": {
+              "value": 137880,
+              "unit": "/a",
+              "system": "http://unitsofmeasure.org",
+              "code": "/a"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "76437-3",
+                  "display": "Primary insurance"
+                }
+              ],
+              "text": "What is your main insurance?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA22073-3",
+                  "display": "Private Insurance (includes \"no-fault\", BCBS, United Health, etc)"
+                }
+              ],
+              "text": "Medicare"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "67875-5",
+                  "display": "Employment status - current"
+                }
+              ],
+              "text": "What is your current work situation?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA17956-6",
+                  "display": "Unemployed"
+                }
+              ],
+              "text": "Unemployed (finding)"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "82589-3",
+                  "display": "Highest level of education"
+                }
+              ],
+              "text": "What is the highest level of school that you have finished?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA30193-9",
+                  "display": "More than high school"
+                }
+              ],
+              "text": "More than high school"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "56799-0",
+                  "display": "Address"
+                }
+              ],
+              "text": "What address do you live at?"
+            },
+            "valueString": "475 Dibbert Rapid"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93033-9",
+                  "display": "Are you worried about losing your housing?"
+                }
+              ],
+              "text": "Are you worried about losing your housing?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "71802-3",
+                  "display": "Housing status"
+                }
+              ],
+              "text": "What is your housing situation today?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA30189-7",
+                  "display": "I have housing"
+                }
+              ],
+              "text": "I have housing"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "63512-8",
+                  "display": "How many people are living or staying at this address [#]"
+                }
+              ],
+              "text": "How many family members, including yourself, do you currently live with?"
+            },
+            "valueQuantity": {
+              "value": 3,
+              "unit": "{#}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{#}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "54899-0",
+                  "display": "Preferred language"
+                }
+              ],
+              "text": "What language are you most comfortable speaking?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA43-5",
+                  "display": "English"
+                }
+              ],
+              "text": "English"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93034-7",
+                  "display": "Have you been discharged from the armed forces of the United States?"
+                }
+              ],
+              "text": "Have you been discharged from the armed forces of the United States?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "93035-4",
+                  "display": "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?"
+                }
+              ],
+              "text": "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "32624-9",
+                  "display": "Race"
+                }
+              ],
+              "text": "Which race(s) are you?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA14045-1",
+                  "display": "Native Hawaiian"
+                }
+              ],
+              "text": "Native Hawaiian"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "56051-6",
+                  "display": "Hispanic or Latino"
+                }
+              ],
+              "text": "Are you Hispanic or Latino?"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              ],
+              "text": "No"
+            }
           }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93026-3",
-              "display": "Do you feel physically and emotionally safe where you currently live?"
-            } ],
-            "text": "Do you feel physically and emotionally safe where you currently live?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA33-6",
-              "display": "Yes"
-            } ],
-            "text": "Yes"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93027-1",
-              "display": "Are you a refugee?"
-            } ],
-            "text": "Are you a refugee?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93028-9",
-              "display": "In the past year, have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility?"
-            } ],
-            "text": "In the past year, have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93038-8",
-              "display": "Stress level"
-            } ],
-            "text": "Stress is when someone feels tense, nervous, anxious or can't sleep at night because their mind is troubled. How stressed are you?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA6568-5",
-              "display": "Not at all"
-            } ],
-            "text": "Not at all"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93029-7",
-              "display": "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?"
-            } ],
-            "text": "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA30132-7",
-              "display": "5 or more times a week"
-            } ],
-            "text": "5 or more times a week"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93030-5",
-              "display": "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living"
-            } ],
-            "text": "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93031-3",
-              "display": "In the past year, have you or any family members you live with been unable to get any of the following when it was really needed?"
-            } ],
-            "text": "In the past year, have you or any family members you live with been unable to get any of the following when it was really needed?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA30122-8",
-              "display": "I choose not to answer this question"
-            } ],
-            "text": "I choose not to answer this question"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "63586-2",
-              "display": "What was your best estimate of the total income of all family members from all sources, before taxes, in last year [PhenX]"
-            } ],
-            "text": "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits."
-          },
-          "valueQuantity": {
-            "value": 137880,
-            "unit": "/a",
-            "system": "http://unitsofmeasure.org",
-            "code": "/a"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "76437-3",
-              "display": "Primary insurance"
-            } ],
-            "text": "What is your main insurance?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA22073-3",
-              "display": "Private Insurance (includes \"no-fault\", BCBS, United Health, etc)"
-            } ],
-            "text": "Medicare"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "67875-5",
-              "display": "Employment status - current"
-            } ],
-            "text": "What is your current work situation?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA17956-6",
-              "display": "Unemployed"
-            } ],
-            "text": "Unemployed (finding)"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "82589-3",
-              "display": "Highest level of education"
-            } ],
-            "text": "What is the highest level of school that you have finished?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA30193-9",
-              "display": "More than high school"
-            } ],
-            "text": "More than high school"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "56799-0",
-              "display": "Address"
-            } ],
-            "text": "What address do you live at?"
-          },
-          "valueString": "475 Dibbert Rapid"
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93033-9",
-              "display": "Are you worried about losing your housing?"
-            } ],
-            "text": "Are you worried about losing your housing?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "71802-3",
-              "display": "Housing status"
-            } ],
-            "text": "What is your housing situation today?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA30189-7",
-              "display": "I have housing"
-            } ],
-            "text": "I have housing"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "63512-8",
-              "display": "How many people are living or staying at this address [#]"
-            } ],
-            "text": "How many family members, including yourself, do you currently live with?"
-          },
-          "valueQuantity": {
-            "value": 3,
-            "unit": "{#}",
-            "system": "http://unitsofmeasure.org",
-            "code": "{#}"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "54899-0",
-              "display": "Preferred language"
-            } ],
-            "text": "What language are you most comfortable speaking?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA43-5",
-              "display": "English"
-            } ],
-            "text": "English"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93034-7",
-              "display": "Have you been discharged from the armed forces of the United States?"
-            } ],
-            "text": "Have you been discharged from the armed forces of the United States?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "93035-4",
-              "display": "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?"
-            } ],
-            "text": "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "32624-9",
-              "display": "Race"
-            } ],
-            "text": "Which race(s) are you?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA14045-1",
-              "display": "Native Hawaiian"
-            } ],
-            "text": "Native Hawaiian"
-          }
-        }, {
-          "code": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "56051-6",
-              "display": "Hispanic or Latino"
-            } ],
-            "text": "Are you Hispanic or Latino?"
-          },
-          "valueCodeableConcept": {
-            "coding": [ {
-              "system": "http://loinc.org",
-              "code": "LA32-8",
-              "display": "No"
-            } ],
-            "text": "No"
-          }
-        } ]
+        ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:40467772-1ef1-0c18-ff88-11430573abcc",
       "resource": {
         "resourceType": "Observation",
         "id": "40467772-1ef1-0c18-ff88-11430573abcc",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "survey",
-            "display": "survey"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "survey"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "59460-6",
-            "display": "Fall risk total [Morse Fall Scale]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59460-6",
+              "display": "Fall risk total [Morse Fall Scale]"
+            }
+          ],
           "text": "Fall risk total [Morse Fall Scale]"
         },
         "subject": {
@@ -868,25 +1069,32 @@
           "code": "{#}"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:78248281-4b56-0911-39f7-59980e3eb719",
       "resource": {
         "resourceType": "Observation",
         "id": "78248281-4b56-0911-39f7-59980e3eb719",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "survey",
-            "display": "survey"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "survey"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "59461-4",
-            "display": "Fall risk level [Morse Fall Scale]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59461-4",
+              "display": "Fall risk level [Morse Fall Scale]"
+            }
+          ],
           "text": "Fall risk level [Morse Fall Scale]"
         },
         "subject": {
@@ -895,33 +1103,42 @@
         "effectiveDateTime": "2014-06-03T19:06:57-10:00",
         "issued": "2014-06-03T19:06:57.248-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "LA13040-3",
-            "display": "High Risk (MFS Score 50+)"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA13040-3",
+              "display": "High Risk (MFS Score 50+)"
+            }
+          ],
           "text": "High Risk (MFS Score 50+)"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:a2ff5841-48c1-7422-9907-e655315ca266",
       "resource": {
         "resourceType": "Observation",
         "id": "a2ff5841-48c1-7422-9907-e655315ca266",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "survey",
-            "display": "survey"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "survey"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "76504-0",
-            "display": "Total score [HARK]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "76504-0",
+              "display": "Total score [HARK]"
+            }
+          ],
           "text": "Total score [HARK]"
         },
         "subject": {
@@ -936,25 +1153,32 @@
           "code": "{score}"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:fed13ffd-a1e5-490e-4d65-725bf9f8e78e",
       "resource": {
         "resourceType": "Observation",
         "id": "fed13ffd-a1e5-490e-4d65-725bf9f8e78e",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "survey",
-            "display": "survey"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "survey"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "55758-7",
-            "display": "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55758-7",
+              "display": "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]"
+            }
+          ],
           "text": "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]"
         },
         "subject": {
@@ -969,30 +1193,37 @@
           "code": "{score}"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:d0be44d8-6c6a-b00e-11bb-4ab79a34b1ce",
       "resource": {
         "resourceType": "Observation",
         "id": "d0be44d8-6c6a-b00e-11bb-4ab79a34b1ce",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "survey",
-            "display": "survey"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "survey"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "82667-7",
-            "display": "Total score [DAST-10]"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82667-7",
+              "display": "Total score [DAST-10]"
+            }
+          ],
           "text": "Total score [DAST-10]"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
-        } ,
+        },
         "effectiveDateTime": "2014-06-03T20:53:53-10:00",
         "issued": "2014-06-03T20:53:53.248-10:00",
         "valueQuantity": {
@@ -1002,28 +1233,37 @@
           "code": "{score}"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:27d1457d-cf3a-2a1d-9f50-e0297c056e61",
       "resource": {
         "resourceType": "Observation",
         "id": "27d1457d-cf3a-2a1d-9f50-e0297c056e61",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "2093-3",
-            "display": "Cholesterol [Mass/volume] in Serum or Plasma"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2093-3",
+              "display": "Cholesterol [Mass/volume] in Serum or Plasma"
+            }
+          ],
           "text": "Total Cholesterol"
         },
         "subject": {
@@ -1038,28 +1278,37 @@
           "code": "mg/dL"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:8b932d89-10f0-8142-85fa-5d77ca991a94",
       "resource": {
         "resourceType": "Observation",
         "id": "8b932d89-10f0-8142-85fa-5d77ca991a94",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "2571-8",
-            "display": "Triglycerides"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2571-8",
+              "display": "Triglycerides"
+            }
+          ],
           "text": "Triglycerides"
         },
         "subject": {
@@ -1074,28 +1323,37 @@
           "code": "mg/dL"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:d679b1d8-5435-4e77-b544-cafe3ef9a252",
       "resource": {
         "resourceType": "Observation",
         "id": "d679b1d8-5435-4e77-b544-cafe3ef9a252",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "18262-6",
-            "display": "Low Density Lipoprotein Cholesterol"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18262-6",
+              "display": "Low Density Lipoprotein Cholesterol"
+            }
+          ],
           "text": "Low Density Lipoprotein Cholesterol"
         },
         "subject": {
@@ -1110,28 +1368,37 @@
           "code": "mg/dL"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:6c5ddb93-d405-3363-567c-0410145b6260",
       "resource": {
         "resourceType": "Observation",
         "id": "6c5ddb93-d405-3363-567c-0410145b6260",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
         },
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "2085-9",
-            "display": "Cholesterol in HDL [Mass/volume] in Serum or Plasma"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2085-9",
+              "display": "Cholesterol in HDL [Mass/volume] in Serum or Plasma"
+            }
+          ],
           "text": "High Density Lipoprotein Cholesterol"
         },
         "subject": {
@@ -1146,21 +1413,26 @@
           "code": "mg/dL"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:507f267e-8946-47d2-b2e1-3221fb22f4d0",
       "resource": {
         "resourceType": "Procedure",
         "id": "507f267e-8946-47d2-b2e1-3221fb22f4d0",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
         },
         "status": "completed",
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "25732003",
-            "display": "Fiberoptic colonoscopy with biopsy (procedure)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25732003",
+              "display": "Fiberoptic colonoscopy with biopsy (procedure)"
+            }
+          ],
           "text": "Fiberoptic colonoscopy with biopsy (procedure)"
         },
         "subject": {
@@ -1171,21 +1443,26 @@
           "end": "2011-07-12T00:00:00-10:00"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:e3191af6-bb59-03dd-8f04-781cd8c14e05",
       "resource": {
         "resourceType": "Procedure",
         "id": "e3191af6-bb59-03dd-8f04-781cd8c14e05",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
         },
         "status": "completed",
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "311774002",
-            "display": "Colonoscopic polypectomy (procedure)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "311774002",
+              "display": "Colonoscopic polypectomy (procedure)"
+            }
+          ],
           "text": "Colonoscopic polypectomy (procedure)"
         },
         "subject": {
@@ -1205,25 +1482,32 @@
           "reference": "DiagnosticReport/93b40608-5c08-4917-b396-7a660df7658"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:bcaf4e9c-bb1a-0530-4f1e-3ad32fd1519c",
       "resource": {
         "resourceType": "Observation",
         "id": "bcaf4e9c-bb1a-0530-4f1e-3ad32fd1519c",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "2857-1",
-            "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2857-1",
+              "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+            }
+          ],
           "text": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
         },
         "subject": {
@@ -1238,21 +1522,26 @@
           "code": "ng/mL"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:59fd72f0-e9a7-59a0-308f-e9667013dce1",
       "resource": {
         "resourceType": "Immunization",
         "id": "59fd72f0-e9a7-59a0-308f-e9667013dce1",
         "meta": {
-          "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" ]
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+          ]
         },
         "status": "completed",
         "vaccineCode": {
-          "coding": [ {
-            "system": "http://hl7.org/fhir/sid/cvx",
-            "code": "135",
-            "display": "influenza, high dose seasonal, preservative-free"
-          } ],
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "135",
+              "display": "influenza, high dose seasonal, preservative-free"
+            }
+          ],
           "text": "influenza, high dose seasonal, preservative-free"
         },
         "patient": {
@@ -1261,7 +1550,8 @@
         "occurrenceDateTime": "2021-08-17T17:59:13-10:00",
         "primarySource": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df7658",
       "resource": {
         "resourceType": "DiagnosticReport",
@@ -1333,7 +1623,8 @@
           }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:c7ef17f8-2a3a-4324-aa12-1c2d9b1c8275",
       "resource": {
         "resourceType": "Specimen",
@@ -1364,7 +1655,7 @@
             "unit": "mm"
           }
         },
-          "type": {
+        "type": {
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
@@ -1377,10 +1668,13 @@
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
         "note": [
-          {"text": "D. Snared Cecal Polyp "}
+          {
+            "text": "D. Snared Cecal Polyp "
+          }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:60a9b253-e932-4fdf-82cb-4f3691c86780",
       "resource": {
         "resourceType": "Specimen",
@@ -1424,10 +1718,13 @@
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
         "note": [
-          {"text": "E. Snared Ascending Colon Polyp "}
+          {
+            "text": "E. Snared Ascending Colon Polyp "
+          }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:f2e68ce3-4d4e-4c5c-87e4-790a0abd37d4",
       "resource": {
         "resourceType": "Specimen",
@@ -1471,10 +1768,13 @@
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
         "note": [
-          {"text": "F. Descending Colon Polyps x 3: #1 (cold snare) "}
+          {
+            "text": "F. Descending Colon Polyps x 3: #1 (cold snare) "
+          }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:ef4af09f-c90e-4824-93f7-902006648987",
       "resource": {
         "resourceType": "Specimen",
@@ -1505,7 +1805,7 @@
             "unit": "mm"
           }
         },
-          "type": {
+        "type": {
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
@@ -1518,10 +1818,13 @@
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
         "note": [
-          {"text": "F. Descending Colon Polyps x 3: #2 (hot snare #1). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "}
+          {
+            "text": "F. Descending Colon Polyps x 3: #2 (hot snare #1). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "
+          }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:6e022128-23a0-475a-962a-6e39812a47ba",
       "resource": {
         "resourceType": "Specimen",
@@ -1565,29 +1868,38 @@
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
         },
         "note": [
-          {"text": "F. Descending Colon Polyps x 3: #3 (hot snare #2). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "}
+          {
+            "text": "F. Descending Colon Polyps x 3: #3 (hot snare #2). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "
+          }
         ]
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
       "resource": {
         "resourceType": "Observation",
         "id": "f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "34574-4",
-            "display": "Pathology report final diagnosis"
-        } ],
-        "text": "Pathology report final diagnosis"
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
         },
         "subject": {
           "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
@@ -1598,33 +1910,42 @@
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "444898006",
-            "display": "Tubular adenoma of colon (disorder)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
           "text": "Tubular adenoma of colon (disorder)"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
       "resource": {
         "resourceType": "Observation",
         "id": "adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "34574-4",
-            "display": "Pathology report final diagnosis"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
           "text": "Pathology report final diagnosis"
         },
         "subject": {
@@ -1636,33 +1957,42 @@
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "444898006",
-            "display": "Tubular adenoma of colon (disorder)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
           "text": "Tubular adenoma of colon (disorder)"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:a233ee0e-39a0-4418-8bc3-cb61ab29272a",
       "resource": {
         "resourceType": "Observation",
         "id": "a233ee0e-39a0-4418-8bc3-cb61ab29272a",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "34574-4",
-            "display": "Pathology report final diagnosis"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
           "text": "Pathology report final diagnosis"
         },
         "subject": {
@@ -1674,33 +2004,42 @@
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "444898006",
-            "display": "Tubular adenoma of colon (disorder)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
           "text": "Tubular adenoma of colon (disorder)"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:079213ea-36db-40a3-a3c0-03e204e2f589",
       "resource": {
         "resourceType": "Observation",
         "id": "079213ea-36db-40a3-a3c0-03e204e2f589",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "34574-4",
-            "display": "Pathology report final diagnosis"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
           "text": "Pathology report final diagnosis"
         },
         "subject": {
@@ -1712,33 +2051,42 @@
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "444898006",
-            "display": "Tubular adenoma of colon (disorder)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
           "text": "Tubular adenoma of colon (disorder)"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df76587",
       "resource": {
         "resourceType": "Observation",
         "id": "93b40608-5c08-4917-b396-7a660df76587",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "34574-4",
-            "display": "Pathology report final diagnosis"
-          } ],
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
           "text": "Pathology report final diagnosis"
         },
         "subject": {
@@ -1750,33 +2098,42 @@
         "effectiveDateTime": "2019-06-23T00:00:00-10:00",
         "issued": "2019-06-24T00:00:00-10:00",
         "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "444898006",
-            "display": "Tubular adenoma of colon (disorder)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
           "text": "Tubular adenoma of colon (disorder)"
         }
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:00b9bfa7-3487-4f27-b910-e55fa08e3b69",
       "resource": {
         "resourceType": "Observation",
         "id": "00b9bfa7-3487-4f27-b910-e55fa08e3b69",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "787139004",
-            "display": "Piecemeal excision"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "787139004",
+              "display": "Piecemeal excision"
+            }
+          ],
           "text": "Piecemeal excision"
         },
         "subject": {
@@ -1789,25 +2146,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:22543be2-b3c5-4026-95d6-74c2e63884a7",
       "resource": {
         "resourceType": "Observation",
         "id": "22543be2-b3c5-4026-95d6-74c2e63884a7",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "787139004",
-            "display": "Piecemeal excision"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "787139004",
+              "display": "Piecemeal excision"
+            }
+          ],
           "text": "Piecemeal excision"
         },
         "subject": {
@@ -1820,25 +2184,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:167b651c-d365-4c79-a47b-5758d0cf967b",
       "resource": {
         "resourceType": "Observation",
         "id": "167b651c-d365-4c79-a47b-5758d0cf967b",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "787139004",
-            "display": "Piecemeal excision"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "787139004",
+              "display": "Piecemeal excision"
+            }
+          ],
           "text": "Piecemeal excision"
         },
         "subject": {
@@ -1851,25 +2222,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:9ac5502a-cb22-4b9d-95f5-731fdf287ac2",
       "resource": {
         "resourceType": "Observation",
         "id": "99ac5502a-cb22-4b9d-95f5-731fdf287ac2",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "787139004",
-            "display": "Piecemeal excision"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "787139004",
+              "display": "Piecemeal excision"
+            }
+          ],
           "text": "Piecemeal excision"
         },
         "subject": {
@@ -1882,25 +2260,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:554452c4-b0b3-4521-90b2-151d949cef71",
       "resource": {
         "resourceType": "Observation",
         "id": "554452c4-b0b3-4521-90b2-151d949cef71",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "787139004",
-            "display": "Piecemeal excision"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "787139004",
+              "display": "Piecemeal excision"
+            }
+          ],
           "text": "Piecemeal excision"
         },
         "subject": {
@@ -1913,25 +2298,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:d926c198-6e27-4ea2-87f2-a2c76a2ea364",
       "resource": {
         "resourceType": "Observation",
         "id": "d926c198-6e27-4ea2-87f2-a2c76a2ea364",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55237006",
+              "display": "Severe dysplasia (morphologic abnormality)"
+            }
+          ],
           "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
@@ -1944,25 +2336,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:7f1e5c1e-2998-45d8-90e7-279610eaae24",
       "resource": {
         "resourceType": "Observation",
         "id": "7f1e5c1e-2998-45d8-90e7-279610eaae24",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55237006",
+              "display": "Severe dysplasia (morphologic abnormality)"
+            }
+          ],
           "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
@@ -1975,25 +2374,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:05ad780d-7773-424e-90cd-da3a749e4daa",
       "resource": {
         "resourceType": "Observation",
         "id": "05ad780d-7773-424e-90cd-da3a749e4daa",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55237006",
+              "display": "Severe dysplasia (morphologic abnormality)"
+            }
+          ],
           "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
@@ -2006,25 +2412,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:58119921-f054-4aa9-a5d9-d7ecb95328d2",
       "resource": {
         "resourceType": "Observation",
         "id": "58119921-f054-4aa9-a5d9-d7ecb95328d2",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55237006",
+              "display": "Severe dysplasia (morphologic abnormality)"
+            }
+          ],
           "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
@@ -2037,25 +2450,32 @@
         "issued": "2019-06-24T00:00:00-10:00",
         "valueBoolean": false
       }
-    }, {
+    },
+    {
       "fullUrl": "urn:uuid:b3a3eff8-d6e9-41ba-bc98-f963e6d39c01",
       "resource": {
         "resourceType": "Observation",
         "id": "b3a3eff8-d6e9-41ba-bc98-f963e6d39c01",
         "status": "final",
-        "category": [ {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "laboratory"
-          } ]
-        } ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
         "code": {
-          "coding": [ {
-            "system": "http://snomed.info/sct",
-            "code": "55237006",
-            "display": "Severe dysplasia (morphologic abnormality)"
-          } ],
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55237006",
+              "display": "Severe dysplasia (morphologic abnormality)"
+            }
+          ],
           "text": "Severe dysplasia (morphologic abnormality)"
         },
         "subject": {
