@@ -1200,7 +1200,10 @@
             "reference": "Procedure/507f267e-8946-47d2-b2e1-3221fb22f4d0",
             "display": "Fiberoptic colonoscopy with biopsy"
           }
-        ]
+        ],
+        "report": {
+          "reference": "DiagnosticReport/93b40608-5c08-4917-b396-7a660df7658"
+        }
       }
     }, {
       "fullUrl": "urn:uuid:bcaf4e9c-bb1a-0530-4f1e-3ad32fd1519c",

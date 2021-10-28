@@ -59,7 +59,7 @@ context Patient
 //define "First colonoscopy in the list":
 //"Had Colonoscopy"[0]
 
-define "Colonoscopy with polypectomy":
+define "ID from Colonoscopy with polypectomy":
   [Procedure] P
     //where singleton from P.code.coding.code.value='311774002'
     where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
@@ -72,7 +72,7 @@ define "Observations that are part of Colonoscopy with polypectomy":
     //where exists(O.partOf.reference)
     // ...to a colonoscopy with polypectomy (in progress)
     //and O.partOf.reference
-    where "Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
+    where "ID from Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
     //return {ID: Last(Split(O.id,'/')),
     //  Description: (O.value as CodeableConcept).coding.display.value}
 
@@ -212,15 +212,50 @@ define "Piecemeal resection of adenoma >20 mm":
   Count("Polyp full report" R
     where R."Piecemeal?"=true) > 0
 
-define "Next colonoscopy":
+define "Next colonoscopy interval":
   case
-    when "Piecemeal resection of adenoma >20 mm" then '6 months'
-    when ">10 adenomas on single examination" then '1 year'
-    when "Adenoma with high-grade dysplasia" then '3 years'
-    when "Any adenoma with tubulovillous or villous histology" then '3 years'
-    when "Any adenoma >= 10 mm" then '3 years'
-    when "5-10 tubular adenomas <10 mm" then '3 years'
-    when "3-4 tubular adenomas <10 mm" then '3-5 years'
-    when "1-2 tubular adenomas <10 mm" then '7-10 years'
-    else '10 years'
+    when "Piecemeal resection of adenoma >20 mm" then Interval[0.5 year, 0.5 year] //-or- point from Interval[0.5, 0.5]
+    when ">10 adenomas on single examination" then Interval[1.0 year, 1.0 year]
+    when "Adenoma with high-grade dysplasia" then Interval[3.0 years, 3.0 years]
+    when "Any adenoma with tubulovillous or villous histology" then Interval[3.0 years, 3.0 years]
+    when "Any adenoma >= 10 mm" then Interval[3.0 years, 3.0 years]
+    when "5-10 tubular adenomas <10 mm" then Interval[3.0 years, 3.0 years]
+    when "3-4 tubular adenomas <10 mm" then Interval[3.0 years, 5.0 years]
+    when "1-2 tubular adenomas <10 mm" then Interval[7.0 years, 10.0 years]
+    else Interval[10 years, 10.0 years]
   end
+
+  /* define "Next colonoscopy date":
+    Date(2025,10,10) + 1 year */
+
+define "This colonoscopy date":
+  [Procedure] P
+    where P.code ~ "Colonoscopic polypectomy"
+    return P.performed.end.value
+
+define "Surveillance colonoscopy date low":
+  [Procedure] P
+    where P.code ~ "Colonoscopic polypectomy"
+    return P.performed.end.value + "Next colonoscopy interval".low
+
+define "Surveillance colonoscopy date high":
+  [Procedure] P
+    where P.code ~ "Colonoscopic polypectomy"
+    return P.performed.end.value + "Next colonoscopy interval".high
+
+define "Surveillance colonoscopy date range tuple":
+  [Procedure] P
+    where P.code ~ "Colonoscopic polypectomy"
+    return {"From": P.performed.end.value + "Next colonoscopy interval".low,
+            "To":   P.performed.end.value + "Next colonoscopy interval".high}
+
+/* define "Surveillance colonoscopy date range interval":
+  [Procedure] P
+    where P.code ~ "Colonoscopic polypectomy"
+    return Interval((P.performed.end.value + "Next colonoscopy interval".low), (P.performed.end.value + "Next colonoscopy interval".high))
+ */
+/* define "Surveillance colonoscopy date":
+  case "Surveillance colonoscopy date low"="Surveillance colonoscopy date high"
+    when true then Interval["Surveillance colonoscopy date low",]
+    else "Surveillance colonoscopy date high"
+  end */
