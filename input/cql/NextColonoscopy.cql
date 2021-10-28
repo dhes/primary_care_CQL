@@ -63,7 +63,7 @@ define "ID from Colonoscopy with polypectomy":
   [Procedure] P
     //where singleton from P.code.coding.code.value='311774002'
     where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
-    return Last(Split(P.id,':'))
+    return "GetId:"(P.id)
 
 define "Observations that are part of Colonoscopy with polypectomy":
 // AKA colon polyp observations
@@ -72,13 +72,13 @@ define "Observations that are part of Colonoscopy with polypectomy":
     //where exists(O.partOf.reference)
     // ...to a colonoscopy with polypectomy (in progress)
     //and O.partOf.reference
-    where "ID from Colonoscopy with polypectomy" contains Last(Split(O.partOf.first().reference.value,'/'))
+    where "ID from Colonoscopy with polypectomy" contains "GetId/"(O.partOf.first().reference.value)
     //return {ID: Last(Split(O.id,'/')),
     //  Description: (O.value as CodeableConcept).coding.display.value}
 
 define "Full report with details":
   "Observations that are part of Colonoscopy with polypectomy" O
-    return all {ID: Last(Split(O.id.value,':')),
+    return all {ID: "GetId:"(O.id.value),
                 Specimen: singleton from (O.value as CodeableConcept).coding.display,
                 Size: ((O.contained[0] as Observation).value as Quantity).value.toString() +
                   ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
@@ -86,7 +86,7 @@ define "Full report with details":
 
 define "Full report":
   "Observations that are part of Colonoscopy with polypectomy" O
-    return all {ID: Last(Split(O.id.value,':')),
+    return all {ID: "GetId:"(O.id.value),
                 Specimen: O.value as CodeableConcept,
                 Size: (O.contained[0] as Observation).value as Quantity,
                 "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept}
@@ -230,7 +230,7 @@ define "Next colonoscopy interval":
 
 define "This colonoscopy date":
   [Procedure] P
-    where P.code ~ "Colonoscopic polypectomy"
+    where P.code ~ "Colonoscopic polypectomy"  // this will need to be narrowed where there is more that one colonoscopy polypectomy on file
     return P.performed.end.value
 
 define "Surveillance colonoscopy date low":
@@ -259,3 +259,6 @@ define "Surveillance colonoscopy date range tuple":
     when true then Interval["Surveillance colonoscopy date low",]
     else "Surveillance colonoscopy date high"
   end */
+
+  //Try to match the polypectomy procedure to the specimens through the DiagnosticReport
+  define "specimens for a certian colonoscopic polypectomy":
