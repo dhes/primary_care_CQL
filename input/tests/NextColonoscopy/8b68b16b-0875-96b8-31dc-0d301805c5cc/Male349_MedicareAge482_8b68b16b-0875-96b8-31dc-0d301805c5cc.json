@@ -1598,28 +1598,27 @@
           },
           {
             "reference": "Specimen/6e022128-23a0-475a-962a-6e39812a47ba"
-          }
-        ],
-        "result": [
-          {
-            "reference": "Observation/f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
-            "display": "Snared cecal polyp"
           },
           {
-            "reference": "Observation/adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
-            "display": "Snared ascending colon polyp"
+            "reference": "Specimen/f12b1b53-8f8e-400d-a804-e9ecbbb46cfd"
           },
           {
-            "reference": "Observation/a233ee0e-39a0-4418-8bc3-cb61ab29272a",
-            "display": "Descending colon polyp cold snare"
+            "reference": "Specimen/f76e25d8-4ec1-4e42-8895-530dbf89adf5"
           },
           {
-            "reference": "Observation/079213ea-36db-40a3-a3c0-03e204e2f589",
-            "display": "Descending colon polyp hot snare #1"
+            "reference": "Specimen/b1b1c3dc-9c54-44d6-949f-ade8eb34c52b"
           },
           {
-            "reference": "Observation/93b40608-5c08-4917-b396-7a660df76587",
-            "display": "Descending colon polyp hot snare #2"
+            "reference": "Specimen/d5e4494b-a436-47c2-bbbb-a66937fba8e6"
+          },
+          {
+            "reference": "Specimen/76ce3d3b-4f9e-40fe-be40-38bcc2db7021"
+          },
+          {
+            "reference": "Specimen/682b8fc3-7a83-44af-b866-80cd2cc521de"
+          },
+          {
+            "reference": "Specimen/a6f605c0-d073-4069-b8a0-118d82942121"
           }
         ]
       }
@@ -1769,7 +1768,7 @@
         },
         "note": [
           {
-            "text": "F. Descending Colon Polyps x 3: #1 (cold snare) "
+            "text": "F1. Descending Colon Polyps x 3: (cold snare) "
           }
         ]
       }
@@ -1819,7 +1818,7 @@
         },
         "note": [
           {
-            "text": "F. Descending Colon Polyps x 3: #2 (hot snare #1). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "
+            "text": "F2. Descending Colon Polyps x 3: (hot snare #1)"
           }
         ]
       }
@@ -1869,7 +1868,7 @@
         },
         "note": [
           {
-            "text": "F. Descending Colon Polyps x 3: #3 (hot snare #2). Length was given as 8-10 mm in the report. The larger value is used in this structured Observation. "
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
           }
         ]
       }
