@@ -143,7 +143,6 @@ define "Pathology":
     where "GetId/"(O.specimen.reference)="GetId:"(S.id)
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
-//            Pathology: singleton from (O.value as CodeableConcept).coding.display} // gives a readable output
             Pathology: O.value as CodeableConcept} // used in reminder calculation
 
 define "Piecemeal?":
@@ -180,11 +179,6 @@ define "Polyp full report":
   "Polyp full report" R
     where R.Size < 10 'mm'
     and R."Pathology"~"Tubular adenoma of colon"
-    /* return all {"Specimen ID": R."Specimen ID",
-            Specimen: R.Specimen.text,
-            Size: (R.Size).value,
-            Path: R."Microscopic Pathology".text
-          } */
 
 define "1-2 tubular adenomas <10 mm":
   Count("? tubular adenoma and < 10 mm") <= 2
@@ -199,23 +193,10 @@ define "Any adenoma >= 10 mm":
 Count("Polyp full report" R
   where R.Size >= 10 'mm'
   and R.Pathology in "Adenoma") > 0
-  /* return all {ID: R.ID,
-          Specimen: R.Specimen.text,
-          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
-          Path: R."Microscopic Pathology".text
-        }) > 0 */
-
-//define "Adenomas with tubulovillous or villous histology test":
-//"Colonoscopic polypectomy" in "Adenoma with tubulovillous or villous histology"
 
 define "Any adenoma with tubulovillous or villous histology":
 Count("Polyp full report" R
   where R."Pathology" in "Adenoma with tubulovillous or villous histology") > 0
-  /* return all {ID: R.ID,
-          Specimen: R.Specimen.text,
-          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
-          Path: R."Microscopic Pathology".text
-        }) > 0 */
 
 define "Adenoma with high-grade dysplasia":
   Count("Polyp full report" R
@@ -223,14 +204,7 @@ define "Adenoma with high-grade dysplasia":
 
 define ">10 adenomas on single examination":
 Count("Polyp full report" R
-  //where R.Size >= 10 'mm'
-  //where R."Microscopic Pathology" in "Adenoma with tubulovillous or villous histology"
   where R."Pathology" in "Adenoma") > 10
-  /* return all {ID: R.ID,
-          Specimen: R.Specimen.text,
-          Size: (R.Size).value.toString() + ' ' + (R.Size).unit,
-          Path: R."Microscopic Pathology".text
-        }) > 10 */
 
 define "Piecemeal resection of adenoma >20 mm":
   Count("Polyp full report" R
