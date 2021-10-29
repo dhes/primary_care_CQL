@@ -99,10 +99,10 @@ define "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport":
    from [Procedure] P, [DiagnosticReport] DR
       where P.code ~ "Colonoscopic polypectomy"
       and "GetId/"(P.report[0].reference)="GetId:"(DR.id)  //assumes only one report
-      return {Date: DR.effective.value,
+      return {Date: P.performed.end,
               Specimens: DR.specimen.reference}
 
-define "Specimens from Colonoscopic polypectomy":
+define "Specimen IDs from Colonoscopic polypectomy":
   from [Specimen] S,
   "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport" SFP // Specimen From Polypectomy
     where 'Specimen/' + "GetId:"(S.id) in SFP.Specimens
@@ -110,11 +110,11 @@ define "Specimens from Colonoscopic polypectomy":
           Specimen: S}
 
 define "a":
-  "Specimens from Colonoscopic polypectomy".Specimen.id.value
+  "Specimen IDs from Colonoscopic polypectomy".Specimen.id.value
 
 define "Polyp length":
-  from [Specimen] S, "Specimens from Colonoscopic polypectomy" SFCP
-    where S.id in ("Specimens from Colonoscopic polypectomy".Specimen.id.value)
+  from [Specimen] S, "Specimen IDs from Colonoscopic polypectomy" SFCP
+    where S.id in ("Specimen IDs from Colonoscopic polypectomy".Specimen.id.value)
     return {ID: S.id,
             Date: SFCP."Report date",
             Site: S.collection.bodySite.text.value,
@@ -140,7 +140,7 @@ define "Polyp length":
 // break up "Polyp path" and then lace it back together using the specimen id
 define "Pathology":
   from [Specimen] S, [Observation] O
-    where "GetId/"(O.specimen.reference)= "GetId:"(S.id)
+    where "GetId/"(O.specimen.reference)="GetId:"(S.id)
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
 //            Pathology: singleton from (O.value as CodeableConcept).coding.display} // gives a readable output
@@ -169,6 +169,7 @@ define "Polyp full report":
         and P.ID=PM.ID and P.ID=SD.ID
         and PM.ID=SD.ID
   return all {"Specimen ID": L.ID,
+          Date: L.Date.value,
           Site: L.Site,
           Size: L.Size,
           Pathology: P.Pathology,
@@ -248,9 +249,6 @@ define "Next colonoscopy interval":
     else Interval[10 years, 10.0 years]
   end
 
-  /* define "Next colonoscopy date":
-    Date(2025,10,10) + 1 year */
-
 define "This colonoscopy date":
   [Procedure] P
     where P.code ~ "Colonoscopic polypectomy"  // this will need to be narrowed where there is more that one colonoscopy polypectomy on file
@@ -269,39 +267,10 @@ define "Surveillance colonoscopy date high":
 define "Surveillance colonoscopy date range tuple":
   [Procedure] P
     where P.code ~ "Colonoscopic polypectomy"
-    return {"From": P.performed.end.value + "Next colonoscopy interval".low,
-            "To":   P.performed.end.value + "Next colonoscopy interval".high}
-
-/* define "Surveillance colonoscopy date range interval":
-  [Procedure] P
-    where P.code ~ "Colonoscopic polypectomy"
-    return Interval((P.performed.end.value + "Next colonoscopy interval".low), (P.performed.end.value + "Next colonoscopy interval".high))
- */
-/* define "Surveillance colonoscopy date":
-  case "Surveillance colonoscopy date low"="Surveillance colonoscopy date high"
-    when true then Interval["Surveillance colonoscopy date low",]
-    else "Surveillance colonoscopy date high"
-  end */
+    return {"From": ToDate(P.performed.end.value + "Next colonoscopy interval".low),
+            "To":   ToDate(P.performed.end.value + "Next colonoscopy interval".high)}
 
 define "Colonoscopic polypectomy diagnosticReport id":
    [Procedure] P
     where P.code ~ "Colonoscopic polypectomy"
     return P.report.reference.value
-
-/* define "Specimae in colonoscopic polypectomy diagnosticReport":
-  [Procedure] P
-     where P.code ~ "Colonoscopic polypectomy"
-     return P.report.reference.value
-   */
-
-/* define "Specimen associated with a colonoscopic polypectomy diagnosticReport":
-  from "Colonoscopy polypectomy diagnosticReport id" D,
-       [Specimen] S
-       where  */
-
-/* define "Colonoscopic polypectomy diagnosticReport":
-  from "Colonoscopic polypectomy diagnosticReport id" DRID,
-       [DiagnosticReport] R
-//         where "GetId/"(DRID) = "GetId:"(R.id)
-        return {DRID: "GetId/"(DRID),
-                RID: "GetId:"(R.id)} */
