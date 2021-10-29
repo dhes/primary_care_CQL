@@ -1616,9 +1616,6 @@
           },
           {
             "reference": "Specimen/682b8fc3-7a83-44af-b866-80cd2cc521de"
-          },
-          {
-            "reference": "Specimen/a6f605c0-d073-4069-b8a0-118d82942121"
           }
         ]
       }
@@ -1828,6 +1825,306 @@
       "resource": {
         "resourceType": "Specimen",
         "id": "6e022128-23a0-475a-962a-6e39812a47ba",
+        "status": "available",
+        "collection": {
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32622004",
+                "display": "Descending colon structure (body structure)"
+              }
+            ],
+            "text": "Descending colon structure (body structure)"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129304002",
+                "display": "Excision - action"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 10,
+            "unit": "mm"
+          }
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "POL",
+              "display": "Polyps"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "note": [
+          {
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f12b1b53-8f8e-400d-a804-e9ecbbb46cfd",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "f12b1b53-8f8e-400d-a804-e9ecbbb46cfd",
+        "status": "available",
+        "collection": {
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32622004",
+                "display": "Descending colon structure (body structure)"
+              }
+            ],
+            "text": "Descending colon structure (body structure)"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129304002",
+                "display": "Excision - action"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 10,
+            "unit": "mm"
+          }
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "POL",
+              "display": "Polyps"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "note": [
+          {
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f76e25d8-4ec1-4e42-8895-530dbf89adf5",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "f76e25d8-4ec1-4e42-8895-530dbf89adf5",
+        "status": "available",
+        "collection": {
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32622004",
+                "display": "Descending colon structure (body structure)"
+              }
+            ],
+            "text": "Descending colon structure (body structure)"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129304002",
+                "display": "Excision - action"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 10,
+            "unit": "mm"
+          }
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "POL",
+              "display": "Polyps"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "note": [
+          {
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b1b1c3dc-9c54-44d6-949f-ade8eb34c52b",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "b1b1c3dc-9c54-44d6-949f-ade8eb34c52b",
+        "status": "available",
+        "collection": {
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32622004",
+                "display": "Descending colon structure (body structure)"
+              }
+            ],
+            "text": "Descending colon structure (body structure)"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129304002",
+                "display": "Excision - action"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 10,
+            "unit": "mm"
+          }
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "POL",
+              "display": "Polyps"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "note": [
+          {
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d5e4494b-a436-47c2-bbbb-a66937fba8e6",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "d5e4494b-a436-47c2-bbbb-a66937fba8e6",
+        "status": "available",
+        "collection": {
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32622004",
+                "display": "Descending colon structure (body structure)"
+              }
+            ],
+            "text": "Descending colon structure (body structure)"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129304002",
+                "display": "Excision - action"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 10,
+            "unit": "mm"
+          }
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "POL",
+              "display": "Polyps"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "note": [
+          {
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:76ce3d3b-4f9e-40fe-be40-38bcc2db7021",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "76ce3d3b-4f9e-40fe-be40-38bcc2db7021",
+        "status": "available",
+        "collection": {
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32622004",
+                "display": "Descending colon structure (body structure)"
+              }
+            ],
+            "text": "Descending colon structure (body structure)"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129304002",
+                "display": "Excision - action"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 10,
+            "unit": "mm"
+          }
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "POL",
+              "display": "Polyps"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "note": [
+          {
+            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:682b8fc3-7a83-44af-b866-80cd2cc521de",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "682b8fc3-7a83-44af-b866-80cd2cc521de",
         "status": "available",
         "collection": {
           "bodySite": {
