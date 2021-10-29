@@ -95,9 +95,28 @@ define "ID from Colonoscopy with polypectomy":
                 Size: (O.contained[0] as Observation).value as Quantity,
                 "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept} */
 
+define "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport":
+   from [Procedure] P, [DiagnosticReport] DR
+      where P.code ~ "Colonoscopic polypectomy"
+      and "GetId/"(P.report[0].reference)="GetId:"(DR.id)  //assumes only one report
+      return {Date: DR.effective.value,
+              Specimens: DR.specimen.reference}
+
+define "Specimens from Colonoscopic polypectomy":
+  from [Specimen] S,
+  "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport" SFP // Specimen From Polypectomy
+    where 'Specimen/' + "GetId:"(S.id) in SFP.Specimens
+  return {"Report date": SFP.Date,
+          Specimen: S}
+
+define "a":
+  "Specimens from Colonoscopic polypectomy".Specimen.id.value
+
 define "Polyp length":
-  [Specimen] S
+  from [Specimen] S, "Specimens from Colonoscopic polypectomy" SFCP
+    where S.id in ("Specimens from Colonoscopic polypectomy".Specimen.id.value)
     return {ID: S.id,
+            Date: SFCP."Report date",
             Site: S.collection.bodySite.text.value,
 //            Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}  // for a literal readout
             Size: S.collection.quantity} // for the reminder calculation
@@ -263,3 +282,26 @@ define "Surveillance colonoscopy date range tuple":
     when true then Interval["Surveillance colonoscopy date low",]
     else "Surveillance colonoscopy date high"
   end */
+
+define "Colonoscopic polypectomy diagnosticReport id":
+   [Procedure] P
+    where P.code ~ "Colonoscopic polypectomy"
+    return P.report.reference.value
+
+/* define "Specimae in colonoscopic polypectomy diagnosticReport":
+  [Procedure] P
+     where P.code ~ "Colonoscopic polypectomy"
+     return P.report.reference.value
+   */
+
+/* define "Specimen associated with a colonoscopic polypectomy diagnosticReport":
+  from "Colonoscopy polypectomy diagnosticReport id" D,
+       [Specimen] S
+       where  */
+
+/* define "Colonoscopic polypectomy diagnosticReport":
+  from "Colonoscopic polypectomy diagnosticReport id" DRID,
+       [DiagnosticReport] R
+//         where "GetId/"(DRID) = "GetId:"(R.id)
+        return {DRID: "GetId/"(DRID),
+                RID: "GetId:"(R.id)} */
