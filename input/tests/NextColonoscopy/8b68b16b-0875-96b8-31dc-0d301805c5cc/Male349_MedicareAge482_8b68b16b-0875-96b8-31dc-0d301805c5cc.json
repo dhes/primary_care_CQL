@@ -1455,9 +1455,11 @@
             "display": "Fiberoptic colonoscopy with biopsy"
           }
         ],
-        "report": {
+        "report": [
+          {
           "reference": "urn:uuid:93b40608-5c08-4917-b396-7a660df7658"
-        }
+          }
+        ]
       }
     },
     {
