@@ -1883,7 +1883,7 @@
         },
         "note": [
           {
-            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+            "text": "G1. Sigmoid colon polyps x 5 (biopsy x 1, snare x 4)"
           }
         ]
       }
@@ -1932,7 +1932,7 @@
         },
         "note": [
           {
-            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+            "text": "G2. Sigmoid colon polyps x 5 (biopsy x 1, snare x 4)"
           }
         ]
       }
@@ -1981,7 +1981,7 @@
         },
         "note": [
           {
-            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+            "text": "G3. Sigmoid colon polyps x 5 (biopsy x 1, snare x 4)"
           }
         ]
       }
@@ -2030,7 +2030,7 @@
         },
         "note": [
           {
-            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+            "text": "G4. Sigmoid colon polyps x 5 (biopsy x 1, snare x 4)"
           }
         ]
       }
@@ -2079,7 +2079,7 @@
         },
         "note": [
           {
-            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+            "text": "G5. Sigmoid colon polyps x 5 (biopsy x 1, snare x 4)"
           }
         ]
       }
@@ -2128,7 +2128,7 @@
         },
         "note": [
           {
-            "text": "F3. Descending Colon Polyps x 3: #3 (hot snare #2)"
+            "text": "H. Rectal Polyp"
           }
         ]
       }
@@ -2340,6 +2340,270 @@
         },
         "specimen": {
           "reference": "urn:uuid:6e022128-23a0-475a-962a-6e39812a47ba"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "adbebd48-1169-4348-a3fa-89f83c7d536a",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "urn:uuid:f12b1b53-8f8e-400d-a804-e9ecbbb46cfd"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "12bce8d4-b197-45d1-89d4-087bfb0d9549",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "urn:uuid:f76e25d8-4ec1-4e42-8895-530dbf89adf5"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "bdba27bf-6e5a-49ed-830d-c2384b45243c",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "urn:uuid:b1b1c3dc-9c54-44d6-949f-ade8eb34c52b"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5c106abf-b100-4e6c-90a1-889bb2b06f7f",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "urn:uuid:d5e4494b-a436-47c2-bbbb-a66937fba8e6"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ea9cad20-aaaf-473a-9452-aaf50b1b9489",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "urn:uuid:76ce3d3b-4f9e-40fe-be40-38bcc2db7021"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444898006",
+              "display": "Tubular adenoma of colon (disorder)"
+            }
+          ],
+          "text": "Tubular adenoma of colon (disorder)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "052a982d-2538-421a-bc0c-4caa9af40f97",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34574-4",
+              "display": "Pathology report final diagnosis"
+            }
+          ],
+          "text": "Pathology report final diagnosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc"
+        },
+        "specimen": {
+          "reference": "urn:uuid:682b8fc3-7a83-44af-b866-80cd2cc521de"
         },
         "valueCodeableConcept": {
           "coding": [
