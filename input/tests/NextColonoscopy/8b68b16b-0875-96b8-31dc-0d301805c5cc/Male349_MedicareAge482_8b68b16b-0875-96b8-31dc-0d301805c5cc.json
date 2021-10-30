@@ -1849,11 +1849,11 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "32622004",
-                "display": "Descending colon structure (body structure)"
+                "code": "60184004",
+                "display": "Sigmoid colon structure (body structure) "
               }
             ],
-            "text": "Descending colon structure (body structure)"
+            "text": "Sigmoid colon structure (body structure) "
           },
           "method": {
             "coding": [
@@ -1898,11 +1898,11 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "32622004",
-                "display": "Descending colon structure (body structure)"
+                "code": "60184004",
+                "display": "Sigmoid colon structure (body structure) "
               }
             ],
-            "text": "Descending colon structure (body structure)"
+            "text": "Sigmoid colon structure (body structure) "
           },
           "method": {
             "coding": [
@@ -1947,11 +1947,11 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "32622004",
-                "display": "Descending colon structure (body structure)"
+                "code": "60184004",
+                "display": "Sigmoid colon structure (body structure) "
               }
             ],
-            "text": "Descending colon structure (body structure)"
+            "text": "Sigmoid colon structure (body structure) "
           },
           "method": {
             "coding": [
@@ -1996,11 +1996,11 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "32622004",
-                "display": "Descending colon structure (body structure)"
+                "code": "60184004",
+                "display": "Sigmoid colon structure (body structure) "
               }
             ],
-            "text": "Descending colon structure (body structure)"
+            "text": "Sigmoid colon structure (body structure) "
           },
           "method": {
             "coding": [
@@ -2045,11 +2045,11 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "32622004",
-                "display": "Descending colon structure (body structure)"
+                "code": "60184004",
+                "display": "Sigmoid colon structure (body structure) "
               }
             ],
-            "text": "Descending colon structure (body structure)"
+            "text": "Sigmoid colon structure (body structure) "
           },
           "method": {
             "coding": [
@@ -2094,11 +2094,11 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "32622004",
-                "display": "Descending colon structure (body structure)"
+                "code": "34402009",
+                "display": "Rectum structure (body structure)"
               }
             ],
-            "text": "Descending colon structure (body structure)"
+            "text": "Rectum structure (body structure)"
           },
           "method": {
             "coding": [
