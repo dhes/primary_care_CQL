@@ -98,14 +98,14 @@ define "ID from Colonoscopy with polypectomy":
 define "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport":
    from [Procedure] P, [DiagnosticReport] DR
       where P.code ~ "Colonoscopic polypectomy"
-      and "GetId/"(P.report[0].reference)="GetId:"(DR.id)  //assumes only one report
+      and P.report[0].reference=DR.id  //assumes only one report
       return {Date: P.performed.end,
               Specimens: DR.specimen.reference}
 
 define "Specimen IDs from Colonoscopic polypectomy":
   from [Specimen] S,
   "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport" SFP // Specimen From Polypectomy
-    where 'Specimen/' + "GetId:"(S.id) in SFP.Specimens
+    where S.id in SFP.Specimens
   return {"Report date": SFP.Date,
           Specimen: S}
 
@@ -140,21 +140,21 @@ define "Polyp length":
 // break up "Polyp path" and then lace it back together using the specimen id
 define "Pathology":
   from [Specimen] S, [Observation] O
-    where "GetId/"(O.specimen.reference)="GetId:"(S.id)
+    where O.specimen.reference=S.id
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
             Pathology: O.value as CodeableConcept} // used in reminder calculation
 
 define "Piecemeal?":
   from [Specimen] S, [Observation] O
-    where "GetId/"(O.specimen.reference) = "GetId:"(S.id)
+    where O.specimen.reference = S.id
     and singleton from O.code.coding.code.value~'787139004' // Piecemeal resection?
     return {ID: S.id.value,
             "Piecemeal?": (O.value as boolean).value}
 
 define "Severe dysplasia?":
   from [Specimen] S, [Observation] O
-    where "GetId/"(O.specimen.reference) = "GetId:"(S.id)
+    where O.specimen.reference = S.id
     and singleton from O.code.coding.code.value~'55237006' // severe (high-grade) dysplasia?
     return {ID: S.id.value,
             "Severe Dysplasia": (O.value as boolean).value}
