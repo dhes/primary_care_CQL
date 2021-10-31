@@ -3,6 +3,7 @@
   "type": "collection",
   "entry": [
     {
+      "fullUrl": "urn:uuid:8b68b16b-0875-96b8-31dc-0d301805c5cc",
       "resource": {
         "resourceType": "Patient",
         "id": "8b68b16b-0875-96b8-31dc-0d301805c5cc",
@@ -56,6 +57,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:c916fab3-9399-51a5-8e18-3321129cc847",
       "resource": {
         "resourceType": "AllergyIntolerance",
         "id": "c916fab3-9399-51a5-8e18-3321129cc847",
@@ -97,6 +99,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:61d000e0-eced-f8a4-7ae4-146ce5346c9d",
       "resource": {
         "resourceType": "Condition",
         "id": "61d000e0-eced-f8a4-7ae4-146ce5346c9d",
@@ -150,6 +153,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:a27db04f-882e-ae76-dcba-d8053b15bb41",
       "resource": {
         "resourceType": "Observation",
         "id": "a27db04f-882e-ae76-dcba-d8053b15bb41",
@@ -195,6 +199,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:1241207a-074d-59d1-2fd0-31a148aefea8",
       "resource": {
         "resourceType": "Observation",
         "id": "1241207a-074d-59d1-2fd0-31a148aefea8",
@@ -234,6 +239,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:f0699843-1b4a-f033-27e9-9b0bd7be4823",
       "resource": {
         "resourceType": "Observation",
         "id": "f0699843-1b4a-f033-27e9-9b0bd7be4823",
@@ -279,6 +285,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:7375202e-d782-e232-fcd1-322000681845",
       "resource": {
         "resourceType": "Observation",
         "id": "7375202e-d782-e232-fcd1-322000681845",
@@ -324,6 +331,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:2ea3e93f-2d2d-3210-3040-a9649e517e9b",
       "resource": {
         "resourceType": "Observation",
         "id": "2ea3e93f-2d2d-3210-3040-a9649e517e9b",
@@ -401,6 +409,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:c7c10daa-6cea-3864-c83f-59e9f62228ed",
       "resource": {
         "resourceType": "Observation",
         "id": "c7c10daa-6cea-3864-c83f-59e9f62228ed",
@@ -446,6 +455,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:53ea28cb-c733-8ef8-b46f-1e583281a2c3",
       "resource": {
         "resourceType": "Observation",
         "id": "53ea28cb-c733-8ef8-b46f-1e583281a2c3",
@@ -491,6 +501,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:",
       "resource": {
         "resourceType": "Observation",
         "id": "1c23fa5e-1636-45f5-00e3-4b42f22a892a",
@@ -539,6 +550,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:0cb988e7-1d38-c73d-b6fe-58c2d916b6b7",
       "resource": {
         "resourceType": "Observation",
         "id": "0cb988e7-1d38-c73d-b6fe-58c2d916b6b7",
@@ -1019,6 +1031,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:40467772-1ef1-0c18-ff88-11430573abcc",
       "resource": {
         "resourceType": "Observation",
         "id": "40467772-1ef1-0c18-ff88-11430573abcc",
@@ -1058,6 +1071,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:78248281-4b56-0911-39f7-59980e3eb719",
       "resource": {
         "resourceType": "Observation",
         "id": "78248281-4b56-0911-39f7-59980e3eb719",
@@ -1101,6 +1115,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:a2ff5841-48c1-7422-9907-e655315ca266",
       "resource": {
         "resourceType": "Observation",
         "id": "a2ff5841-48c1-7422-9907-e655315ca266",
@@ -1140,6 +1155,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:fed13ffd-a1e5-490e-4d65-725bf9f8e78e",
       "resource": {
         "resourceType": "Observation",
         "id": "fed13ffd-a1e5-490e-4d65-725bf9f8e78e",
@@ -1179,6 +1195,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:d0be44d8-6c6a-b00e-11bb-4ab79a34b1ce",
       "resource": {
         "resourceType": "Observation",
         "id": "d0be44d8-6c6a-b00e-11bb-4ab79a34b1ce",
@@ -1218,6 +1235,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:27d1457d-cf3a-2a1d-9f50-e0297c056e61",
       "resource": {
         "resourceType": "Observation",
         "id": "27d1457d-cf3a-2a1d-9f50-e0297c056e61",
@@ -1262,6 +1280,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:8b932d89-10f0-8142-85fa-5d77ca991a94",
       "resource": {
         "resourceType": "Observation",
         "id": "8b932d89-10f0-8142-85fa-5d77ca991a94",
@@ -1306,6 +1325,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:d679b1d8-5435-4e77-b544-cafe3ef9a252",
       "resource": {
         "resourceType": "Observation",
         "id": "d679b1d8-5435-4e77-b544-cafe3ef9a252",
@@ -1350,6 +1370,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:6c5ddb93-d405-3363-567c-0410145b6260",
       "resource": {
         "resourceType": "Observation",
         "id": "6c5ddb93-d405-3363-567c-0410145b6260",
@@ -1394,6 +1415,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:507f267e-8946-47d2-b2e1-3221fb22f4d0",
       "resource": {
         "resourceType": "Procedure",
         "id": "507f267e-8946-47d2-b2e1-3221fb22f4d0",
@@ -1423,6 +1445,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:e3191af6-bb59-03dd-8f04-781cd8c14e05",
       "resource": {
         "resourceType": "Procedure",
         "id": "e3191af6-bb59-03dd-8f04-781cd8c14e05",
@@ -1457,12 +1480,13 @@
         ],
         "report": [
           {
-          "reference": "urn:uuid:93b40608-5c08-4917-b396-7a660df7658"
+            "reference": "urn:uuid:93b40608-5c08-4917-b396-7a660df7658"
           }
         ]
       }
     },
     {
+      "fullUrl": "urn:uuid:bcaf4e9c-bb1a-0530-4f1e-3ad32fd1519c",
       "resource": {
         "resourceType": "Observation",
         "id": "bcaf4e9c-bb1a-0530-4f1e-3ad32fd1519c",
@@ -1502,6 +1526,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:59fd72f0-e9a7-59a0-308f-e9667013dce1",
       "resource": {
         "resourceType": "Immunization",
         "id": "59fd72f0-e9a7-59a0-308f-e9667013dce1",
@@ -1529,6 +1554,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df7658",
       "resource": {
         "resourceType": "DiagnosticReport",
         "id": "93b40608-5c08-4917-b396-7a660df7658",
@@ -1597,6 +1623,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:c7ef17f8-2a3a-4324-aa12-1c2d9b1c8275",
       "resource": {
         "resourceType": "Specimen",
         "id": "c7ef17f8-2a3a-4324-aa12-1c2d9b1c8275",
@@ -1646,6 +1673,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:60a9b253-e932-4fdf-82cb-4f3691c86780",
       "resource": {
         "resourceType": "Specimen",
         "id": "60a9b253-e932-4fdf-82cb-4f3691c86780",
@@ -1695,6 +1723,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:f2e68ce3-4d4e-4c5c-87e4-790a0abd37d4",
       "resource": {
         "resourceType": "Specimen",
         "id": "f2e68ce3-4d4e-4c5c-87e4-790a0abd37d4",
@@ -1744,6 +1773,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:ef4af09f-c90e-4824-93f7-902006648987",
       "resource": {
         "resourceType": "Specimen",
         "id": "ef4af09f-c90e-4824-93f7-902006648987",
@@ -1793,6 +1823,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:6e022128-23a0-475a-962a-6e39812a47ba",
       "resource": {
         "resourceType": "Specimen",
         "id": "6e022128-23a0-475a-962a-6e39812a47ba",
@@ -1842,6 +1873,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:f12b1b53-8f8e-400d-a804-e9ecbbb46cfd",
       "resource": {
         "resourceType": "Specimen",
         "id": "f12b1b53-8f8e-400d-a804-e9ecbbb46cfd",
@@ -1852,10 +1884,10 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "60184004",
-                "display": "Sigmoid colon structure (body structure) "
+                "display": "Sigmoid colon structure (body structure)"
               }
             ],
-            "text": "Sigmoid colon structure (body structure) "
+            "text": "Sigmoid colon structure (body structure)"
           },
           "method": {
             "coding": [
@@ -1891,6 +1923,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:f76e25d8-4ec1-4e42-8895-530dbf89adf5",
       "resource": {
         "resourceType": "Specimen",
         "id": "f76e25d8-4ec1-4e42-8895-530dbf89adf5",
@@ -1901,10 +1934,10 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "60184004",
-                "display": "Sigmoid colon structure (body structure) "
+                "display": "Sigmoid colon structure (body structure)"
               }
             ],
-            "text": "Sigmoid colon structure (body structure) "
+            "text": "Sigmoid colon structure (body structure)"
           },
           "method": {
             "coding": [
@@ -1940,6 +1973,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:b1b1c3dc-9c54-44d6-949f-ade8eb34c52b",
       "resource": {
         "resourceType": "Specimen",
         "id": "b1b1c3dc-9c54-44d6-949f-ade8eb34c52b",
@@ -1950,10 +1984,10 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "60184004",
-                "display": "Sigmoid colon structure (body structure) "
+                "display": "Sigmoid colon structure (body structure)"
               }
             ],
-            "text": "Sigmoid colon structure (body structure) "
+            "text": "Sigmoid colon structure (body structure)"
           },
           "method": {
             "coding": [
@@ -1989,6 +2023,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:d5e4494b-a436-47c2-bbbb-a66937fba8e6",
       "resource": {
         "resourceType": "Specimen",
         "id": "d5e4494b-a436-47c2-bbbb-a66937fba8e6",
@@ -1999,10 +2034,10 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "60184004",
-                "display": "Sigmoid colon structure (body structure) "
+                "display": "Sigmoid colon structure (body structure)"
               }
             ],
-            "text": "Sigmoid colon structure (body structure) "
+            "text": "Sigmoid colon structure (body structure)"
           },
           "method": {
             "coding": [
@@ -2038,6 +2073,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:76ce3d3b-4f9e-40fe-be40-38bcc2db7021",
       "resource": {
         "resourceType": "Specimen",
         "id": "76ce3d3b-4f9e-40fe-be40-38bcc2db7021",
@@ -2048,10 +2084,10 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "60184004",
-                "display": "Sigmoid colon structure (body structure) "
+                "display": "Sigmoid colon structure (body structure)"
               }
             ],
-            "text": "Sigmoid colon structure (body structure) "
+            "text": "Sigmoid colon structure (body structure)"
           },
           "method": {
             "coding": [
@@ -2087,6 +2123,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:682b8fc3-7a83-44af-b866-80cd2cc521de",
       "resource": {
         "resourceType": "Specimen",
         "id": "682b8fc3-7a83-44af-b866-80cd2cc521de",
@@ -2136,6 +2173,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
       "resource": {
         "resourceType": "Observation",
         "id": "f018a8d3-2c33-4ffc-b7cd-6ce4fc8624b7",
@@ -2180,6 +2218,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
       "resource": {
         "resourceType": "Observation",
         "id": "adfceb40-c4e4-4814-9fc2-6e70b54bb4ad",
@@ -2224,6 +2263,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:a233ee0e-39a0-4418-8bc3-cb61ab29272a",
       "resource": {
         "resourceType": "Observation",
         "id": "a233ee0e-39a0-4418-8bc3-cb61ab29272a",
@@ -2268,6 +2308,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:079213ea-36db-40a3-a3c0-03e204e2f589",
       "resource": {
         "resourceType": "Observation",
         "id": "079213ea-36db-40a3-a3c0-03e204e2f589",
@@ -2312,6 +2353,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:93b40608-5c08-4917-b396-7a660df76587",
       "resource": {
         "resourceType": "Observation",
         "id": "93b40608-5c08-4917-b396-7a660df76587",
@@ -2356,6 +2398,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:adbebd48-1169-4348-a3fa-89f83c7d536a",
       "resource": {
         "resourceType": "Observation",
         "id": "adbebd48-1169-4348-a3fa-89f83c7d536a",
@@ -2400,6 +2443,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:12bce8d4-b197-45d1-89d4-087bfb0d9549",
       "resource": {
         "resourceType": "Observation",
         "id": "12bce8d4-b197-45d1-89d4-087bfb0d9549",
@@ -2444,6 +2488,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:bdba27bf-6e5a-49ed-830d-c2384b45243c",
       "resource": {
         "resourceType": "Observation",
         "id": "bdba27bf-6e5a-49ed-830d-c2384b45243c",
@@ -2488,6 +2533,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:5c106abf-b100-4e6c-90a1-889bb2b06f7f",
       "resource": {
         "resourceType": "Observation",
         "id": "5c106abf-b100-4e6c-90a1-889bb2b06f7f",
@@ -2532,6 +2578,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:ea9cad20-aaaf-473a-9452-aaf50b1b9489",
       "resource": {
         "resourceType": "Observation",
         "id": "ea9cad20-aaaf-473a-9452-aaf50b1b9489",
@@ -2576,6 +2623,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:052a982d-2538-421a-bc0c-4caa9af40f97",
       "resource": {
         "resourceType": "Observation",
         "id": "052a982d-2538-421a-bc0c-4caa9af40f97",
@@ -2620,6 +2668,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:00b9bfa7-3487-4f27-b910-e55fa08e3b69",
       "resource": {
         "resourceType": "Observation",
         "id": "00b9bfa7-3487-4f27-b910-e55fa08e3b69",
@@ -2655,6 +2704,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:22543be2-b3c5-4026-95d6-74c2e63884a7",
       "resource": {
         "resourceType": "Observation",
         "id": "22543be2-b3c5-4026-95d6-74c2e63884a7",
@@ -2690,6 +2740,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:167b651c-d365-4c79-a47b-5758d0cf967b",
       "resource": {
         "resourceType": "Observation",
         "id": "167b651c-d365-4c79-a47b-5758d0cf967b",
@@ -2725,6 +2776,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:99ac5502a-cb22-4b9d-95f5-731fdf287ac2",
       "resource": {
         "resourceType": "Observation",
         "id": "99ac5502a-cb22-4b9d-95f5-731fdf287ac2",
@@ -2760,6 +2812,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:554452c4-b0b3-4521-90b2-151d949cef71",
       "resource": {
         "resourceType": "Observation",
         "id": "554452c4-b0b3-4521-90b2-151d949cef71",
@@ -2795,6 +2848,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:4ab23aaf-a7e3-48f3-a1ff-e228748ee9ec",
       "resource": {
         "resourceType": "Observation",
         "id": "4ab23aaf-a7e3-48f3-a1ff-e228748ee9ec",
@@ -2830,6 +2884,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:ab72096c-078e-403b-8c0c-6cdb68a0a09b",
       "resource": {
         "resourceType": "Observation",
         "id": "ab72096c-078e-403b-8c0c-6cdb68a0a09b",
@@ -2865,6 +2920,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:68d3a11f-b7f3-45e9-a2a2-2e320567619a",
       "resource": {
         "resourceType": "Observation",
         "id": "68d3a11f-b7f3-45e9-a2a2-2e320567619a",
@@ -2900,6 +2956,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:3e59e0a0-6627-44df-88e9-0ba5556d6cf9",
       "resource": {
         "resourceType": "Observation",
         "id": "3e59e0a0-6627-44df-88e9-0ba5556d6cf9",
@@ -2935,6 +2992,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:cc399ad1-b7be-4d84-b6f1-5cea99324063",
       "resource": {
         "resourceType": "Observation",
         "id": "cc399ad1-b7be-4d84-b6f1-5cea99324063",
@@ -2970,6 +3028,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:b985f748-efc9-4eee-9e5a-b47eadd78516",
       "resource": {
         "resourceType": "Observation",
         "id": "b985f748-efc9-4eee-9e5a-b47eadd78516",
@@ -3005,6 +3064,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:d926c198-6e27-4ea2-87f2-a2c76a2ea364",
       "resource": {
         "resourceType": "Observation",
         "id": "d926c198-6e27-4ea2-87f2-a2c76a2ea364",
@@ -3040,6 +3100,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:7f1e5c1e-2998-45d8-90e7-279610eaae24",
       "resource": {
         "resourceType": "Observation",
         "id": "7f1e5c1e-2998-45d8-90e7-279610eaae24",
@@ -3075,6 +3136,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:05ad780d-7773-424e-90cd-da3a749e4daa",
       "resource": {
         "resourceType": "Observation",
         "id": "05ad780d-7773-424e-90cd-da3a749e4daa",
@@ -3110,6 +3172,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:58119921-f054-4aa9-a5d9-d7ecb95328d2",
       "resource": {
         "resourceType": "Observation",
         "id": "58119921-f054-4aa9-a5d9-d7ecb95328d2",
@@ -3145,6 +3208,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:c10bb12e-2b1e-437d-b868-9f06390ce700",
       "resource": {
         "resourceType": "Observation",
         "id": "c10bb12e-2b1e-437d-b868-9f06390ce700",
@@ -3180,6 +3244,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:b3a3eff8-d6e9-41ba-bc98-f963e6d39c01",
       "resource": {
         "resourceType": "Observation",
         "id": "b3a3eff8-d6e9-41ba-bc98-f963e6d39c01",
@@ -3215,6 +3280,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:4e4ce2cf-836c-4c62-9a2c-0d7ca2eb8184",
       "resource": {
         "resourceType": "Observation",
         "id": "4e4ce2cf-836c-4c62-9a2c-0d7ca2eb8184",
@@ -3250,6 +3316,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:79117183-fd61-404b-b8e2-411abdd6decf",
       "resource": {
         "resourceType": "Observation",
         "id": "79117183-fd61-404b-b8e2-411abdd6decf",
@@ -3285,6 +3352,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:4df10936-77fa-4b9c-b71f-82c25ed6ed28",
       "resource": {
         "resourceType": "Observation",
         "id": "4df10936-77fa-4b9c-b71f-82c25ed6ed28",
@@ -3320,6 +3388,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:4dd44872-dbc4-4760-97d9-41e33ce519b0",
       "resource": {
         "resourceType": "Observation",
         "id": "4dd44872-dbc4-4760-97d9-41e33ce519b0",
@@ -3355,6 +3424,7 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:09d01129-981e-4613-8047-d1d4947ea669",
       "resource": {
         "resourceType": "Observation",
         "id": "09d01129-981e-4613-8047-d1d4947ea669",

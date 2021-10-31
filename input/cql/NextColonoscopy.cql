@@ -59,47 +59,49 @@ context Patient
 //define "First colonoscopy in the list":
 //"Had Colonoscopy"[0]
 
-/* // not currently referred to
-define "ID from Colonoscopy with polypectomy":
-  [Procedure] P
-    //where singleton from P.code.coding.code.value='311774002'
-    where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
-    return "GetId:"(P.id) */
+// not currently referred to
+// define "ID from Colonoscopy with polypectomy":
+//  [Procedure] P
+//    //where singleton from P.code.coding.code.value='311774002'
+//    where P.code as CodeableConcept ~ "Colonoscopic polypectomy"
+//    return "GetId:"(P.id)
 
 // not currently referred to
-/* define "Observations that are part of Colonoscopy with polypectomy":
+// define "Observations that are part of Colonoscopy with polypectomy":
 // AKA colon polyp observations
-  [Observation] O
+//  [Observation] O
     // only observations with references..
     //where exists(O.partOf.reference)
     // ...to a colonoscopy with polypectomy (in progress)
     //and O.partOf.reference
-    where "ID from Colonoscopy with polypectomy" contains "GetId/"(O.partOf.first().reference.value)
+//      where "ID from Colonoscopy with polypectomy" contains "GetId/"(O.partOf.first().reference.value)
     //return {ID: Last(Split(O.id,'/')),
-    //  Description: (O.value as CodeableConcept).coding.display.value} */
+    //  Description: (O.value as CodeableConcept).coding.display.value}
 
 // not currently referred to
-/* define "Full report with details":
-  "Observations that are part of Colonoscopy with polypectomy" O
-    return all {ID: "GetId:"(O.id.value),
-                Specimen: singleton from (O.value as CodeableConcept).coding.display,
-                Size: ((O.contained[0] as Observation).value as Quantity).value.toString() +
-                  ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
-                "Microscopic Pathology": ((O.contained[1] as Observation).value as CodeableConcept).text } */
+// define "Full report with details":
+//  "Observations that are part of Colonoscopy with polypectomy" O
+//    return all {ID: "GetId:"(O.id.value),
+//                Specimen: singleton from (O.value as CodeableConcept).coding.display,
+//                Size: ((O.contained[0] as Observation).value as Quantity).value.toString() +
+//                  ' ' + ((O.contained[0] as Observation).value as Quantity).unit.value,
+//                "Microscopic Pathology": ((O.contained[1] as Observation).value as CodeableConcept).text }
 
 // not currently referred to
-/* define "Full report":
-  "Observations that are part of Colonoscopy with polypectomy" O
-    return all {ID: "GetId:"(O.id.value),
-                Specimen: O.value as CodeableConcept,
-                Size: (O.contained[0] as Observation).value as Quantity,
-                "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept} */
+// define "Full report":
+//  "Observations that are part of Colonoscopy with polypectomy" O
+//    return all {ID: "GetId:"(O.id.value),
+//                Specimen: O.value as CodeableConcept,
+//                Size: (O.contained[0] as Observation).value as Quantity,
+//                "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept}
 
 define "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport":
    from [Procedure] P, [DiagnosticReport] DR
       where P.code ~ "Colonoscopic polypectomy"
-      and P.report[0].reference=DR.id  //assumes only one report
+      and P.report[0].reference.value=DR.id.value  //assumes only one report
       return {Date: P.performed.end,
+              /* "P.report[0].reference": P.report[0].reference,
+              "DR.id":DR.id, */
               Specimens: DR.specimen.reference}
 
 define "Specimen IDs from Colonoscopic polypectomy":
@@ -122,20 +124,20 @@ define "Polyp length":
             Size: S.collection.quantity} // for the reminder calculation
 
 // this one works but takes three minutes
-/* define "Polyp path":
-  from [Specimen] S, [Observation] O1, [Observation] O2, [Observation] O3
-    where (Last(Split(O1.specimen.reference, '/')) = Last(Split(S.id, ':')))
-    and (Last(Split(O2.specimen.reference, '/')) = Last(Split(S.id, ':')))
-    and (Last(Split(O3.specimen.reference, '/')) = Last(Split(S.id, ':')))
-    and singleton from O1.code.coding.code.value~'34574-4' // Pathology report final diagnosis
-    and singleton from O2.code.coding.code.value~'787139004'  // Piecemeal excision
-    and singleton from O3.code.coding.code.value~'55237006' // Severe dysplasia
-    return {Description: singleton from S.note.text,
-            "Body Site": S.collection.bodySite.text.value,
-            Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
-            Pathology: singleton from (O1.value as CodeableConcept).coding.display.value,
-            "Piecemeal?": O2.value.value,
-            "High-grade dysplasia?": O3.value.value} */
+// define "Polyp path":
+//  from [Specimen] S, [Observation] O1, [Observation] O2, [Observation] O3
+//    where (Last(Split(O1.specimen.reference, '/')) = Last(Split(S.id, ':')))
+//    and (Last(Split(O2.specimen.reference, '/')) = Last(Split(S.id, ':')))
+//    and (Last(Split(O3.specimen.reference, '/')) = Last(Split(S.id, ':')))
+//    and singleton from O1.code.coding.code.value~'34574-4' // Pathology report final diagnosis
+//    and singleton from O2.code.coding.code.value~'787139004'  // Piecemeal excision
+//    and singleton from O3.code.coding.code.value~'55237006' // Severe dysplasia
+//    return {Description: singleton from S.note.text,
+//            "Body Site": S.collection.bodySite.text.value,
+//            Length: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value,
+//            Pathology: singleton from (O1.value as CodeableConcept).coding.display.value,
+//            "Piecemeal?": O2.value.value,
+//            "High-grade dysplasia?": O3.value.value}
 
 // break up "Polyp path" and then lace it back together using the specimen id
 define "Pathology":
