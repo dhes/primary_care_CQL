@@ -95,33 +95,39 @@ context Patient
 //                Size: (O.contained[0] as Observation).value as Quantity,
 //                "Microscopic Pathology": (O.contained[1] as Observation).value as CodeableConcept}
 
-define "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport":
+define "Procedure date and specimen IDs from Colonoscopic polypectomy diagnosticReport":
    from [Procedure] P, [DiagnosticReport] DR
       where P.code ~ "Colonoscopic polypectomy"
       and P.report[0].reference.value=DR.id.value  //assumes only one report
       return {Date: P.performed.end,
-              /* "P.report[0].reference": P.report[0].reference,
-              "DR.id":DR.id, */
-              Specimens: DR.specimen.reference}
+              Specimens: DR.specimen.reference.value}
 
-define "Specimen IDs from Colonoscopic polypectomy":
+define "Procedure date and Specimens from Colonoscopic polypectomy": // SFCP
   from [Specimen] S,
-  "Specimen date and IDs from Colonoscopic polypectomy diagnosticReport" SFP // Specimen From Polypectomy
+  "Procedure date and specimen IDs from Colonoscopic polypectomy diagnosticReport" SFP // Specimen From Polypectomy
     where S.id in SFP.Specimens
   return {"Report date": SFP.Date,
           Specimen: S}
 
-define "a":
-  "Specimen IDs from Colonoscopic polypectomy".Specimen.id.value
+define "a":  //just to test if i got the right specimens from "Procedure date and Specimens from Colonoscopic polypectomy"
+  // comment out for production
+  "Procedure date and Specimens from Colonoscopic polypectomy".Specimen.id.value
 
 define "Polyp length":
-  from [Specimen] S, "Specimen IDs from Colonoscopic polypectomy" SFCP
-    where S.id in ("Specimen IDs from Colonoscopic polypectomy".Specimen.id.value)
+  from [Specimen] S, "Procedure date and Specimens from Colonoscopic polypectomy" SFCP
+    where S.id in ("Procedure date and Specimens from Colonoscopic polypectomy".Specimen.id.value)
     return {ID: S.id,
             Date: SFCP."Report date",
             Site: S.collection.bodySite.text.value,
 //            Size: S.collection.quantity.value.toString() + ' ' + S.collection.quantity.unit.value}  // for a literal readout
             Size: S.collection.quantity} // for the reminder calculation
+
+/* define "Check Polyp Length": //Comment me and the next me out in production
+  from "Polyp length" PL
+    return all PL.Size.value.toString() + ' ' + PL.Size.unit.value
+
+define "Count Check Polyp Length": //Comment me out in productions
+  Count("Check Polyp Length") */
 
 // this one works but takes three minutes
 // define "Polyp path":
@@ -140,14 +146,33 @@ define "Polyp length":
 //            "High-grade dysplasia?": O3.value.value}
 
 // break up "Polyp path" and then lace it back together using the specimen id
-define "Pathology":
+/* define "Pathology": //updated in next definition. This one only works if there is one set of specimens
   from [Specimen] S, [Observation] O
     where O.specimen.reference=S.id
     and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
     return {ID: S.id.value,
+            Pathology: O.value as CodeableConcept} // used in reminder calculation*/
+
+define "Pathology":
+  from "Procedure date and Specimens from Colonoscopic polypectomy" SFCP,
+      [Observation] O
+    where O.specimen.reference=SFCP.Specimen.id.value
+    and singleton from O.code.coding.code.value~'34574-4' // Pathology report final diagnosis
+    return all {ID: SFCP.Specimen.id.value,
+            Date: SFCP."Report date",
             Pathology: O.value as CodeableConcept} // used in reminder calculation
 
-define "Piecemeal?":
+define "Count Pathology": // comment out in production
+  Count("Pathology")
+
+define "Elaborate Pathology":
+  "Pathology" P
+  return all {ID: P.ID,
+          Date: P.Date,
+          Pathology: P.Pathology.coding.display}
+
+
+/* define "Piecemeal?":
   from [Specimen] S, [Observation] O
     where O.specimen.reference = S.id
     and singleton from O.code.coding.code.value~'787139004' // Piecemeal resection?
@@ -249,4 +274,4 @@ define "Surveillance colonoscopy date range tuple":
 define "Colonoscopic polypectomy diagnosticReport id":
    [Procedure] P
     where P.code ~ "Colonoscopic polypectomy"
-    return P.report.reference.value
+    return P.report.reference.value */

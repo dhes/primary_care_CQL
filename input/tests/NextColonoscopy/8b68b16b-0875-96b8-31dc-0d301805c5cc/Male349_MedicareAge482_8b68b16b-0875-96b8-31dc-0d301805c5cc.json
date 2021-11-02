@@ -2659,11 +2659,11 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "444898006",
-              "display": "Tubular adenoma of colon (disorder)"
+              "code": "62047007",
+              "display": "Hyperplastic polyp (morphologic abnormality)"
             }
           ],
-          "text": "Tubular adenoma of colon (disorder)"
+          "text": "Hyperplastic polyp (morphologic abnormality)"
         }
       }
     },
