@@ -171,38 +171,74 @@ define "Elaborate Pathology":
           Date: P.Date,
           Pathology: P.Pathology.coding.display}
 
-
-/* define "Piecemeal?":
+/* define "Piecemeal?": //rewritten
   from [Specimen] S, [Observation] O
     where O.specimen.reference = S.id
     and singleton from O.code.coding.code.value~'787139004' // Piecemeal resection?
     return {ID: S.id.value,
-            "Piecemeal?": (O.value as boolean).value}
+            "Piecemeal?": (O.value as boolean).value} */
 
-define "Severe dysplasia?":
+define "Piecemeal?":
+from "Procedure date and Specimens from Colonoscopic polypectomy" SFCP,
+    [Observation] O
+  where O.specimen.reference=SFCP.Specimen.id.value
+  and singleton from O.code.coding.code.value~'787139004' // Piecemeal resection?
+  return all {ID: SFCP.Specimen.id.value,
+              Date: SFCP."Report date",
+              "Piecemeal?": (O.value as boolean).value} // used in reminder calculation
+
+/*define "Severe dysplasia?": // replaced, next definition
   from [Specimen] S, [Observation] O
     where O.specimen.reference = S.id
     and singleton from O.code.coding.code.value~'55237006' // severe (high-grade) dysplasia?
     return {ID: S.id.value,
-            "Severe Dysplasia": (O.value as boolean).value}
+            "Severe Dysplasia": (O.value as boolean).value} */
+
+define "Severe dysplasia?":
+  from "Procedure date and Specimens from Colonoscopic polypectomy" SFCP,
+    [Observation] O
+      where O.specimen.reference=SFCP.Specimen.id.value
+      and singleton from O.code.coding.code.value~'55237006' // severe (high-grade) dysplasia?
+      return all {ID: SFCP.Specimen.id.value,
+              Date: SFCP."Report date",
+              "Severe Dysplasia?": (O.value as boolean).value} //
+
 
 define "Polyp full report":
   from  "Polyp length" L,
         "Pathology" P,
         "Piecemeal?" PM,
         "Severe dysplasia?" SD
-  where L.ID=P.ID and L.ID=PM.ID and L.ID = SD.ID
-        and P.ID=PM.ID and P.ID=SD.ID
-        and PM.ID=SD.ID
-  return all {"Specimen ID": L.ID,
+  where L.ID=P.ID
+        and L.ID=PM.ID
+//        and L.ID = SD.ID
+        and P.ID=PM.ID
+//        and P.ID=SD.ID
+//        and PM.ID=SD.ID
+          and L.Date=P.Date
+  return all {
+          "Specimen ID": L.ID,
           Date: L.Date.value,
           Site: L.Site,
           Size: L.Size,
-          Pathology: P.Pathology,
+          Pathology: singleton from P.Pathology.coding.display,
           "Piecemeal?": PM."Piecemeal?",
-          "Severe dysplasia?": SD."Severe Dysplasia"}
+          "Severe dysplasia?": SD."Severe Dysplasia?"
+          }
 
- define "? tubular adenoma and < 10 mm":
+define "Elaborate polyp full report": // comment out in production
+  "Polyp full report" PFR
+  return {
+          "Specimen ID": PFR."Specimen ID",
+          Date: PFR.Date,
+          Site: PFR.Site,
+          Size: PFR.Size.value.toString() + ' ' +PFR.Size.unit,
+          Pathology: PFR.Pathology,
+          "Piecemeal?": PFR."Piecemeal?",
+          "Severe dysplasia?": PFR."Severe dysplasia?"
+          }
+
+ /* define "? tubular adenoma and < 10 mm":
   "Polyp full report" R
     where R.Size < 10 'mm'
     and R."Pathology"~"Tubular adenoma of colon"
