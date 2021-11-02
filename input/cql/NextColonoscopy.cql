@@ -29,7 +29,7 @@ code "Colonoscopic polypectomy": '311774002' from "SNOMED"
 code "Hyperlastic polyp of large intestine": '721691004' from "SNOMED"
 code "Tubular adenoma of colon": '444898006' from "SNOMED"
 // next three for testing:
-code "Benign tubular adenoma (morphologic abnormality)": '444898006' from "SNOMED"
+code "Benign tubular adenoma (morphologic abnormality)": '1156654007' from "SNOMED"
 code "Villous adenoma (morphologic abnormality)": '128859003' from "SNOMED"
 code  "Tubulovillous adenoma (morphologic abnormality)": '61722000' from "SNOMED"
 // code "Tubular adenoma": '444408007' from "SNOMED"
@@ -211,17 +211,17 @@ define "Polyp full report":
         "Severe dysplasia?" SD
   where L.ID=P.ID
         and L.ID=PM.ID
-//        and L.ID = SD.ID
+        and L.ID = SD.ID
         and P.ID=PM.ID
-//        and P.ID=SD.ID
-//        and PM.ID=SD.ID
-          and L.Date=P.Date
+        and P.ID=SD.ID
+        and PM.ID=SD.ID
+        and L.Date=P.Date
   return all {
           "Specimen ID": L.ID,
           Date: L.Date.value,
           Site: L.Site,
           Size: L.Size,
-          Pathology: singleton from P.Pathology.coding.display,
+          Pathology: P.Pathology,
           "Piecemeal?": PM."Piecemeal?",
           "Severe dysplasia?": SD."Severe Dysplasia?"
           }
@@ -233,18 +233,18 @@ define "Elaborate polyp full report": // comment out in production
           Date: PFR.Date,
           Site: PFR.Site,
           Size: PFR.Size.value.toString() + ' ' +PFR.Size.unit,
-          Pathology: PFR.Pathology,
+          Pathology: singleton from PFR.Pathology.coding.display,
           "Piecemeal?": PFR."Piecemeal?",
           "Severe dysplasia?": PFR."Severe dysplasia?"
           }
 
- /* define "? tubular adenoma and < 10 mm":
+define "? tubular adenoma and < 10 mm":
   "Polyp full report" R
     where R.Size < 10 'mm'
-    and R."Pathology"~"Tubular adenoma of colon"
+    and R."Pathology"~"Benign tubular adenoma (morphologic abnormality)"
 
 define "1-2 tubular adenomas <10 mm":
-  Count("? tubular adenoma and < 10 mm") <= 2
+  1 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=2
 
 define "3-4 tubular adenomas <10 mm":
   3 <= Count("? tubular adenoma and < 10 mm") and Count("? tubular adenoma and < 10 mm") <=4
@@ -310,4 +310,4 @@ define "Surveillance colonoscopy date range tuple":
 define "Colonoscopic polypectomy diagnosticReport id":
    [Procedure] P
     where P.code ~ "Colonoscopic polypectomy"
-    return P.report.reference.value */
+    return P.report.reference.value
